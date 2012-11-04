@@ -2,7 +2,7 @@
  <script type="text/javascript" src="js/functions.js"></script>
   <script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
   <script>window.jQuery || document.write('<script type="text/javascript" src="js/jquery.js"><\/script>')</script>
-<h3 class="span2" style="margin-top: -50px;">ocio y cultura</h3>
+<h3 class="span2" style="margin-top: -50px;"><?php echo $titulo ?></h3>
     <script type="text/javascript" src="js/modernizr.custom.81963.js"></script>
 
 
