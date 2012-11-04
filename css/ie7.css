@@ -1,0 +1,45 @@
+.ie7 h2 i {
+	padding-top:16px;
+	padding-bottom:3px;
+	margin-bottom:-2px;
+}
+
+.ie7 .da-slider {
+	border-bottom:1px solid #eee;
+}
+
+.ie7 #map {
+    border-bottom:1px solid #eee;
+}
+
+.ie7 .da-arrows span {
+    filter: alpha(opacity=100);
+}
+
+.ie7 .da-arrows span {
+  width: 34px; 
+  height: 34px; 
+  display: block; 
+  background:#fff url(../img/arrows1.png) no-repeat -1px center ; 
+  position: absolute; 
+  top: 42%; 
+  cursor: pointer; 
+  text-indent: -999em;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border:3px solid #474747;
+}
+
+.ie7 .da-arrows span.da-arrows-prev {
+    left: 20px;
+}
+
+.ie7 .da-arrows span.da-arrows-next {
+    background-position: right center;
+    right: 20px;
+}
+
+.ie7 #nav ul ul {
+    padding:0;
+}
