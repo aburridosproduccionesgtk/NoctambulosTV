@@ -87,7 +87,7 @@ $(document).ready(function(){
 		if(ruta == 'home/secciones'){
 			$('#main_container').load(ruta);
 		}else{  
-			$('#lnav').fadeOut(1000,function(){$('#main_container').load(ruta);});
+			$('#lnav').fadeOut(1000,function(){Document.load(ruta);});
 		}
 	}
 		  

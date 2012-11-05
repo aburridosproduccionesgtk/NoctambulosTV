@@ -42,14 +42,14 @@
 <div id="social">
       <div class="container miLine">
         <ul class="social"> 	
-          <li><a target="_blank" class="programacion" href="">Facebook</a></li>
-          <li><a target="_blank" class="ocio" href="">Twitter</a></li>
-          <li><a target="_blank" class="experiencias" href="">Google +</a></li>
-          <li><a target="_blank" class="conciertos" href="">LinkedIn</a></li>
-          <li><a target="_blank" class="discotecas" href="">Flickr</a></li>
-          <li><a target="_blank" class="festivales" href="">Dribbble</a></li>
-           <li><a target="_blank" class="prensa" href="">Flickr</a></li>
-          <li><a target="_blank" class="vcasting" href="">Dribbble</a></li>
+          <li><a class="programacion" href="">Programacion</a></li>
+          <li><a class="ocio" href="javascript:menuSel('secciones/ocio')">Ocio</a></li>
+          <li><a class="experiencias" href="javascript:menuSel('<?php echo base_url() ?>secciones/experiencias')">Experiencias</a></li>
+          <li><a class="conciertos" href="javascript:menuSel('<?php echo base_url() ?>secciones/conciertos')">Conciertos</a></li>
+          <li><a class="discotecas" href="javascript:menuSel('<?php echo base_url() ?>secciones/discotecas')">Discotecas</a></li>
+          <li><a class="festivales" href="javascript:menuSel('<?php echo base_url() ?>secciones/festivales')">Festivales</a></li>
+           <li><a class="prensa" href="javascript:menuSel('<?php echo base_url() ?>secciones/prensa')">Prensa</a></li>
+          <li><a  class="vcasting" href="javascript:menuSel('<?php echo base_url() ?>secciones/vcasting')">Video Casting</a></li>
         </ul>
        <!-- código a recorda... onmouseover="cambiar('.$item.')" -->
         <nav id="nav" class="clearfix">

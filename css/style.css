@@ -2343,6 +2343,7 @@ aside .categories li a:hover {
 
 .flexslider {background:transparent; position: relative; -webkit-border-radius: 5px; -moz-border-radius: 5px; -o-border-radius: 5px; border-radius: 5px; zoom: 1;}
 .flexslider .slides {zoom: 1;}
+.flexslider ul{padding-top:1px; list-style: none;}
 .flexslider .slides > li {position: relative;}
 /* Suggested container for "Slide" animation setups. Can replace this with your own, if you wish */
 .flex-container, .flex-container-nonav {

@@ -33,7 +33,7 @@
       				</li>
       				
       				<li>
-      					<a class="vcasting" href="#" >Video Castings</a>
+      					<a class="vcasting" href="javascript:menuSel('secciones/vcasting')" >Video Castings</a>
       				</li>
       				
       			</ul>

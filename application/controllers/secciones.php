@@ -116,7 +116,7 @@ class secciones extends CI_Controller {
 		$this->load->helper('global');
 		$data['videos'] = $this->video_model->get_v('3');
 		$data['videos_dat']=$this->video_model->get_v_date('3');
-		$data['color'] = 'rgb(254, 223, 14)';
+		$data['color'] = 'rgb(41,255,6)';
 		$data['titulo'] = "experiencias";
 		$this->load->view('ocio',$data);
 
@@ -129,7 +129,7 @@ class secciones extends CI_Controller {
 		$this->load->helper('global');
 		$data['videos'] = $this->video_model->get_v('7');
 		$data['videos_dat']=$this->video_model->get_v_date('7');
-		$data['color'] = 'rgb(254, 223, 14)';
+		$data['color'] = 'rgb(255,0,0)';
 		$data['titulo'] = "conciertos";
 		$this->load->view('ocio',$data);	
 		
@@ -141,7 +141,7 @@ class secciones extends CI_Controller {
 		$this->load->helper('global');
 		$data['videos'] = $this->video_model->get_v('4');
 		$data['videos_dat']=$this->video_model->get_v_date('4');
-		$data['color'] = 'rgb(254, 223, 14)';
+		$data['color'] = 'rgb(238,11,169)';
 		$data['titulo'] = "discotecas";
 		$this->load->view('ocio',$data);
 
@@ -153,7 +153,7 @@ class secciones extends CI_Controller {
 		$this->load->helper('global');
 		$data['videos'] = $this->video_model->get_v('6');
 		$data['videos_dat']=$this->video_model->get_v_date('6');
-		$data['color'] = 'rgb(254, 223, 14)';
+		$data['color'] = 'rgb(255,108,0)';
 		$data['titulo'] = "festivales";
 		$this->load->view('ocio',$data);
 	
@@ -165,7 +165,7 @@ class secciones extends CI_Controller {
 		$this->load->helper('global');
 		$data['videos'] = $this->video_model->get_v('5');
 		$data['videos_dat']=$this->video_model->get_v_date('5');
-		$data['color'] = 'rgb(254, 223, 14)';
+		$data['color'] = 'rgb(122,74,23)';
 		$data['titulo'] = "Ruedas de Prensa";
 		$this->load->view('ocio',$data);
 	

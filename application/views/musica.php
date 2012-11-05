@@ -114,7 +114,7 @@
 	        </div>
 	        
 	         <div class="span3 project hip">
-	          <a href="./music/Hip hop - DoblEfecto - Donde siempre y como siempre.zip">         
+	          <a href="./music/Hip hop - DoblEfecto - Donde siempre y como siempre.rar">         
 	            <h4>Donde siempre y como siempre</h4> 
 	             <img src="./music/tumb/doblefecto.jpg" alt="">
 	             <div>
@@ -153,7 +153,7 @@
 	        </div>
 	        
 	         <div class="span3 project jazz">
-	          <a href="./music/Jazz fusión - Triplexity - Between Light And Shadow.zip">         
+	          <a href="./music/Jazz fusion - Triplexity - Between Light And Shadow.zip">         
 	            <h4>Between Light And Shadow</h4>  
 	             <img src="./music/tumb/Triplexity.jpg" alt="">
 	             <div>
