@@ -39,8 +39,8 @@ class home extends CI_Controller {
     			<link href='".base_url()."css/font-awesome.css' rel='stylesheet'>";
 		$this->template->write("css",$css);
 		
-		$js = "<script type='text/javascript' src='js/test.js'></script>
-    		   <script type='text/javascript' src='js/modernizr.custom.81963.js'></script>";
+		$js = "<script type='text/javascript' src='".base_url()."js/test.js'></script>
+    		   <script type='text/javascript' src='".base_url()."js/modernizr.custom.81963.js'></script>";
 		$this->template->write("js",$js);		
 		
 		$data = array(
@@ -49,25 +49,33 @@ class home extends CI_Controller {
 		
 		$this->template->parse_view("header", "header_view", $data, FALSE);
 	
-	/*	$css = "<link rel='stylesheet' type='text/css' href='". base_url() ."views/css/slide.css' />";
-		$css .= "<link rel='stylesheet' type='text/css' href='". base_url() ."views/css/jquery.mCustomScrollbar.css' />";
-		$css .= "<link rel='stylesheet' type='text/css' href='". base_url() ."views/css/distributor_carousel.css' />";
-		$css .= "<link rel='stylesheet' type='text/css' href='". base_url() ."views/css/home.css' />";
-		$this->template->write("css",$css);
 	
-		$js = "<script type='text/javascript' src='" . base_url() . "views/js/slide.js'></script>";
-		$js .= "<script type='text/javascript' src='" . base_url() . "views/js/jquery.easing.1.3.js'></script>";
-		$js .= "<script type='text/javascript' src='" . base_url() . "views/js/jquery.mousewheel.min.js'></script>";
-		$js .= "<script type='text/javascript' src='" . base_url() . "views/js/jquery.mCustomScrollbar.js'></script>";
-		$js .= "<script type='text/javascript' src='" . base_url() . "views/js/jcarousellite_1.0.1.min.js'></script>";
-		$js .= "<script type='text/javascript' src='" . base_url() . "js/load/home.js'></script>";
-		$this->template->write("js", $js);*/
 	
 	}
 	
 	function __draw_after_content()
 	{
-		// FOOTER
+		//  Colocados aqui para que la p�gina tarde menos en cargar -->
+    // Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+   // <script  type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> -->
+
+  /*  $js = "<script type='text/javascript' src='js/bootstrap.min.js'></script>
+    <script type='text/javascript' src='js/jquery.fitvids.js'></script>
+    <script type='text/javascript' src='js/jquery.easing.1.3.js'></script>
+    <script type='text/javascript' src='js/jquery.cslider.js'></script> 
+    <!--
+    	<script type='text/javascript' src='http://maps.google.com/maps/api/js?sensor=false'></script>-->
+    <script type='text/javascript' src='js/jquery.gmap.min.js'></script>
+    <script type='text/javascript' src='js/jquery.validate.min.js'></script>
+    <script type='text/javascript' src='js/jquery.form.js'></script>
+    <script type='text/javascript' src='js/jquery.isotope.min.js'></script>
+    <script type='text/javascript' src='js/jquery.flexslider-min.js'></script>
+    <script type='text/javascript' src='js/jquery.fancybox-1.3.4.pack.js'></script>
+    <!--[if lt IE 9]>
+    <script type='text/javascript' src='js/css3-mediaqueries.js'></script>
+    <![endif]-->";*/
+    
+    
 		$this->template->write_view("footer", "footer", "",FALSE);
 		$this->template->render();
 	
@@ -93,9 +101,10 @@ class home extends CI_Controller {
 	 /*	
 	  *   Comentado. Descomentar para entrar en el modo debugger.  
 	  * 
-	  *   $this->output->enable_profiler(TRUE); 
+	  *   
 	  * 
 	  * */
+	  $this->output->enable_profiler(TRUE); 
 	}
 	
 	

@@ -34,13 +34,13 @@ class secciones extends CI_Controller {
 		//$data["username"] = $this->session->userdata("username");
 		$this->load->helper('global');
 		$css =   "<link href='".base_url()."css/bootstrap.css' rel='stylesheet'>
-    			<link href='css/jquery.fancybox-1.3.4.css' rel='stylesheet'>
+    			<link href='".base_url()."css/jquery.fancybox-1.3.4.css' rel='stylesheet'>
     			<link href='".base_url()."css/style.css' rel='stylesheet'>
-    			<link href='css/font-awesome.css' rel='stylesheet'>";
+    			<link href='".base_url()."css/font-awesome.css' rel='stylesheet'>";
 		$this->template->write("css",$css);
 		
-		$js = "<script type='text/javascript' src='js/test.js'></script>
-    		   <script type='text/javascript' src='js/modernizr.custom.81963.js'></script>";
+		$js = "<script type='text/javascript' src='".base_url()."js/test.js'></script>
+    		   <script type='text/javascript' src='".base_url()."js/modernizr.custom.81963.js'></script>";
 		$this->template->write("js",$js);		
 		
 		$data = array(
@@ -180,7 +180,7 @@ class secciones extends CI_Controller {
 		$this-> __draw_before_content();
 		
 		
-		$this->template->write_view("content","video",$data,false);
+		$this->template->write_view("content","video",$data,TRUE);
 		
 		$this->__draw_after_content();
 		

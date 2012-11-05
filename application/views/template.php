@@ -67,5 +67,22 @@
    
      <?=  $footer ?>
      
+   <script>window.jQuery || document.write('<script type="text/javascript" src="<? echo base_url() ?>js/jquery.js"><\/script>')</script>
+
+     <script type='text/javascript' src='<? echo base_url() ?>js/bootstrap.min.js'></script>
+    <script type='text/javascript' src='<? echo base_url() ?>js/jquery.fitvids.js'></script>
+    <script type='text/javascript' src='<? echo base_url() ?>js/jquery.easing.1.3.js'></script>
+    <script type='text/javascript' src='<? echo base_url() ?>js/jquery.cslider.js'></script> 
+    <!--
+    	<script type='text/javascript' src='http://maps.google.com/maps/api/js?sensor=false'></script>-->
+    <script type='text/javascript' src='<? echo base_url() ?>js/jquery.gmap.min.js'></script>
+    <script type='text/javascript' src='<? echo base_url() ?>js/jquery.validate.min.js'></script>
+    <script type='text/javascript' src='<? echo base_url() ?>js/jquery.form.js'></script>
+    <script type='text/javascript' src='<? echo base_url() ?>js/jquery.isotope.min.js'></script>
+    <script type='text/javascript' src='<? echo base_url() ?>js/jquery.flexslider-min.js'></script>
+    <script type='text/javascript' src='<? echo base_url() ?>js/jquery.fancybox-1.3.4.pack.js'></script>
+    <!--[if lt IE 9]>
+    <script type='text/javascript' src='<? echo base_url() ?>js/css3-mediaqueries.js'></script>
+    <![endif]-->
   </body>
 </html>

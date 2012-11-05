@@ -1,7 +1,7 @@
 <div class="container">
 
 <a href="home" id="logo">
-<img src="img/logo.png" alt="Noctambulos TV">
+<img src="<?php echo base_url() ?>img/logo.png" alt="Noctambulos TV">
 </a>
 <span class="span4">
 <span class="cita"><i>en la noche es cuando mejor se ven las estrellas...</i></span>

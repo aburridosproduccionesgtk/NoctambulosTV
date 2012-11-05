@@ -1,4 +1,4 @@
-<?php ?>
+
  <script type="text/javascript" src="js/functions.js"></script>
   <script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
   <script>window.jQuery || document.write('<script type="text/javascript" src="js/jquery.js"><\/script>')</script>
@@ -16,8 +16,8 @@
                 <div class="flexslider">
                   <ul class="slides">               	
                  	 <?php foreach ($videos_dat as $v_dat){ ?>
-                  <!-- 	<li><a href="secciones/videos/<?php echo $v_dat->id ?>"> -->
-                  <li><a target="_blank" href="<?php echo $v_dat->link ?>" >
+                 <li><a href="secciones/videos/<?php echo $v_dat->id ?>"> 
+    
                   	<div >
                   	<img style="border:3px solid <?php echo $color ?>;	list-style: none;
                   	" src="img/tbvid/<?php echo $v_dat->id ?>.jpg" width="215" height="115" /></div>
@@ -39,8 +39,8 @@
                 <div class="flexslider">
                   <ul class="slides">   
                    <?php foreach ($videos as $v){ ?>
-                     <li><a target="_blank" href="<?php echo $v->link ?>" >
-               <!--   	<li><a href="hsecciones/videos/<?php echo $v_dat->id ?>"> --> 
+                   
+            	<li><a href="secciones/videos/<?php echo $v->id ?>"> 
                   	<div >
                   	<img style="border:3px solid <?php echo $color ?>;	list-style: none;
                   	" src="img/tbvid/<?php echo $v->id ?>.jpg" width="215" height="115" /></div>
