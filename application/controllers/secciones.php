@@ -175,6 +175,7 @@ class secciones extends CI_Controller {
 	public function videos($id){
 		$this->load->model('video_model','video_model',TRUE);
 		$this->load->helper('global');
+		$this->video_model->update_c($id);
 		$data['video'] = $this->video_model->get_v_id($id);
 		
 		$this-> __draw_before_content();

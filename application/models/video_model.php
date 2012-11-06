@@ -26,6 +26,12 @@ function __construct()
     		$query = $this->db->query("SELECT * FROM video v WHERE v.id = ?",array($id));
     		return $query->result();
     }
+	
+	function update_c($id){
+		$sql = "UPDATE video set reproducciones = reproducciones+1 WHERE video.id = ?";
+		$query = $this->db->query($sql,array($id));
+	}
+	
 }
 
 ?>
