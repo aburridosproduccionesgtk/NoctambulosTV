@@ -8,32 +8,32 @@
       					<a class="programacion" href="#" >Programación</a>
       				</li>
       				<li>
-      				<a class="ocio" href="javascript:menuSel('secciones/ocio')" >ocio y cultura</a> 
+      				<a class="ocio" href="<?php echo base_url() ?>secciones/ocio" >ocio y cultura</a> 
       					
       				</li>
       				<li>
-      					<a class="experiencias" href="javascript:menuSel('secciones/experiencias')" >Experiencias</a>
+      					<a class="experiencias" href="<?php echo base_url() ?>secciones/experiencias" >Experiencias</a>
       					
       				</li>
       				<li>
-      					<a class="conciertos" href="javascript:menuSel('secciones/conciertos')" >Conciertos</a> 
+      					<a class="conciertos" href="<?php echo base_url() ?>secciones/conciertos" >Conciertos</a> 
       				
       				</li>
       				<li>
-      					<a class="discotecas" href="javascript:menuSel('secciones/discotecas')" >Discotecas</a> 
+      					<a class="discotecas" href="<?php echo base_url() ?>secciones/discotecas" >Discotecas</a> 
       				
       				</li>
       				<li>
-      					<a class="festivales" href="javascript:menuSel('secciones/festivales')" >Festivales</a> 
+      					<a class="festivales" href="<?php echo base_url() ?>secciones/festivales" >Festivales</a> 
       						
       				</li>
       				<li>
-      					<a class="prensa" href="javascript:menuSel('secciones/prensa')" >Prensa</a>
+      					<a class="prensa" href="<?php echo base_url() ?>secciones/prensa" >Prensa</a>
       					
       				</li>
       				
       				<li>
-      					<a class="vcasting" href="javascript:menuSel('secciones/vcasting')" >Video Castings</a>
+      					<a class="vcasting" href="<?php echo base_url() ?>secciones//vcasting" >Video Castings</a>
       				</li>
       				
       			</ul>

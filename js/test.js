@@ -82,16 +82,16 @@ $(document).ready(function(){
 	
 	
 	//base_url+"index.php?/home/secciones"
-	function menuSel(ruta) {
+/*	function menuSel(ruta) {
 		
 		if(ruta == 'home/secciones'){
 			$('#main_container').load(ruta);
 		}else{  
 			$('#lnav').fadeOut(1000,function(){$('#main_container').load(ruta);});
 		}
-	}
+	}*/
 		  
-	
+	//
  	function login_toggle()
 	{
  		$('.login_container').removeClass('span4');

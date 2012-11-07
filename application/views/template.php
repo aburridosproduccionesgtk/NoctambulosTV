@@ -73,6 +73,7 @@
     <script type='text/javascript' src='<? echo base_url() ?>js/jquery.fitvids.js'></script>
     <script type='text/javascript' src='<? echo base_url() ?>js/jquery.easing.1.3.js'></script>
     <script type='text/javascript' src='<? echo base_url() ?>js/jquery.cslider.js'></script> 
+    <script>window.jQuery || document.write('<script type="text/javascript" src="<?php echo base_url() ?>js/jquery.js"><\/script>')</script>
     <!--
     	<script type='text/javascript' src='http://maps.google.com/maps/api/js?sensor=false'></script>-->
     <script type='text/javascript' src='<? echo base_url() ?>js/jquery.gmap.min.js'></script>

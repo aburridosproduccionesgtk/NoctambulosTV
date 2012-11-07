@@ -32,6 +32,14 @@ function __construct()
 		$query = $this->db->query($sql,array($id));
 	}
 	
+	function get_f($tipe){
+		$query = $this->db->query("SELECT * FROM img f WHERE f.tipe = ?",array($tipe)); 
+    	return $query->result();
+	}
+	function get_f_id($id){
+		$query = $this->db->query("SELECT * FROM img i WHERE i.id_vid = ?",array($id));
+    		return $query->result();
+	}
 }
 
 ?>

@@ -1,6 +1,6 @@
 <div class="container">
 
-<a href="<?php echo base_url() ?>home" id="logo">
+<a href="<?php echo base_url() ?>secciones" id="logo">
 <img src="<?php echo base_url() ?>img/logo.png" alt="Noctambulos TV">
 </a>
 <span class="span4">
@@ -43,13 +43,13 @@
       <div class="container miLine">
         <ul class="social"> 	
           <li><a class="programacion" href="">Programacion</a></li>
-          <li><a class="ocio" href="javascript:menuSel('secciones/ocio')">Ocio</a></li>
-          <li><a class="experiencias" href="javascript:menuSel('<?php echo base_url() ?>secciones/experiencias')">Experiencias</a></li>
-          <li><a class="conciertos" href="javascript:menuSel('<?php echo base_url() ?>secciones/conciertos')">Conciertos</a></li>
-          <li><a class="discotecas" href="javascript:menuSel('<?php echo base_url() ?>secciones/discotecas')">Discotecas</a></li>
-          <li><a class="festivales" href="javascript:menuSel('<?php echo base_url() ?>secciones/festivales')">Festivales</a></li>
-           <li><a class="prensa" href="javascript:menuSel('<?php echo base_url() ?>secciones/prensa')">Prensa</a></li>
-          <li><a  class="vcasting" href="javascript:menuSel('<?php echo base_url() ?>secciones/vcasting')">Video Casting</a></li>
+          <li><a class="ocio" href="<?php echo base_url() ?>secciones/ocio">Ocio</a></li>
+          <li><a class="experiencias" href="<?php echo base_url() ?>secciones/experiencias">Experiencias</a></li>
+          <li><a class="conciertos" href="<?php echo base_url() ?>secciones/conciertos">Conciertos</a></li>
+          <li><a class="discotecas" href="<?php echo base_url() ?>secciones/discotecas">Discotecas</a></li>
+          <li><a class="festivales" href="<?php echo base_url() ?>secciones/festivales">Festivales</a></li>
+           <li><a class="prensa" href="<?php echo base_url() ?>secciones/prensa">Prensa</a></li>
+          <li><a  class="vcasting" href="<?php echo base_url() ?>secciones/vcasting">Video Casting</a></li>
         </ul>
        <!-- código a recorda... onmouseover="cambiar('.$item.')" -->
         <nav id="nav" class="clearfix">
@@ -58,7 +58,7 @@
               <a href="<?php base_url() ?>secciones">SECCIONES</a>
             </li>
             <li class={cur_experiencias} onmouseover="javascript:MenuHover('experiencias')">
-              <a  href="experiencias">EXPERIENCIAS</a>
+              <a  href="<?php base_url() ?>experiencias">EXPERIENCIAS</a>
            </li>
             <li class={cur_plan60} onmouseover="javascript:MenuHover('60seg')">
               <a href="<?php base_url() ?>plan60">PLAN 60"</a>

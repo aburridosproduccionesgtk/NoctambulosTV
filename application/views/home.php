@@ -42,7 +42,7 @@
     <script type="text/javascript" src="js/modernizr.custom.81963.js"></script>
   </head>
 
-  <body onload="javascript:menuSel('home/secciones')">
+  
 
     <header id="header">
       <div class="container">
