@@ -55,25 +55,25 @@
         <nav id="nav" class="clearfix">
           <ul>
             <li class={cur_secciones} onmouseover="javascript:MenuHover('secciones')">
-              <a href="<?php base_url() ?>secciones">SECCIONES</a>
+              <a href="<?php echo base_url() ?>secciones">SECCIONES</a>
             </li>
             <li class={cur_experiencias} onmouseover="javascript:MenuHover('experiencias')">
-              <a  href="<?php base_url() ?>experiencias">EXPERIENCIAS</a>
+              <a  href="#">EXPERIENCIAS</a>
            </li>
             <li class={cur_plan60} onmouseover="javascript:MenuHover('60seg')">
-              <a href="<?php base_url() ?>plan60">PLAN 60"</a>
+              <a href="<?php echo base_url() ?>plan60">PLAN 60"</a>
             </li>
             <li class={cur_musica} onmouseover="javascript:MenuHover('musica')">
-              <a href="<?php base_url() ?>musica">MÚSICA</a>  
+              <a href="<?php echo base_url() ?>musica">MÚSICA</a>  
             </li>
             <li class={cur_tienda} onmouseover="javascript:MenuHover('tienda')">
-              <a href="">TIENDA</a>
+              <a href="#">TIENDA</a>
             </li>
             <li class={cur_lcn} onmouseover="javascript:MenuHover('tienda')">
-            	<a href="">LCN</a>
+            	<a href="#">LCN</a>
             </li>
             <li class={cur_casting} onmouseover="javascript:MenuHover('casting')" >
-            	<a href="">CASTING</a>
+            	<a href="#">CASTING</a>
             </li>
           </ul>
          

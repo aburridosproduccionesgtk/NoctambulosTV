@@ -127,12 +127,12 @@ class secciones extends CI_Controller {
 		$data['foto'] = $this->video_model->get_f('3');
 		$data['titulo'] = "experiencias";
 		
-		$fotos = $this->video_model->get_f('5');
+		/*$fotos = $this->video_model->get_f('5');
 		
 		foreach ($fotos as $f ) {
 				$data['fotos'] = array_push($f);
 				
-			}
+			}*/
 		
 		$this-> __draw_before_content();
 		$this->template->write_view("content","ocio",$data,TRUE);
@@ -200,14 +200,14 @@ class secciones extends CI_Controller {
 		
 		
 		
-	//		get_f_id
-		//$data['foto'] = $this->video_model->get_f('5');
+
+		$data['foto'] = $this->video_model->get_f('5');
 		
 		$fotos = $this->video_model->get_f('5');
-			foreach ($foto as $f ) {
+	/*		foreach ($foto as $f ) {
 				$data['fotos'] = array_push($f);
 				
-			}
+			}*/
 		
 		$this-> __draw_before_content();
 		$this->template->write_view("content","ocio",$data,TRUE);

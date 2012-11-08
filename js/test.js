@@ -68,7 +68,7 @@ $(document).ready(function(){
 			
 			$('#bgImage').fadeOut(100,function(){
 				$('#bgImage').css({ 
-					'background-image': "url('./img/experienciasL.jpg')",
+					'background-image': "url('./img/tienda.jpg')",
 					'background-size': 'contain'
 					}).fadeIn(500);
 			});

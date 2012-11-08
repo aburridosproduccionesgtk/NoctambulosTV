@@ -1,5 +1,7 @@
-<?php echo print_array($fotos) ?>
+ <script type="text/javascript" src="<?php echo base_url() ?>js/functions.js"></script>
+  <script type="text/javascript" src="<?php echo base_url() ?>js/jquery.flexslider-min.js"></script>
 
+    <script type="text/javascript" src="<?php echo base_url() ?>js/modernizr.custom.81963.js"></script> 
 <script type="text/javascript" src="<?php echo base_url() ?>js/functions.js"></script>
 
 <div class="span12">
@@ -12,24 +14,27 @@
 		 	&nbsp;
 		 </div>
 		 
-		   <?php  if ($foto != null){ ?>
+		  <?php  if ($foto != null){ ?>
      
  		<h3 class="span4">Fotos</h1>
- 			<div class="flex-container-nonav">
+ 		  <div class="span4">
+ 			<div class="flex-container-mini" style="padding-left: 0px">
                 <div class="flexslider">
                   <ul class="slides">     
-            <?php foreach ($foto as $f){ ?>          	
+            	<?php foreach ($foto as $f){ ?>          	
                    <li>
                   	 <a class="fancybox" href="<?php echo base_url() ?>img/fotos/<?php echo $f->tipe."/".$f->name ?>">
-                   		<div>
-                   		<img style="list-style: none" src="<?php echo base_url() ?>img/fotos/<?php echo $f->tipe."/".$f->name ?>" width="100" height="80">
-         				</div>
+                   	<div>	
+                   		<img width="80px" height="80px" ="list-style: none" src="<?php echo base_url() ?>img/fotos/<?php echo $f->tipe."/".$f->name ?>">
+         			</div>	
                  	 </a>
                 	</li>	
                   <?php } ?>
                   </ul>
               </div>
 			</div>
+		 </div>
+
       	<?php   } ?>  
 		
 		
@@ -40,3 +45,6 @@
      <?php } ?>
    
 </div>
+
+
+	 

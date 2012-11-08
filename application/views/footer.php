@@ -6,11 +6,11 @@
       <div class="container">
         <nav>
           <ul>
-            <li class="current">
-              <a href="#">Condiciones Legales</a>
+            <li>
+              <a href="<?php echo base_url() ?>contact/condiciones">Condiciones Legales</a>
             </li>
             <li>
-              <a href="#"><i class="icon-envelope-alt"></i> Contacto</a>
+              <a href="<?php echo base_url() ?>contact"><i class="icon-envelope-alt"></i> Contacto</a>
             </li>
             <li>
             	NoctambulosTV 2012
@@ -19,3 +19,5 @@
         </nav>
       </div>
     </div>
+    
+     

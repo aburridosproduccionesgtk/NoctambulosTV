@@ -68,12 +68,14 @@ jQuery(function() {
 
 	/* Flexslider*/
 	 var $flexslider = $('.flexslider');
+	
+	 var $flexslider = $('.flexslider');
 	 if ($flexslider.length){
 	
 	 if ($('.flexslider').parent().get(0).className =='flex-container-nonav'){
-			 var nav = false;
-			}
-		if( $flexslider.length ) {
+			
+			
+		
 			$flexslider.flexslider({
 				
 				animation: "slide",              
@@ -81,12 +83,28 @@ jQuery(function() {
 				 slideshow: false,
 				 itemWidth:220, 
 				 itemMargin: 0,
-				 controlNav: nav,
+				 controlNav: false,
 				    minItems: 2,
 				    maxItems: 4,
 				controlsContainer: ".flex-container"
 			});
-		}
+	 }
+
+		 if($('.flexslider').parent().get(0).className =='flex-container-mini'){
+	
+				 $flexslider.flexslider({
+						animation: "slide",              
+						animationLoop:false,
+						 slideshow: false,
+						 itemWidth:80, 
+						 itemMargin: 4,
+						 controlNav:false,
+						    minItems: 3,
+						    maxItems: 3,
+						
+					});
+			 
+				}
 	}
 
 	/* Isotope */

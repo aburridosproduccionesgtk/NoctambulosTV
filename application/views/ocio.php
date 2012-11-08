@@ -12,7 +12,6 @@
 		<div class="vertical">
 			<?php echo imagetext('ULTIMOS',30,array(255,255,255));?>
 		</div>
-	
  			<div class="flex-container-nonav">
                 <div class="flexslider">
                   <ul class="slides">               	
@@ -30,7 +29,6 @@
                   			<?php }?>
                   </ul>
               </div>
-
 			</div>
 		</div>
 	</div>
