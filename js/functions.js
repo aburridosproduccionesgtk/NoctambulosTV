@@ -79,10 +79,10 @@ jQuery(function() {
 				animation: "slide",              
 				animationLoop:false,
 				 slideshow: false,
-				 itemWidth:300, 
-				 itemMargin: 2,
+				 itemWidth:220, 
+				 itemMargin: 0,
 				 controlNav: nav,
-				    minItems: 4,
+				    minItems: 2,
 				    maxItems: 4,
 				controlsContainer: ".flex-container"
 			});

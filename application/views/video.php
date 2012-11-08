@@ -1,4 +1,6 @@
- <script type="text/javascript" src="<?php echo base_url() ?>js/functions.js"></script>
+<?php echo print_array($fotos) ?>
+
+<script type="text/javascript" src="<?php echo base_url() ?>js/functions.js"></script>
 
 <div class="span12">
 

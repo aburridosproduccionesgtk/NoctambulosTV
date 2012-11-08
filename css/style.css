@@ -62,10 +62,12 @@ Don't forget to change the button color in the html code (see buttons in element
   	
 }
 .vertical{
+	position:absolute;
 float: left;
 text-align: center;
 margin-top: 20px;
-padding-right: 17px;
+padding-right: 20px;
+margin-right:10px;
 display: block;
 height: 115px;
 
@@ -78,7 +80,7 @@ height: 115px;
 	background-color: rgba(50, 50, 50, 0.5);
 margin-bottom: 10px;
 margin-left: 20px;
-padding: 0px 30px 0px 38px;
+padding: 0px 17px 0px 25px;
 	
 }
 .bderVideo{
@@ -2352,7 +2354,7 @@ aside .categories li a:hover {
  	zoom: 1;
 	position: relative;
 	background: transparent;
-	padding: 20px 11px 11px;
+	padding: 20px 11px;
  /*  Comentado por  innecesario en la plantilla oscura 
   border:1px solid #ccc;
   -webkit-box-shadow: 2.5px 2.5px 5px rgba(0, 0, 0, .2);
@@ -2401,7 +2403,7 @@ aside .categories li a:hover {
   border:3px solid #474747;
   
  
-margin: -20px 0 0; background:#fff  url(../img/arrows1.png) no-repeat -1px center;
+	margin: -20px 0 0; background:#fff  url(../img/arrows1.png) no-repeat -1px center;
 
   z-index: 40; 
   opacity:0;

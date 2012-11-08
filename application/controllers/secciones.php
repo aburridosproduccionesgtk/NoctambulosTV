@@ -93,7 +93,7 @@ class secciones extends CI_Controller {
 			
 		}*/
 		
-		$this->output->enable_profiler(TRUE);
+		//$this->output->enable_profiler(TRUE);
 	}
 	
 	
@@ -105,7 +105,8 @@ class secciones extends CI_Controller {
 		$data['videos_dat']=$this->video_model->get_v_date('1');
 		$data['color'] = 'rgb(254, 223, 14)';
 		$data['titulo'] = "ocio y cultura";
-	 	//$this->load->view('ocio',$data);
+		$data['foto'] = $this->video_model->get_f('1');
+	 
 	 	$this-> __draw_before_content();
 		
 		
@@ -126,6 +127,13 @@ class secciones extends CI_Controller {
 		$data['foto'] = $this->video_model->get_f('3');
 		$data['titulo'] = "experiencias";
 		
+		$fotos = $this->video_model->get_f('5');
+		
+		foreach ($fotos as $f ) {
+				$data['fotos'] = array_push($f);
+				
+			}
+		
 		$this-> __draw_before_content();
 		$this->template->write_view("content","ocio",$data,TRUE);
 		$this->__draw_after_content();
@@ -143,6 +151,7 @@ class secciones extends CI_Controller {
 		$data['videos_dat']=$this->video_model->get_v_date('7');
 		$data['color'] = 'rgb(255,0,0)';
 		$data['titulo'] = "conciertos";
+		$data['foto'] = $this->video_model->get_f('7');
 		$this-> __draw_before_content();
 		$this->template->write_view("content","ocio",$data,TRUE);
 		$this->__draw_after_content();
@@ -157,6 +166,7 @@ class secciones extends CI_Controller {
 		$data['videos_dat']=$this->video_model->get_v_date('4');
 		$data['color'] = 'rgb(238,11,169)';
 		$data['titulo'] = "discotecas";
+		$data['foto'] = $this->video_model->get_f('4');
 		$this-> __draw_before_content();
 		$this->template->write_view("content","ocio",$data,TRUE);
 		$this->__draw_after_content();
@@ -171,6 +181,7 @@ class secciones extends CI_Controller {
 		$data['videos_dat']=$this->video_model->get_v_date('6');
 		$data['color'] = 'rgb(255,108,0)';
 		$data['titulo'] = "festivales";
+		$data['foto'] = $this->video_model->get_f('6');
 		$this-> __draw_before_content();
 		$this->template->write_view("content","ocio",$data,TRUE);
 		$this->__draw_after_content();
@@ -185,6 +196,19 @@ class secciones extends CI_Controller {
 		$data['videos_dat']=$this->video_model->get_v_date('5');
 		$data['color'] = 'rgb(122,74,23)';
 		$data['titulo'] = "Ruedas de Prensa";
+		
+		
+		
+		
+	//		get_f_id
+		//$data['foto'] = $this->video_model->get_f('5');
+		
+		$fotos = $this->video_model->get_f('5');
+			foreach ($foto as $f ) {
+				$data['fotos'] = array_push($f);
+				
+			}
+		
 		$this-> __draw_before_content();
 		$this->template->write_view("content","ocio",$data,TRUE);
 		$this->__draw_after_content();

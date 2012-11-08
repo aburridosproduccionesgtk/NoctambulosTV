@@ -12,6 +12,7 @@
 		<div class="vertical">
 			<?php echo imagetext('ULTIMOS',30,array(255,255,255));?>
 		</div>
+	
  			<div class="flex-container-nonav">
                 <div class="flexslider">
                   <ul class="slides">               	
@@ -29,6 +30,7 @@
                   			<?php }?>
                   </ul>
               </div>
+
 			</div>
 		</div>
 	</div>
@@ -61,7 +63,7 @@
 			</div>
 		</div>
 	</div>
-
+    <?php if($foto != null){ ?> 
 	<div claas="span12">
 	<div class="bgVideos">
 		<div class="vertical" style="padding-top: 20px">
@@ -84,3 +86,4 @@
 			</div>
 		</div>
 	</div>
+	<?php } ?>
