@@ -3,15 +3,6 @@
 
 class User_model extends CI_Model {
 
-	var $name = "";
-	var $surname = "";
-	var $username = "";
-	var $password = "";
-	var $email = "";
-	var $phone = "";
-	var $position = "";
-	var $id = null;
-	var $user_type = "";
 	
 
 	function __construct()
@@ -19,18 +10,30 @@ class User_model extends CI_Model {
         // Call the Model constructor
         parent::__construct();
     }
-    //TODO: a partir de aqui, todo es borrable...
-	function get_user($id_user)
-	{
-		$sql = "SELECT u.*,p.name as p_name,p.id as p_id FROM user u"
-				.	" INNER JOIN user_profile up ON u.id=up.id_user"
-				.	" INNER JOIN profile p ON p.id=up.id_profile"
-				.	"		WHERE u.id=". $id_user;
-
-		$query = $this->db->query($sql);
-		$result = $query->result();
-		return $result[0];
-	}
+    
+    function exist_username($username)
+    {
+    	$query = $this->db->get_where("user", array("email" => $username));
+    	$result = $query->result();
+    	if ($result == null){
+    		return false;
+    	}
+    	else{
+    		return true;
+    	}
+    }
+   
+		function get_user_by_email($email)
+		{
+			$sql = "SELECT * FROM user c WHERE c.email=?";
+		
+			$query = $this->db->query($sql,array($email));
+			return $query->row();
+		}
+	
+	//TODO a partir de aqui todo es borrable.......
+	
+	
    function list_users($status)
    {
 
@@ -45,6 +48,11 @@ class User_model extends CI_Model {
 		$query = $this->db->query($sql);
 		$result = $query->result();
 		return $result;
+   }
+   
+   function add_user($user){
+   	  $this->db->insert("user", $user);
+		
    }
 
 	
@@ -142,17 +150,7 @@ class User_model extends CI_Model {
 		return $this->db->count_all_results('user');
 	}
 
-	function exist_username($username)
-	{
-		$query = $this->db->get_where("user", array("username" => $username));
-		$result = $query->result();
-		if ($result == null){
-			return false;
-		}
-		else{
-			return true;
-		}
-	}
+	
 
 	function get_id()
 	{

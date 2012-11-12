@@ -39,7 +39,8 @@ class musica extends CI_Controller {
     			<link href='css/font-awesome.css' rel='stylesheet'>";
 		$this->template->write("css",$css);
 		
-		$js = "<script type='text/javascript' src='js/modernizr.custom.81963.js'></script>";
+		$js = "<script type='text/javascript' src='js/modernizr.custom.81963.js'></script>
+				<script type='text/javascript' src='".base_url()."js/jquery.js'></script>";
 		$this->template->write("js",$js);		
 		
 		$data = array(
@@ -49,19 +50,7 @@ class musica extends CI_Controller {
 		$this->template->parse_view("header", "header_view", $data, FALSE);
 		
 	
-	/*	$css = "<link rel='stylesheet' type='text/css' href='". base_url() ."views/css/slide.css' />";
-		$css .= "<link rel='stylesheet' type='text/css' href='". base_url() ."views/css/jquery.mCustomScrollbar.css' />";
-		$css .= "<link rel='stylesheet' type='text/css' href='". base_url() ."views/css/distributor_carousel.css' />";
-		$css .= "<link rel='stylesheet' type='text/css' href='". base_url() ."views/css/home.css' />";
-		$this->template->write("css",$css);
 	
-		$js = "<script type='text/javascript' src='" . base_url() . "views/js/slide.js'></script>";
-		$js .= "<script type='text/javascript' src='" . base_url() . "views/js/jquery.easing.1.3.js'></script>";
-		$js .= "<script type='text/javascript' src='" . base_url() . "views/js/jquery.mousewheel.min.js'></script>";
-		$js .= "<script type='text/javascript' src='" . base_url() . "views/js/jquery.mCustomScrollbar.js'></script>";
-		$js .= "<script type='text/javascript' src='" . base_url() . "views/js/jcarousellite_1.0.1.min.js'></script>";
-		$js .= "<script type='text/javascript' src='" . base_url() . "js/load/home.js'></script>";
-		$this->template->write("js", $js);*/
 	
 	}
 	

@@ -36,7 +36,11 @@
     <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
 	
 	<!-- cargamos aqui solo las librerias javascript necesarias -->
-	<?= $js ?>
+	  <script type="text/javascript" src="<?php echo base_url() ?>js/jquery.js"></script>
+	 <script type="text/javascript" src="<?php echo base_url() ?>js/functions.js"></script>
+	 <script type="text/javascript" src="<?php echo base_url() ?>js/test.js"></script>
+	
+	<?php echo $js ?>
 	
 	
   </head>
@@ -67,15 +71,15 @@
    
      <?=  $footer ?>
      
-   <script>window.jQuery || document.write('<script type="text/javascript" src="<? echo base_url() ?>js/jquery.js"><\/script>')</script>
+   
 
      <script type='text/javascript' src='<? echo base_url() ?>js/bootstrap.min.js'></script>
     <script type='text/javascript' src='<? echo base_url() ?>js/jquery.fitvids.js'></script>
     <script type='text/javascript' src='<? echo base_url() ?>js/jquery.easing.1.3.js'></script>
     <script type='text/javascript' src='<? echo base_url() ?>js/jquery.cslider.js'></script> 
     <script>window.jQuery || document.write('<script type="text/javascript" src="<?php echo base_url() ?>js/jquery.js"><\/script>')</script>
-    <!--
-    	<script type='text/javascript' src='http://maps.google.com/maps/api/js?sensor=false'></script>-->
+    <!-- 
+    	<script type='text/javascript' src='http://maps.google.com/maps/api/js?sensor=false'></script> -->
     <script type='text/javascript' src='<? echo base_url() ?>js/jquery.gmap.min.js'></script>
     <script type='text/javascript' src='<? echo base_url() ?>js/jquery.validate.min.js'></script>
     <script type='text/javascript' src='<? echo base_url() ?>js/jquery.form.js'></script>

@@ -41,3 +41,49 @@ function recorta($text,$lengt){
 	
 	echo $text;
 }
+
+function cambiaf_a_mysql($fecha){
+	$fecha2=date("Y-m-d",strtotime($fecha));
+	return $fecha2;
+}
+
+function datecheck($input,$format="")
+{
+	$separator_type= array(
+			"/",
+			"-",
+			"."
+	);
+	foreach ($separator_type as $separator) {
+		$find= stripos($input,$separator);
+		if($find<>false){
+			$separator_used= $separator;
+		}
+	}
+	$input_array= explode($separator_used,$input);
+	if ($format=="mdy") {
+		return checkdate($input_array[0],$input_array[1],$input_array[2]);
+	} elseif ($format=="ymd") {
+		return checkdate($input_array[1],$input_array[2],$input_array[0]);
+	} else {
+		return checkdate($input_array[1],$input_array[0],$input_array[2]);
+	}
+	$input_array=array();
+}
+
+function is_logged_in()
+{
+	$CI = & get_instance();
+	return ($CI->session->userdata("user")!= null);
+}
+
+function get_user_id()
+{
+	$CI = & get_instance();
+	if (is_logged_in())
+	{
+		return $CI->session->userdata("user");
+	}
+	else
+		return null;
+}

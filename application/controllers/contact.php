@@ -69,9 +69,9 @@ class contact extends CI_Controller {
 		$this->load->library('user_agent');
 		$this->load->helper('global');
 		
-		
+		$data['mensaje'] = " ";
 		$this-> __draw_before_content();
-		$this->template->write_view("content","contact","",FALSE);
+		$this->template->parse_view("content","contact",$data,FALSE);
 		$this->__draw_after_content();
 		/*Comentado de momento. Debe servirme en un futuro
 		if($this->agent->is_browser()){
@@ -89,6 +89,51 @@ class contact extends CI_Controller {
 	}
 	
 	public function envio(){
+		
+		$name = strip_tags($_POST['name']);
+		$email = strip_tags($_POST['email']);
+		$message = strip_tags($_POST['message']);
+		
+		// si es un robot, en teoría debería escribir datos aquí, 
+		//y seria detectado como tal.
+		$botty = strip_tags($_POST['botty']);
+		
+		if($botty != NULL){
+			die;
+		}
+		
+		
+		// dirección de correo a la que mando este mensaje
+		$to = "hesselek@gmail.com";
+		
+		// dirección de correo que deberá aparecer en 
+		$from = "contact@yourwebsite.com";
+		
+		$subject = "Contact from your website";
+		
+		$body = "Email from your website: " . " ";
+		$body .= "Name: " . $name. " ";
+		$body .= "Email: " . $email . " ";
+		$body .= "Message: " . $message . " ";
+		
+		$headers = "From: $from" . "
+";
+		$headers .= "Reply-To: $from" . "
+";
+		$headers .= "Return-Path: $from" . "
+";
+		
+		// mail(to,subject,body,headers);
+		
+		$mailed = mail($to, $subject, $body, $headers);
+		
+		if($mailed){
+			$data['mensaje'] =  '<div class="valid">Gracias por su mensaje. Responderemos lo antes posible</div>';
+		}else{
+			$$data['mensaje'] = '<div class="error">Ha ocurrido un problema. No hemos podido mandar el mensaje.</div>';
+		}
+		$this->template->write_view("content","contact",$data,TRUE);
+		$this->__draw_after_content();
 		
 	}
 	

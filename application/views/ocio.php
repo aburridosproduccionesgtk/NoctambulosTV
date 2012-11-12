@@ -1,5 +1,5 @@
 
- <script type="text/javascript" src="<?php echo base_url() ?>js/functions.js"></script>
+
   <script type="text/javascript" src="<?php echo base_url() ?>js/jquery.flexslider-min.js"></script>
 
     <script type="text/javascript" src="<?php echo base_url() ?>js/modernizr.custom.81963.js"></script> 
@@ -22,7 +22,7 @@
     	              		<img style="border:3px solid <?php echo $color ?>;	list-style: none;
         			          	" src="<?php echo base_url() ?>img/tbvid/<?php echo $v_dat->id ?>.jpg" width="215" height="115" />
                   		</div>
-                  	 	<p class="leyeVideo"><?php recorta($v_dat->title,30) ?></p>
+                  	 	<p class="leyeVideo"><?php recorta($v_dat->title,45) ?></p>
                   	 </a>
                   </li>
                  
@@ -49,7 +49,7 @@
                   		 <div>
                   			<img style="border:3px solid <?php echo $color ?>;	list-style: none" src="<?php echo base_url() ?>img/tbvid/<?php echo $v->id ?>.jpg" width="215" height="115" />
                   		</div>
-                  	 	<p class="leyeVideo"><?php recorta($v->title,30) ?></p>
+                  	 	<p class="leyeVideo"><?php recorta($v->title,45) ?></p>
                   	 </a>
                   </li>
                  
@@ -61,22 +61,34 @@
 			</div>
 		</div>
 	</div>
-    <?php if($foto != null){ ?> 
+    <?php if($fotos != null){ ?> 
 	<div claas="span12">
 	<div class="bgVideos">
 		<div class="vertical" style="padding-top: 20px">
 			<?php echo imagetext('FOTOS',30,array(255,255,255));?>
 		</div>
- 			<div class="flex-container-nonav">
-                <div class="flexslider">
+ 			<div class="flex-container-fotos">
+                <div class="flexslider1">
                   <ul class="slides">     
-            <?php foreach ($foto as $f){ ?>          	
+            <?php foreach ($fotos as $f){
+            	      $fo = $f['galery'];
+            	         		  ?>          	
                    <li>
-                  	 <a class="fancybox" href="<?php echo base_url() ?>img/fotos/<?php echo $f->tipe."/".$f->name ?>">
-                   		<div>
-                   		<img style="border:3px solid <?php echo $color ?>;	list-style: none" src="<?php echo base_url() ?>img/fotos/<?php echo $f->tipe."/".$f->name ?>" width="215" height="115">
-         				</div>
-                 	 </a>
+                  	 
+                  	<?php for ($i=0; $i<count($fo); $i++){
+                  		
+                  		
+                  		?>
+                  	
+                  	 <a rel="<?php echo $fo[$i]->id_vid ?>" class="fancybox" href="<?php echo base_url() ?>img/fotos/<?php echo $fo[$i]->tipe."/".$fo[$i]->name ?>">
+                  
+                   			<img style="border:3px solid <?php echo $color; if($i>0){echo "display:none;";} ?>	list-style: none" src="<?php echo base_url() ?>img/fotos/<?php echo $fo[$i]->tipe."/".$fo[$i]->name ?>" width="130" height="115">
+         			
+         				</a>
+                  	 <?php }?>
+                   		
+         				<p class="leyeVideoF"><?php recorta($f['title'],30) ?></p>
+                 	
                 	</li>	
                   <?php } ?>
                   </ul>

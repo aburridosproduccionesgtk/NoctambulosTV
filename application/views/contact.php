@@ -1,7 +1,11 @@
+
+   <script>window.jQuery || document.write('<script type="text/javascript" src="<?php echo base_url() ?>js/jquery.js"><\/script>')</script>
+    <script type="text/javascript" src="<?php echo base_url() ?>js/functions.js"></script>
 <div class="container contact">
       <div class="row">
         <div class="span8">
           <h2>Formulario de Contacto</h2>
+           {mensaje} 
           <form method="post" action="<?php echo base_url() ?>contact/envio" id="contact">
             <div class="row">
               <div class="span4">

@@ -11,12 +11,24 @@ jQuery(function() {
 	});
 
 	/* Fancybox */
+
 	var $fancy = $('.fancybox');
+	var $fancyg = $('.group');
 	if( $fancy.length ) {
 		$fancy.fancybox({
 			'transitionIn'	:	'elastic',
 			'transitionOut'	:	'elastic'
 		});
+	}
+	
+	if($fancyg.length){
+	   $fancyg.fancybox({
+		'transitionIn'	:	'elastic',
+		'transitionOut'	:	'elastic',
+		'speedIn'		:	600, 
+		'speedOut'		:	200, 
+		'overlayShow'	:	false
+	});
 	}
 
 	/* Accordion */ 
@@ -68,43 +80,68 @@ jQuery(function() {
 
 	/* Flexslider*/
 	 var $flexslider = $('.flexslider');
+	 var $flexslider1 =$('.flexslider1');
+	 
 	
-	 var $flexslider = $('.flexslider');
-	 if ($flexslider.length){
-	
-	 if ($('.flexslider').parent().get(0).className =='flex-container-nonav'){
-			
-			
-		
-			$flexslider.flexslider({
-				
-				animation: "slide",              
+	 if($flexslider.length){
+		 $flexslider1.flexslider({
+			 animation: "slide",              
 				animationLoop:false,
 				 slideshow: false,
-				 itemWidth:220, 
+				 itemWidth:130, 
 				 itemMargin: 0,
 				 controlNav: false,
-				    minItems: 2,
-				    maxItems: 4,
-				controlsContainer: ".flex-container"
-			});
+				    minItems: 6,
+				    maxItems: 6,
+				    controlsContainer: ".flex-container"
+				});
+			
 	 }
-
-		 if($('.flexslider').parent().get(0).className =='flex-container-mini'){
+	 
+	 if ($flexslider.length){
+		 var $flextype = $('.flexslider').parent().get(0).className;
 	
-				 $flexslider.flexslider({
-						animation: "slide",              
-						animationLoop:false,
-						 slideshow: false,
-						 itemWidth:80, 
-						 itemMargin: 4,
-						 controlNav:false,
-						    minItems: 3,
-						    maxItems: 3,
-						
-					});
+
+
+		 switch($flextype){
+		 
+		 case 'flex-container-nonav':
+		
+			 $flexslider.flexslider({
+				 
+					animation: "slide",              
+					animationLoop:false,
+					 slideshow: false,
+					 itemWidth:220, 
+					 itemMargin: 0,
+					 controlNav: false,
+					    minItems: 4,
+					    maxItems: 4,
+					controlsContainer: ".flex-container"
+				});
+			 break;
 			 
-				}
+		 case 'flex-container-mini':
+		
+			 $flexslider.flexslider({
+					animation: "slide",              
+					animationLoop:false,
+					 slideshow: false,
+					 itemWidth:80, 
+					 itemMargin: 4,
+					 controlNav:false,
+					    minItems: 3,
+					    maxItems: 3,
+					
+				});
+		    break;
+			 
+		 }
+			
+		
+
+
+		
 	}
 
 	/* Isotope */

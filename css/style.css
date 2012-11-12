@@ -19,6 +19,15 @@ Don't forget to change the button color in the html code (see buttons in element
 	background-size: cover;
 }
 
+.login_container{
+	margin-right:30px;
+	
+}
+
+.login_container form{
+	text-align:right;
+	padding-bottom:5px;
+}
 .login_container:after{
 	
 	 content:""; 
@@ -55,6 +64,14 @@ Don't forget to change the button color in the html code (see buttons in element
 
 }
 
+.commentarios{
+	height: 300px;
+	background-color: rgba(0,120,255,0.3);
+	padding: 10px;
+	font-family: "LeagueGothicRegular", "Helvetica Neue", Helvetica, Arial;
+  	font-size: 18px;
+  	overflow: auto;
+}
 
 .miLine{
 	/*border-bottom:1px solid #ccc;*/
@@ -125,13 +142,22 @@ padding: 0px 17px 0px 25px;
 .leyeVideo{
 
 	margin-bottom:0px;
-	padding: 0 5px;
+	
 	font-family: "LeagueGothicRegular", "Helvetica Neue", Helvetica, Arial;
   	font-size: 20px;
 	width:250px;
 	float:left;
 	
 }
+
+.leyeVideoF{
+	margin-bottom:0px;
+	font-family: "LeagueGothicRegular", "Helvetica Neue", Helvetica, Arial;
+  	font-size: 15px;
+	width:250px;
+	float:left;
+}
+
 .ifoto{
 			border: 3px solid #003580;
 			top: 0;
@@ -172,6 +198,8 @@ padding: 0px 17px 0px 25px;
 }
 
 #login_frame{
+	
+	
 	display:none;
 
 }
@@ -185,6 +213,7 @@ padding: 0px 17px 0px 25px;
 
 	 }
 #login_form_reg{
+	
 	margin:0;
 }
 
@@ -2345,16 +2374,16 @@ aside .categories li a:hover {
   margin:30px 0;
 }
 
-.flexslider {background:transparent; position: relative; -webkit-border-radius: 5px; -moz-border-radius: 5px; -o-border-radius: 5px; border-radius: 5px; zoom: 1;}
-.flexslider .slides {zoom: 1;}
-.flexslider ul{padding-top:1px; list-style: none;}
-.flexslider .slides > li {position: relative;}
+.flexslider, .flexslider1 {background:transparent; position: relative; -webkit-border-radius: 5px; -moz-border-radius: 5px; -o-border-radius: 5px; border-radius: 5px; zoom: 1;}
+.flexslider, .flexslider1 .slides {zoom: 1;}
+.flexslider, .flexslider1 ul{padding-top:1px; list-style: none;}
+.flexslider, .flexslider1 .slides > li {position: relative;}
 /* Suggested container for "Slide" animation setups. Can replace this with your own, if you wish */
-.flex-container, .flex-container-nonav {
+.flex-container, .flex-container-nonav, .flex-container-fotos, .flex-container-mini  {
  	zoom: 1;
 	position: relative;
 	background: transparent;
-	padding: 20px 11px;
+	padding: 20px 25px;
  /*  Comentado por  innecesario en la plantilla oscura 
   border:1px solid #ccc;
   -webkit-box-shadow: 2.5px 2.5px 5px rgba(0, 0, 0, .2);
@@ -2423,6 +2452,10 @@ aside .categories li a:hover {
 .flexslider:hover .flex-next {opacity: 0.8; right: 5px;}
 .flexslider:hover .flex-prev {opacity: 0.8; left: 5px;}
 .flexslider:hover .flex-next:hover, .flexslider:hover .flex-prev:hover {opacity: 1;}
+
+.flexslider1:hover .flex-next {opacity: 0.8; right: 5px;}
+.flexslider1:hover .flex-prev {opacity: 0.8; left: 5px;}
+.flexslider1:hover .flex-next:hover, .flexslider1:hover .flex-prev:hover {opacity: 1;}
 .flex-direction-nav .flex-disabled {
 	/*buena idea, pero no me convence...
 	opacity: .3; filter:alpha(opacity=30); cursor: default;*/

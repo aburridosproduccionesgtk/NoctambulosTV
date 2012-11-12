@@ -40,6 +40,15 @@ function __construct()
 		$query = $this->db->query("SELECT * FROM img i WHERE i.id_vid = ?",array($id));
     		return $query->result();
 	}
+	function get_comments($id){
+		$query = $this->db->query("SELECT * FROM comments c WHERE c.id_vid = ?",array($id)); 
+    	return $query->result();
+		
+	}
+	function add_comment($coment){
+		$this->db->insert("comments", $coment);
+	
+	}
 }
 
 ?>

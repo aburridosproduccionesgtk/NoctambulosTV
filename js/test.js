@@ -94,22 +94,22 @@ $(document).ready(function(){
 	//
  	function login_toggle()
 	{
- 		$('.login_container').removeClass('span4');
- 		$('.login_container').addClass('span6');
+ 	//	$('.login_container').removeClass('span4');
+ 		//$('.login_container').addClass('span6');
 		$("#login_reg_frame").hide();
 		$("#login_frame").toggle(function(){
-			$("form#login_form input#Nombre").focus();
+			$("form#login_form input#email").focus();
 		});
 
 	} 
  	
  	function login_reg_toggle()
  	{
- 		$('.login_container').removeClass('span4');
- 		$('.login_container').addClass('span8');
+ 	//	$('.login_container').removeClass('span4');
+ 		//$('.login_container').addClass('span8');
  		$("#login_frame").hide();
  		$("#login_reg_frame").toggle(function(){
- 			$("form#login_form_reg input#Nombre").focus();
+ 			$("form#login_form_reg input#email").focus();
  		});
  	}
 

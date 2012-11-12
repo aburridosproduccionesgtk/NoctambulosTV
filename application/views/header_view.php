@@ -9,34 +9,45 @@
 
 <div class="pull-right">
 <span class="login span4">
+<?php if( is_logged_in()){ ?>
+	<a href="<?php echo base_url() ?>user/logout">Salir</a>
+		<?php	}else{ ?>
 <a href="javascript:login_reg_toggle()"> Registrarse</a> |
 <a href="javascript:login_toggle()">Entrar</a>
+<?php }?>
 </span>
 </div>
 </div>
 
+
 <div class="container">
 
-<div class="pull-right">
- 
- 
-<div class="login_container span4">
-<div id="login_frame">
-<form id="login_form">
-<input type="text" class="imput span2" value="Nombre" name="email" id="Nombre"  />
-<input type="password" class="imput span2" value="Contraseña" name="pass" id="Pass" />
-</form>
-</div>
-<div id="login_reg_frame">
-<form id="login_form_reg">
-<input type="text" class="imput span2" value="Nombre" id="Nombre" />
-<input type="text" class="imput span2" value="Email" id="email" />
-<input type="text" class="imput span2" value="Fecha de Nacimiento"  />
-<input type="password" class="imput span2" value="Contraseña"  />
-</form>
-</div>
+<div class="span4 offset8">
+	
+		<div class="login_container ">
+			
+				<div id="login_frame">
+					<form id="login_form" method="post" action="<?php echo base_url() ?>user/login" >
+						<input type="text" class="required" value="Nombre" name="email" id="email"  />
+						<input type="password" class="required" value="Contraseña" name="password" id="password" />
+						<input type="submit" value="   Enviar   " name="submit" id="submit" class="btn btn-large btn-primary"/>.
+				 </div>
+					</form>
+			
+		
+			<div id="login_reg_frame" >
+				<form id="login_form_reg" method="post" action="<?php echo base_url() ?>user/reg">
+					<input type="text" class="required email" value="Email" id="email" name="email" />
+					<input type="text" class="required" value="Fecha de Nacimiento (dd-mm-aaaa)"  id="fecha_nac" name="fecha_nac" />
+					<input type="password" class="requied" value="Contrase�a"  id="password" name="password" />
+					<input type="submit" value="   Enviar   " name="submit" id="submit" class="btn btn-large btn-primary"/>
+				</form>
+		  
+			</div>
+			
+		</div>
+	</div>
 
-</div>
 </div>
 </div>
 <div id="social">
