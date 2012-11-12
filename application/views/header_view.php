@@ -28,9 +28,11 @@
 			
 				<div id="login_frame">
 					<form id="login_form" method="post" action="<?php echo base_url() ?>user/login" >
-						<input type="text" class="required" value="Nombre" name="email" id="email"  />
-						<input type="password" class="required" value="Contraseña" name="password" id="password" />
-						<input type="submit" value="   Enviar   " name="submit" id="submit" class="btn btn-large btn-primary"/>.
+						<input type="text" value="Nombre" name="email_log" id="email_log"  />
+						
+						<input type="password" class="required" value="Contraseña" name="password_log" id="password_log" />
+						
+						<input type="submit" value="   Enviar   " name="login" id="login" class="btn btn-large btn-primary"/>.
 				 </div>
 					</form>
 			
@@ -38,13 +40,17 @@
 			<div id="login_reg_frame" >
 				<form id="login_form_reg" method="post" action="<?php echo base_url() ?>user/reg">
 					<input type="text" class="required email" value="Email" id="email" name="email" />
+					<label class="error" for="email" id="email_error">Este campo es obligatorio (Email).</label>
 					<input type="text" class="required" value="Fecha de Nacimiento (dd-mm-aaaa)"  id="fecha_nac" name="fecha_nac" />
-					<input type="password" class="requied" value="Contrase�a"  id="password" name="password" />
-					<input type="submit" value="   Enviar   " name="submit" id="submit" class="btn btn-large btn-primary"/>
+					<label class="error" for="fecha_nac" id="fecha_nac_error">Este campo es obligatorio (Fecha de nacimiento)</label>
+					<input type="password" class="requied" value="password"  id="password" name="password" />
+					<label class="error" for="password" id="password_error">Este campo es obligatorio(Contraseña).</label>
+					<input type="submit" value="   Enviar   " name="reg" id="reg" class="btn btn-large btn-primary"/>
 				</form>
+				
 		  
 			</div>
-			
+			<div id="mensajito"></div>
 		</div>
 	</div>
 

@@ -19,7 +19,7 @@ Don't forget to change the button color in the html code (see buttons in element
 	background-size: cover;
 }
 
-.login_container{
+.login_container{	
 	margin-right:30px;
 	
 }
@@ -66,12 +66,27 @@ Don't forget to change the button color in the html code (see buttons in element
 
 .commentarios{
 	height: 300px;
-	background-color: rgba(0,120,255,0.3);
-	padding: 10px;
+	background-color: rgba(0,155,255,0.4);
+	padding: 15px;
+	-webkit-border-radius: 15px;
+    border-radius: 15px;
 	font-family: "LeagueGothicRegular", "Helvetica Neue", Helvetica, Arial;
   	font-size: 18px;
-  	overflow: auto;
+  
+  	-webkit-box-shadow: inset 1px 1px 12px 12px rgba(15, 15, 255, 0.4);
+        box-shadow: inset 1px 1px 12px 12px rgba(15, 15, 255, 0.4);
 }
+
+.commentarios p{
+	margin:0;
+}
+
+.comentconatiner{
+		overflow: auto;
+	height: 193px;
+}
+
+
 
 .miLine{
 	/*border-bottom:1px solid #ccc;*/
@@ -442,12 +457,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3009ee0', e
 /* ---------------------------------------------------------------------- */
 
 html{
-	/*background: url(../img/bgnd.png) no-repeat center center fixed;
+	background: url(../img/bgnd.png) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-	background-size: cover;*/
-	background-color: #000;
+	background-size: cover;
+	/*background-color: #000;*/
 }
 
 body {
@@ -805,7 +820,7 @@ footer nav li a {
 }
 
 #copyright nav li a {
-    color:#fff;
+    
     text-decoration:none;
     font-family: Arial;
     font-size:13px;
@@ -828,7 +843,6 @@ footer .address {
 #copyright {
   padding:12px 0 6px 0;
   background:#000;
-  color:#fff;
   font-size:13px;
 }
 

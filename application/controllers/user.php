@@ -40,20 +40,29 @@ class user extends CI_Controller {
 		
 		
 		if($this->user_model->exist_username($user['email'])){
-			echo "el usuario ya existe";
+				$mensaje = "<div class='alert alert-error fade in'>
+                <a class='close' data-dismiss='alert'>x</a><strong>El usuario ya existe
+              </div>";
+			echo json_encode($mensaje);
 		}
 		
-		else if(datecheck($user['fecha_nac'])===false)
+		if(datecheck($user['fecha_nac'])===false)
 		{
-			echo "la fecha no es correcta";
+			$mensaje = "<div class='alert alert-error fade in'>
+                <a class='close' data-dismiss='alert'>x</a><strong>La fecha introducida no es correcta
+              </div>";
+			echo json_encode($mensaje);
 		}else {
 			$this->user_model->add_user($user);
 			$userl = $this->user_model->get_user_by_email($user['email']);
 			$this->session->set_userdata("user", $user1->id);
-			redirect("secciones");
+		    $mensaje= "<div class='alert alert-sucess fade in'>
+                <a class='close' data-dismiss='alert'>x</a><strong>El usuario ha sido creado correctamente
+              </div>";
+			echo json_encode($mensaje);
 		}
 		
-		redirect("secciones");
+		
 		
 		
 	//	
