@@ -32,7 +32,7 @@ class User_model extends CI_Model {
 		}
 	
 	//TODO a partir de aqui todo es borrable.......
-	
+	/*
 	
    function list_users($status)
    {
@@ -62,7 +62,7 @@ class User_model extends CI_Model {
 	 * for more information in return values see constants.php
 	 * @return logged status
 	 */
-	function do_login($username,$password)
+	/*function do_login($username,$password)
 	{
 
 		$sql = "SELECT u.id,u.password,up.id_profile,u.email,u.phone,u.name,u.surname,u.position FROM user u"
@@ -201,7 +201,7 @@ class User_model extends CI_Model {
 	function get_surname()
 	{
 		return $this->surname;
-	}
+	}*/
 
 }
 

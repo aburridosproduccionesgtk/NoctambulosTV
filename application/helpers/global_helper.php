@@ -61,7 +61,7 @@ function datecheck($input,$format="")
 		}
 	}
 	$input_array= explode($separator_used,$input);
-	if ($format=="mdy") {
+	if ($format=="dmy") {
 		return checkdate($input_array[0],$input_array[1],$input_array[2]);
 	} elseif ($format=="ymd") {
 		return checkdate($input_array[1],$input_array[2],$input_array[0]);

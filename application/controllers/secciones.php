@@ -66,19 +66,15 @@ class secciones extends CI_Controller {
 	public function index()
 	{
 		
-		$this->load->library('user_agent');
-	
+		//$this->load->library('user_agent');
+		//if($this->agent->is_browser()){
 		
 		$this-> __draw_before_content();
 		$this->template->write_view("content","secciones","",FALSE);
 		$this->__draw_after_content();
-		
-		
-		/*Comentado de momento. Debe servirme en un futuro
-		if($this->agent->is_browser()){
-			$data['info_agent']=  $this->agent->browser().' '.$this->agent->version();
 			
-		}*/
+			$this->output->enable_profiler(TRUE); 
+		
 		
 		
 	}
@@ -151,7 +147,7 @@ class secciones extends CI_Controller {
 	{
 		$data['videos'] = $this->video_model->get_v('7');
 		$data['videos_dat']=$this->video_model->get_v_date('7');
-		$data['color'] = 'rgb(255,0,0)';
+		$data['color'] = 'rgb(255,0,0);';
 		$data['titulo'] = "conciertos";
 		$data['foto'] = $this->video_model->get_f('7');
 		
@@ -178,7 +174,7 @@ class secciones extends CI_Controller {
 	{
 		$data['videos'] = $this->video_model->get_v('4');
 		$data['videos_dat']=$this->video_model->get_v_date('4');
-		$data['color'] = 'rgb(238,11,169)';
+		$data['color'] = 'rgb(238,11,169);';
 		$data['titulo'] = "discotecas";
 		$data['foto'] = $this->video_model->get_f('4');
 		
@@ -205,7 +201,7 @@ class secciones extends CI_Controller {
 	{
 		$data['videos'] = $this->video_model->get_v('6');
 		$data['videos_dat']=$this->video_model->get_v_date('6');
-		$data['color'] = 'rgb(255,108,0)';
+		$data['color'] = 'rgb(255,108,0);';
 		$data['titulo'] = "festivales";
 		$data['foto'] = $this->video_model->get_f('6');
 		
@@ -232,7 +228,7 @@ class secciones extends CI_Controller {
 	{
 		$data['videos'] = $this->video_model->get_v('5');
 		$data['videos_dat']=$this->video_model->get_v_date('5');
-		$data['color'] = 'rgb(122,74,23)';
+		$data['color'] = 'rgb(122,74,23);';
 		$data['titulo'] = "Ruedas de Prensa";
 		$data['foto'] = $this->video_model->get_f('5');
 		

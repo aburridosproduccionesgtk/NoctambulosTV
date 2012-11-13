@@ -43,7 +43,7 @@
                    <li>
                   	 <a class="fancybox" rel="fotoVideo" href="<?php echo base_url() ?>img/fotos/<?php echo $f->tipe."/".$f->name ?>">
                    	<div>	
-                   		<img width="80px" height="80px" ="list-style: none" src="<?php echo base_url() ?>img/fotos/<?php echo $f->tipe."/".$f->name ?>">
+                   		<img width="100px" height="70px" ="list-style: none" src="<?php echo base_url() ?>img/fotos/<?php echo $f->tipe."/".$f->name ?>">
          			</div>	
                  	 </a>
                 	</li>	

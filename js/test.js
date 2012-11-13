@@ -207,7 +207,8 @@ $(document).ready(function(){
  		      $("label#email_error").show();
  		      $("input#email").focus();
  		      return false;
- 		    }
+ 				}
+ 				
  				var fecha_nac = $("input#fecha_nac").val();
  				if (fecha_nac == "Fecha de Nacimiento (dd-mm-aaaa)" || fecha_nac == "") {
  		 		      $("label#fecha_nac_error").show();
@@ -239,9 +240,9 @@ $(document).ready(function(){
  		    return false;
  			});
  		});
- 	/*	runOnLoad(function(){
- 		  $("input#name").select().focus();
- 		});*/
+ 		runOnLoad(function(){
+ 		  $("input#email").select().focus();
+ 		});
  	
  	
  	

@@ -35,8 +35,9 @@ class user extends CI_Controller {
 		$user['id'] = null;
 		$user['email'] = strip_tags($_POST['email']);
 		$user['password'] = strip_tags($_POST['password']);
-		$fecha = strip_tags($_POST['fecha_nac']);
-		$user['fecha_nac'] = cambiaf_a_mysql($fecha);
+		//$fecha = strip_tags($_POST['fecha_nac']);
+		//cambiaf_a_mysql($fecha);
+		$user['fecha_nac'] = strip_tags($_POST['fecha_nac']);
 		
 		
 		if($this->user_model->exist_username($user['email'])){
@@ -44,15 +45,8 @@ class user extends CI_Controller {
                 <a class='close' data-dismiss='alert'>x</a><strong>El usuario ya existe
               </div>";
 			echo json_encode($mensaje);
-		}
 		
-		if(datecheck($user['fecha_nac'])===false)
-		{
-			$mensaje = "<div class='alert alert-error fade in'>
-                <a class='close' data-dismiss='alert'>x</a><strong>La fecha introducida no es correcta
-              </div>";
-			echo json_encode($mensaje);
-		}else {
+		}else{
 			$this->user_model->add_user($user);
 			$userl = $this->user_model->get_user_by_email($user['email']);
 			$this->session->set_userdata("user", $user1->id);
@@ -65,7 +59,7 @@ class user extends CI_Controller {
 		
 		
 		
-	//	
+	
 		
 		
 	}
@@ -73,10 +67,9 @@ class user extends CI_Controller {
 	function login(){
 		
 	
-		$email = strip_tags($_POST['email']);
-		$password = strip_tags($_POST['password']);
-		echo $email;
-		echo $password;
+		$email = strip_tags($_POST['email_log']);
+		$password = strip_tags($_POST['password_log']);
+		
 		
 		
 		$user = $this->user_model->get_user_by_email($email);

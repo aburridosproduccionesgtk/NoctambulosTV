@@ -82,7 +82,12 @@
                   	
                   	 <a rel="<?php echo $fo[$i]->id_vid ?>" class="fancybox" href="<?php echo base_url() ?>img/fotos/<?php echo $fo[$i]->tipe."/".$fo[$i]->name ?>">
                   
-                   			<img style="border:3px solid <?php echo $color; if($i>0){echo "display:none;";} ?>	list-style: none" src="<?php echo base_url() ?>img/fotos/<?php echo $fo[$i]->tipe."/".$fo[$i]->name ?>" width="130" height="115">
+                   			<img style="border:3px solid 
+                   			     <?php echo $color; 
+                   			     if($i>0){
+                   			     	echo "display:none;";
+								 } ?>	list-style: none" src="<?php echo base_url().'img/fotos/'.$fo[$i]->tipe.'/'.$fo[$i]->name; ?>" 
+								 width="130" height="115" />
          			
          				</a>
                   	 <?php }?>
