@@ -30,6 +30,10 @@ class User_model extends CI_Model {
 			$query = $this->db->query($sql,array($email));
 			return $query->row();
 		}
+		
+		function add_user($user){
+   	  		$this->db->insert("user", $user);
+   		}
 	
 	//TODO a partir de aqui todo es borrable.......
 	/*
@@ -50,10 +54,7 @@ class User_model extends CI_Model {
 		return $result;
    }
    
-   function add_user($user){
-   	  $this->db->insert("user", $user);
-		
-   }
+   
 
 	
 

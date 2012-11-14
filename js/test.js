@@ -203,10 +203,11 @@ $(document).ready(function(){
  			  
  			
  				var email = $("input#email").val();
+ 				
  				if (email == "Email" || email == "") {
- 		      $("label#email_error").show();
- 		      $("input#email").focus();
- 		      return false;
+ 					$("label#email_error").show();
+ 					$("input#email").focus();
+ 					return false;
  				}
  				
  				var fecha_nac = $("input#fecha_nac").val();
@@ -217,17 +218,19 @@ $(document).ready(function(){
  		 		    }
  				
  				var password = $("input#password").val();
+ 				
  				if (password == "" || password =="password") {
- 		      $("label#password_error").show();
- 		      $("input#password").focus();
- 		      return false;
- 		    }
+ 					$("label#password_error").show();
+ 					$("input#password").focus();
+ 					return false;
+ 				}
  				
  				var dataString = 'fecha_nac='+ fecha_nac + '&email=' + email + '&password=' + password;
- 				//alert (dataString);return false;
+ 				//alert (dataString);
+ 			
  				
  				$.ajax({
- 		      type: "POST",
+ 		      type: 'POST',
  		      url: 'user/reg',
  		      data: dataString,
  		     dataType: 'json',
@@ -237,12 +240,12 @@ $(document).ready(function(){
  		        $('#mensajito').html(output_string); 
  		        }
  		     });
- 		    return false;
+ 		     return false;
  			});
  		});
- 		runOnLoad(function(){
+ 		/*runOnLoad(function(){
  		  $("input#email").select().focus();
- 		});
+ 		});*/
  	
  	
  	

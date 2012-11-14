@@ -2,21 +2,7 @@
 
 class user extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -  
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in 
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
-	 */
+	
 	function __construct()
 	{
 
@@ -34,27 +20,52 @@ class user extends CI_Controller {
 		//$password = md5($this->input->post("password"));
 		$user['id'] = null;
 		$user['email'] = strip_tags($_POST['email']);
-		$user['password'] = strip_tags($_POST['password']);
-		//$fecha = strip_tags($_POST['fecha_nac']);
-		//cambiaf_a_mysql($fecha);
-		$user['fecha_nac'] = strip_tags($_POST['fecha_nac']);
+		$user['password']  = strip_tags($_POST['password']);
+		$fecha = strip_tags($_POST['fecha_nac']);
+		$valido = TRUE;
 		
 		
-		if($this->user_model->exist_username($user['email'])){
+		if(datecheck($fecha,$format="dmy")===false){
+			$mensaje = "<div class='alert alert-error fade in'>
+              	   <a class='close' data-dismiss='alert'>x</a><strong>
+                	   Por favor, intruduce una fecha correcta
+                   </div>";
+			$valido = FALSE;
+		}
+		
+		$fecha = cambiaf_a_mysql($fecha);
+		$user['fecha_nac'] = $fecha;
+		$fecha = intval((strtotime("now")-strtotime($fecha))/31536000);
+		if($fecha<18){
+			$mensaje = "<div class='alert alert-error fade in'>
+              	   <a class='close' data-dismiss='alert'>x</a><strong>
+                	   Tienes que ser mayor de edad para poder registrarte
+                   </div>";
+			$valido = FALSE;
+		}	
+		if($this->user_model->exist_username($user['email']))
+		{
 				$mensaje = "<div class='alert alert-error fade in'>
                 <a class='close' data-dismiss='alert'>x</a><strong>El usuario ya existe
+               
               </div>";
-			echo json_encode($mensaje);
-		
-		}else{
-			$this->user_model->add_user($user);
-			$userl = $this->user_model->get_user_by_email($user['email']);
-			$this->session->set_userdata("user", $user1->id);
-		    $mensaje= "<div class='alert alert-sucess fade in'>
-                <a class='close' data-dismiss='alert'>x</a><strong>El usuario ha sido creado correctamente
-              </div>";
-			echo json_encode($mensaje);
+			$valido = FALSE;
 		}
+		
+		if($valido){
+			$this->user_model->add_user($user);
+			//$user = $this->user_model->get_user_by_email($user['email']);
+			//$this->session->set_userdata("user", $user1->id);
+		
+		
+		   $mensaje= "<div class='alert alert-success fade in'>
+                <a class='close' data-dismiss='alert'>x</a><strong>
+		  			El usuario ha sido creado correctamente
+              	</div>";
+			
+		}
+		echo json_encode($mensaje);	
+}
 		
 		
 		
@@ -62,7 +73,7 @@ class user extends CI_Controller {
 	
 		
 		
-	}
+
 	
 	function login(){
 		
@@ -87,4 +98,4 @@ class user extends CI_Controller {
 		redirect("secciones");
 	}
 
-}
+	}
