@@ -22,11 +22,21 @@
 		  	    <p><?php echo $c->mensaje?>
 		  	    <?php } }?>
 		  	    </div>
+		  	    <?php if( is_logged_in()){ ?>
 		  	    <form method="post" action="<?php echo base_url() ?>secciones/comments">
-		  	  		  <input type="text" name="comments" id="comments">
-		  	    		<input type="submit" value="   Enviar   " name="submit" id="submit" class="btn btn-btn-small btn-primary"/>
+		  	  		 <input type="text" name="comments" id="comments">
+		  	    	 <input type="submit" value="   Enviar   " name="submit" id="submit" class="btn btn-btn-small btn-primary" />
 		  	   		 <input type="hidden" name="v_id" id="v_id" value="<?php echo $video[0]->id ?>"/>
 		  	    </form>
+		  	    
+		  	    <?php }else{ ?>
+		  	    	
+		  	  
+		  	  		 <input type="text" name="comments" id="comments" value ="Registrate para comentar">
+		  	    	 <input type="button" disabled ="disabled" value="   Enviar   " name="submit" id="submit" class="btn btn-btn-small btn-primary" />
+		  	   		 <input type="hidden" name="v_id" id="v_id" value="<?php echo $video[0]->id ?>"/>
+		  	   
+		  	  <?php  } ?>
 		  	    
 		 </div>
 	</div>	 

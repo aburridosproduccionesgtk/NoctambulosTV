@@ -84,7 +84,7 @@ function get_user_id()
 	$CI = & get_instance();
 	if (is_logged_in())
 	{
-		return $CI->session->userdata("user");
+		return $CI->session->userdata("id");
 	}
 	else
 		return null;

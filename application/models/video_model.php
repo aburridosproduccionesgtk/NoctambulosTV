@@ -45,6 +45,12 @@ function __construct()
     	return $query->result();
 		
 	}
+	function get_foto_comments($id){
+		$query = $this->db->query("SELECT * FROM comments_fotos c WHERE c.id_foto = ?",array($id)); 
+    	return $query->result();
+		
+	}
+	
 	function add_comment($coment){
 		$this->db->insert("comments", $coment);
 	
@@ -53,6 +59,9 @@ function __construct()
 		$query = $this->db->query("SELECT * FROM img f WHERE f.id =?",array($id));
     		return $query->result();
 		
+	}
+	function add_comment_foto($coment){
+		$this->db->insert("comments_fotos", $coment);
 	}
 }
 
