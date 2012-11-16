@@ -49,6 +49,11 @@ function __construct()
 		$this->db->insert("comments", $coment);
 	
 	}
+	function get_foto_id($id){
+		$query = $this->db->query("SELECT * FROM img f WHERE f.id =?",array($id));
+    		return $query->result();
+		
+	}
 }
 
 ?>

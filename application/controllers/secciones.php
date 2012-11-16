@@ -271,9 +271,12 @@ class secciones extends CI_Controller {
 		
 		$this->__draw_after_content();
 		
-		
+	}
 	
+	public function foto($id){
 		
+		$data['foto'] = $this->video_model->get_foto_id($id);
+		$this->load->view('foto',$data);
 	}
 	
 	public function comments(){

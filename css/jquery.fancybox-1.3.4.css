@@ -80,7 +80,7 @@
 	position: relative;
 	overflow: hidden;
 	z-index: 1102;
-	border: 0px solid #fff;
+	border: 0px solid #000;
 }
 
 #fancybox-hide-sel-frame {
@@ -134,7 +134,7 @@
 	position: absolute;
 	bottom: 0px;
 	height: 100%;
-	width: 35%;
+	width: 5%;
 	cursor: pointer;
 	outline: none;
 	background: transparent url('../img/fancybox/blank.gif');

@@ -18,6 +18,8 @@ jQuery(function() {
 		$fancy.fancybox({
 			'transitionIn'	:	'elastic',
 			'transitionOut'	:	'elastic'
+				
+		
 		});
 	}
 	

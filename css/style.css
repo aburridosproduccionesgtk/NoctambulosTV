@@ -72,10 +72,32 @@ Don't forget to change the button color in the html code (see buttons in element
     border-radius: 15px;
 	font-family: "LeagueGothicRegular", "Helvetica Neue", Helvetica, Arial;
   	font-size: 18px;
-    overflow:hidden;
+    
    
   	-webkit-box-shadow: inset 1px 1px 12px 12px rgba(15, 15, 255, 0.4);
         box-shadow: inset 1px 1px 12px 12px rgba(15, 15, 255, 0.4);
+}
+
+
+
+.commentariosF{
+	padding-right:5px;
+	background-color: rgba(0,155,255,0.4);
+	width:300px;
+	-webkit-border-radius: 15px;
+    border-radius: 15px;
+	font-family: "LeagueGothicRegular", "Helvetica Neue", Helvetica, Arial;
+  	font-size: 18px;
+    overflow:hidden;
+   /* -webkit-box-shadow: inset 1px 1px 12px 12px rgba(15, 15, 255, 0.4);
+        box-shadow: inset 1px 1px 12px 12px rgba(15, 15, 255, 0.4);*/
+}
+
+.commentFcontainer{
+	height:70%;
+	padding: 0 0 0 10px;
+	  overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .commentarios p{
@@ -83,7 +105,8 @@ Don't forget to change the button color in the html code (see buttons in element
 }
 
 .comentconatiner{
-		overflow:scroll;
+		 overflow-y: scroll;
+    overflow-x: hidden;
 	height: 250px;
 }
 
@@ -2170,6 +2193,55 @@ aside .categories li a:hover {
 }
 .commentlist .bypostauthor {
 }
+
+/* ------------------------------------------------
+ * Barras de estilo personalizadas 
+ * -------------------------------------------------*/
+.commentariosF ::-webkit-scrollbar {
+    width: 12px;
+}
+
+.commentariosF ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+.commentariosF ::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(0,250,250,0.8); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+.commentariosF ::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(0,250,250,0.4); 
+}
+
+ /* comentarios de los videos */
+.commentarios ::-webkit-scrollbar {
+    width: 12px;
+}
+
+.commentarios ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+.commentarios ::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(0,250,250,0.8); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+.commentarios ::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(0,250,250,0.4); 
+}
+/* ------------------------------------------------
+ * Fin de las barras
+ * -------------------------- --------------------*/
 
 /* ---------------------------------------------------------------------- */
 /*  Back Top button

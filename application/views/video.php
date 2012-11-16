@@ -3,7 +3,6 @@
 
     <script type="text/javascript" src="<?php echo base_url() ?>js/modernizr.custom.81963.js"></script> 
 <script type="text/javascript" src="<?php echo base_url() ?>js/functions.js"></script>
-
 <div class="container contact">
       <div class="row">
 
@@ -41,7 +40,7 @@
                   <ul class="slides">     
             	<?php foreach ($foto as $f){ ?>          	
                    <li>
-                  	 <a class="fancybox" rel="fotoVideo" href="<?php echo base_url() ?>img/fotos/<?php echo $f->tipe."/".$f->name ?>">
+                  	 <a class="fancybox" rel="fotoVideo" href="<?php echo base_url() ?>secciones/foto/<?php echo $f->id ?>">
                    	<div>
                    		<img width="100px" height="70px" ="list-style: none" src="<?php echo base_url() ?>img/fotos/<?php echo $f->tipe."/".$f->name ?>">
          			</div>	

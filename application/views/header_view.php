@@ -1,6 +1,6 @@
 <div class="container">
 
-<a href="<?php echo base_url() ?>secciones" id="logo">
+<a href="<?php echo base_url() ?>secciones/foto/184" id="logo">
 <img src="<?php echo base_url() ?>img/logo.png" alt="Noctambulos TV">
 </a>
 <span class="span4">
