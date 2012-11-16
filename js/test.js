@@ -191,6 +191,32 @@ $(document).ready(function(){
  	}
  	
  	
+ 	$(function(){	
+ 		$('#login').click(function(){
+ 				var email_log = $('input#email_log').val();
+ 				var password_log = $('input#password_log').val();
+ 				var dataString1 = 'email_log='+email_log+'&password_log='+password_log;
+ 				$.ajax({
+ 		 		      type: 'POST',
+ 		 		      url: 'user/login',
+ 		 		      data: dataString1,
+ 		 		     dataType: 'json',
+ 		 		      success: function(output_string) {
+ 		 		    	if(output_string ==='log'){
+ 		 		    		location.reload();
+ 		 		    	  }else{
+ 		 		    
+ 		 		    		  $('#mensajito').show();
+ 		 		    		  $('#mensajito').html(output_string);
+ 		 		    	  } 
+ 		 		       }
+ 		 		     });
+ 				return false;
+ 		});
+ 		
+ 	});
+ 	
+ 	
  	$(function() {
  		  $('.error').hide(); 	
  		  $('.error').css("color","white");
@@ -235,9 +261,15 @@ $(document).ready(function(){
  		      data: dataString,
  		     dataType: 'json',
  		      success: function(output_string) {
+ 		    	  var exito = output_string;
+ 		    	  if(exito ==='log'){
+ 		    		  alert('entro aqui');
+ 		    		 this.reload();
+ 		    	  }else{
  		    
- 		        $('#mensajito').show();
- 		        $('#mensajito').html(output_string); 
+ 		    		  $('#mensajito').show();
+ 		    		  $('#mensajito').html(output_string);
+ 		    	  } 
  		        }
  		     });
  		     return false;

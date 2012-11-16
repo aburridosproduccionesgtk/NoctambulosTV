@@ -65,14 +65,15 @@ Don't forget to change the button color in the html code (see buttons in element
 }
 
 .commentarios{
-	height: 300px;
+	height: 350px;
 	background-color: rgba(0,155,255,0.4);
 	padding: 15px;
 	-webkit-border-radius: 15px;
     border-radius: 15px;
 	font-family: "LeagueGothicRegular", "Helvetica Neue", Helvetica, Arial;
   	font-size: 18px;
-  
+    overflow:hidden;
+   
   	-webkit-box-shadow: inset 1px 1px 12px 12px rgba(15, 15, 255, 0.4);
         box-shadow: inset 1px 1px 12px 12px rgba(15, 15, 255, 0.4);
 }
@@ -82,8 +83,8 @@ Don't forget to change the button color in the html code (see buttons in element
 }
 
 .comentconatiner{
-		overflow: auto;
-	height: 193px;
+		overflow:scroll;
+	height: 250px;
 }
 
 

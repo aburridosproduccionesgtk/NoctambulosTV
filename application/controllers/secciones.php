@@ -68,9 +68,11 @@ class secciones extends CI_Controller {
 		
 		//$this->load->library('user_agent');
 		//if($this->agent->is_browser()){
+
 		
 		$this-> __draw_before_content();
-		$this->template->write_view("content","secciones","",FALSE);
+		
+		$this->template->write_view("content","secciones",FALSE);
 		$this->__draw_after_content();
 			
 			$this->output->enable_profiler(TRUE); 

@@ -78,6 +78,7 @@ function is_logged_in()
 	return ($CI->session->userdata("user")!= null);
 }
 
+
 function get_user_id()
 {
 	$CI = & get_instance();

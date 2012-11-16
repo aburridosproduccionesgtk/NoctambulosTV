@@ -15,8 +15,8 @@
 	<div class="span4" >
 		 <div class="commentarios">
 		    <h4>Comentarios</h4> 
+		    <div class="comentconatiner">
 		  	 <?php  if ($comments == null ){ ?>
-		  	 	<div class="comentconatiner">
 		  	 	<p>Aun no hay comentarios para este video.</p>
 		  	 	<p>Registrate y se el primero en comentar.</p>
 		  	<?php  }else{ foreach ($comments as $c){ ?>
@@ -42,7 +42,7 @@
             	<?php foreach ($foto as $f){ ?>          	
                    <li>
                   	 <a class="fancybox" rel="fotoVideo" href="<?php echo base_url() ?>img/fotos/<?php echo $f->tipe."/".$f->name ?>">
-                   	<div>	
+                   	<div>
                    		<img width="100px" height="70px" ="list-style: none" src="<?php echo base_url() ?>img/fotos/<?php echo $f->tipe."/".$f->name ?>">
          			</div>	
                  	 </a>

@@ -8,10 +8,25 @@
 </span>
 
 <div class="pull-right">
-<span class="login span4">
-<?php if( is_logged_in()){ ?>
+
+	
+<?php if( is_logged_in()){ 
+	   $user = $this->session->userdata['user'];
+	   
+	   if($user != null){ ?>
+		<span class="login span4" style="padding-top: 25px">
+		Bienvenido, 
+	   <?php echo $this->session->userdata['user'] ?>
+	  	<br />	     
+	  	<a href="<?php echo base_url()?>user/profile">Perfil</a>
 	<a href="<?php echo base_url() ?>user/logout">Salir</a>
-		<?php	}else{ ?>
+		<?php }else{ ?>
+			<div class="alert alert-error fade in">
+                <a class="close" data-dismiss="alert">x</a><strong>
+		  			<?php echo $username ?>Tu perfil todavía no está completo¡¡¡ Accede aquí para completarlo
+              	</div>
+		<? } }else{  ?>
+			 	<span class="login span4" 
 <a href="javascript:login_reg_toggle()"> Registrarse</a> |
 <a href="javascript:login_toggle()">Entrar</a>
 <?php }?>
@@ -33,8 +48,10 @@
 						<input type="password" class="required" value="Contraseña" name="password_log" id="password_log" />
 						
 						<input type="submit" value="   Enviar   " name="login" id="login" class="btn btn-large btn-primary"/>.
+				 
 				 </div>
-					
+				 
+						<div id="mensajito"></div>
 		
 			<div id="login_reg_frame" >
 				<form id="login_form_reg" method="post" action="<?php echo base_url() ?>user/reg">

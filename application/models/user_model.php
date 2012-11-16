@@ -22,7 +22,13 @@ class User_model extends CI_Model {
     		return true;
     	}
     }
-   
+   		
+		function checkemail($email){
+			$sql = "SELECT email FROM user c WHERE c.email=?";
+			$query = $this->db->query($sql,array($email));
+			return $query->row();
+		}
+		
 		function get_user_by_email($email)
 		{
 			$sql = "SELECT * FROM user c WHERE c.email=?";

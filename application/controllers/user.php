@@ -10,8 +10,6 @@ class user extends CI_Controller {
 		$this->load->model('user_model','user_model',TRUE);
 		$this->load->helper('global');
 		//Debug
-		
-
 	
 	}
 	
@@ -20,7 +18,7 @@ class user extends CI_Controller {
 		//$password = md5($this->input->post("password"));
 		$user['id'] = null;
 		$user['email'] = strip_tags($_POST['email']);
-		$user['password']  = strip_tags($_POST['password']);
+		$user['password']  = md5(strip_tags($_POST['password']));
 		$fecha = strip_tags($_POST['fecha_nac']);
 		$valido = TRUE;
 		
@@ -65,13 +63,8 @@ class user extends CI_Controller {
 			
 		}
 		echo json_encode($mensaje);	
-}
-		
-		
-		
-		
-	
-		
+	}
+
 		
 
 	
@@ -79,17 +72,35 @@ class user extends CI_Controller {
 		
 	
 		$email = strip_tags($_POST['email_log']);
-		$password = strip_tags($_POST['password_log']);
-		
-		
-		
+		$password = md5(strip_tags($_POST['password_log']));
 		$user = $this->user_model->get_user_by_email($email);
-	
-		if ($user && $user->password && $user->password != ""
+		
+		if(empty($user)){
+			 $mensaje= "<div class='alert alert-error fade in'>
+                <a class='close' data-dismiss='alert'>x</a><strong>
+		  			El usuario no existe
+              	</div>";
+			echo json_encode($mensaje);	
+		}
+		
+			
+		if($user && $user->password && $user->password != ""
 				&& $user->password == $password)
 		{
-			$this->session->set_userdata("user", $user->id);
-			redirect("secciones");
+			$this->session->set_userdata("id",$user->id);
+			$this->session->set_userdata("user",$user->user_name);
+		//	$this->session->set_userdata($user);
+			//$this->session->set_userdata("user_name",$user['user_name']);
+			//$this->session->set_userdata("username", $user->user_name);
+			
+				echo json_encode('log');	
+			
+		}else{
+			$mensaje= "<div class='alert alert-error fade in'>
+		                <a class='close' data-dismiss='alert'>x</a><strong>
+				  			Contraseña incorrecta
+		              	</div>";
+					echo json_encode($mensaje);	
 		}
 	}
 	
