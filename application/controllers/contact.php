@@ -21,7 +21,8 @@ class contact extends CI_Controller {
 	{
 
 		parent::__construct();
-		
+		$this->load->helper('user');
+		$this->load->helper('global');
 		//Debug
 		
 
@@ -67,7 +68,7 @@ class contact extends CI_Controller {
 	{
 		
 		$this->load->library('user_agent');
-		$this->load->helper('global');
+		
 		
 		$data['mensaje'] = " ";
 		$this-> __draw_before_content();
@@ -93,8 +94,9 @@ class contact extends CI_Controller {
 		$name = strip_tags($_POST['name']);
 		$email = strip_tags($_POST['email']);
 		$message = strip_tags($_POST['message']);
+		$asunto = strip_tags($_POST['subject']);
 		
-		// si es un robot, en teoría debería escribir datos aquí, 
+		// si es un robot, en teorï¿½a deberï¿½a escribir datos aquï¿½, 
 		//y seria detectado como tal.
 		$botty = strip_tags($_POST['botty']);
 		
@@ -103,25 +105,23 @@ class contact extends CI_Controller {
 		}
 		
 		
-		// dirección de correo a la que mando este mensaje
-		$to = "hesselek@gmail.com";
+		// direcciï¿½n de correo a la que mando este mensaje
+		$to = "info@aburridosproducciones.com";
 		
-		// dirección de correo que deberá aparecer en 
-		$from = "contact@yourwebsite.com";
+		// direcciï¿½n de correo que deberï¿½ aparecer en el mensaje
+		$from = "info@aburridosproducciones.com";
 		
-		$subject = "Contact from your website";
+		$subject = "Contacto desde NoctÃ¡mbulos TV";
 		
-		$body = "Email from your website: " . " ";
+		$body = "Contacto desde NoctÃ¡mbulos TV: " . " ";
 		$body .= "Name: " . $name. " ";
 		$body .= "Email: " . $email . " ";
+		$body .= "Asunto" . $asunto. " ";
 		$body .= "Message: " . $message . " ";
 		
-		$headers = "From: $from" . "
-";
-		$headers .= "Reply-To: $from" . "
-";
-		$headers .= "Return-Path: $from" . "
-";
+		$headers = "From: $from" . "";
+		$headers .= "Reply-To: $from" . "";
+		$headers .= "Return-Path: $from" . "";
 		
 		// mail(to,subject,body,headers);
 		
@@ -135,6 +135,53 @@ class contact extends CI_Controller {
 		$this->template->write_view("content","contact",$data,TRUE);
 		$this->__draw_after_content();
 		
+	}
+
+	function recovery(){
+		
+		
+		$this->load->view('recovery');
+	}
+	
+	function recoverp(){
+		$email = strip_tags($_POST['email']);
+		$botty = strip_tags($_POST['botty']);
+		if($botty != NULL){
+			die;
+		}
+		$pass = randomPassword();
+		// direcciï¿½n de correo a la que mando este mensaje
+		$to = "info@aburridosproducciones.com";
+		
+		// direcciï¿½n de correo que deberï¿½ aparecer en el mensaje
+		$from = "info@aburridosproducciones.com";
+		$to = $email;
+		
+		// direcciï¿½n de correo que deberï¿½ aparecer en el mensaje
+		$from = "info@aburridosproducciones.com";
+		
+		$subject = "RecuperaciÃ³n de contraseÃ±a";
+		
+		$body = "Formulario de recuperaciÃ³n de contraseÃ±a: " . " ";
+
+		$body .= "Email: " . $email . " ";
+		
+		$body .= "Este mensaje te ha sido enviado por que has solicitado una recuperaciÃ³n de 
+		 contraseÃ±a. Puedes registrarte utilizando la siguiente contraseÃ±a <br /><b>ContraseÃ±a</b>".
+		 $pass."<br /> Recuerda que puedes cambiar tu contraseÃ±a desde la ventana de tu perfil. Gracias
+		 por utilizar Noctambulos TV";
+		
+		$headers = "From: $from" . "";
+		$headers .= "Reply-To: $from" . "";
+		$headers .= "Return-Path: $from" . "";
+		$mailed = mail($to, $subject, $body, $headers);
+		
+		if($mailed){
+			$mensaje =  '<div class="valid">Gracias por su mensaje. Responderemos lo antes posible</div>';
+		}else{
+			$mensaje = '<div class="error">Ha ocurrido un problema. No hemos podido mandar el mensaje.</div>';
+		}
+		echo json_encode($mensaje);	
 	}
 	
 	

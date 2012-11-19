@@ -9,6 +9,7 @@ class user extends CI_Controller {
 		parent::__construct();
 		$this->load->model('user_model','user_model',TRUE);
 		$this->load->helper('global');
+		
 		//Debug
 	
 	}
@@ -98,7 +99,7 @@ class user extends CI_Controller {
 		}else{
 			$mensaje= "<div class='alert alert-error fade in'>
 		                <a class='close' data-dismiss='alert'>x</a><strong>
-				  			Contraseña incorrecta
+				  			Contraseña incorrecta <br>
 		              	</div>";
 					echo json_encode($mensaje);	
 		}

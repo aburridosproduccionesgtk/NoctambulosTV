@@ -10,6 +10,9 @@ jQuery(function() {
 	  autoplay: true
 	});
 
+	
+	
+	
 	/* Fancybox */
 
 	var $fancy = $('.fancybox');
@@ -32,7 +35,37 @@ jQuery(function() {
 		'overlayShow'	:	false
 	});
 	}
+	
+	/* recuperacion de contraseña */
+	
+	$("#pass_rec").fancybox({
+		'scrolling'		: 'no',
+		'titleShow'		: false,
+		'onClosed'		: function() {
+		   
+		}
+	});
+	
+	$("#recovery_pass").bind("submit", function() {
 
+		
+		$.fancybox.showActivity();
+
+		$.ajax({
+			type		: "POST",
+			url		: "contact/recoverp",
+			cache: false,
+			data		: $(this).serializeArray(),
+			 dataType: 'json',
+			success: function(data) {
+				$.fancybox(data);
+			}
+		});
+
+		return false;
+	});
+	
+	
 	/* Accordion */ 
 	var $accordion = $('.accordion');
 	if( $accordion.length ) {

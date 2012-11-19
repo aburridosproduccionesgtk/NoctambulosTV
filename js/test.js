@@ -101,6 +101,8 @@ $(document).ready(function(){
 	$('#main_container').load('home/secciones');
 });*/
  	
+ 
+ 	
 	function MenuHover(param)
 	{
 		switch(param){
@@ -206,8 +208,8 @@ $(document).ready(function(){
  		 		    		location.reload();
  		 		    	  }else{
  		 		    
- 		 		    		  $('#mensajito').show();
- 		 		    		  $('#mensajito').html(output_string);
+ 		 		    		  $('#formresult').show();
+ 		 		    		  $('#formresult').html(output_string);
  		 		    	  } 
  		 		       }
  		 		     });
@@ -215,6 +217,9 @@ $(document).ready(function(){
  		});
  		
  	});
+ 	
+ 	
+ 	
  	
  	
  	$(function() {

@@ -218,6 +218,18 @@ padding: 0px 17px 0px 25px;
   
 }
 
+.mintex{
+  font-family: "LeagueGothicRegular", "Helvetica Neue", Helvetica, Arial;
+  font-size: 18px;
+  float: left;
+  padding-left: 45px;
+  text-decoration: none;
+}
+
+.mintex a:hover{
+	color:#FFBE00;
+}
+
 .login{
 	color: #FFF;
 	font-family: "LeagueGothicRegular", "Helvetica Neue", Helvetica, Arial;

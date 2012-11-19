@@ -1,6 +1,6 @@
 <div class="container">
 
-<a href="<?php echo base_url() ?>secciones/foto/184" id="logo">
+<a href="<?php echo base_url() ?>secciones" id="logo">
 <img src="<?php echo base_url() ?>img/logo.png" alt="Noctambulos TV">
 </a>
 <span class="span4">
@@ -26,14 +26,38 @@
 		  			<?php echo $username ?>Tu perfil todavía no está completo¡¡¡ Accede aquí para completarlo
               	</div>
 		<? } }else{  ?>
-			 	<span class="login span4" 
+			 	<span class="login span4"> 
 <a href="javascript:login_reg_toggle()"> Registrarse</a> |
 <a href="javascript:login_toggle()">Entrar</a>
 <?php }?>
 </span>
 </div>
 </div>
-
+<div style="display: none">
+	 <form id="recovery_pass" method="post" action="<?php echo base_url() ?>contact/recoverp" >
+<div class="contact">
+	 <div class="span3">
+         
+              <div class="row"> 
+                <div class="input">
+                  <label for="email">
+                    Introduce tu correo electrónico:
+                  </label>
+                  <input type="text" name="email" id="email_recovery" value="" class="email" />
+                  <div class="span2">&nbsp;</div>
+                  <input type="submit" value="   Enviar   " name="submit" id="recover_pass" class="btn btn-small btn-primary"/>
+                </div>
+           		</div>
+              <div class="row">
+              <div class="span3">
+                      <div class="botty"><input type="text" name="botty" id="botty" /></div>
+              </div>
+            </div>
+         
+		  </div>	  
+</div>
+</form> 
+</div>
 
 <div class="container">
 
@@ -44,11 +68,11 @@
 				<div id="login_frame">
 					<form id="login_form" method="post" action="<?php echo base_url() ?>user/login" >
 						<input type="text" value="Nombre" name="email_log" id="email_log"  />
-						
 						<input type="password" class="required" value="Contraseña" name="password_log" id="password_log" />
-						
-						<input type="submit" value="   Enviar   " name="login" id="login" class="btn btn-large btn-primary"/>.
-				 
+						<input type="submit" value="   Entrar   " name="login" id="login" class="btn btn-small btn-primary" />
+						<a class="mintex" id="pass_rec" href="#recovery_pass">No recuerdo mi contraseña</a>
+					</form>
+				 		
 				 </div>
 				 
 						<div id="mensajito"></div>
