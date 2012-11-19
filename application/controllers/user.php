@@ -117,6 +117,7 @@ class user extends CI_Controller {
 		if(!isset($_POST['Hoby'])){
 			$data['hoby'] = 'creo que hemos adelantado algo';
 		}
+		redimensionar();
 		$this->load->view('welcome_message',$data);
 	}
 	
