@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<!--[if IE 7]>                  <html class="ie7 no-js" lang="es">    <![endif]-->
-<!--[if lte IE 8]>              <html class="ie8 no-js" lang="es">     <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--> <html class="not-ie no-js" lang="es">  <!--<![endif]-->
+ <html class="not-ie no-js" lang="es"> 
   <head>
     <meta charset="utf-8">
     <title>NoctambulosTV</title>

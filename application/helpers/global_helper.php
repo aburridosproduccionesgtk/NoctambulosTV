@@ -47,7 +47,7 @@ function cambiaf_a_mysql($fecha){
 	return $fecha2;
 }
 
-function datecheck($input,$format="")
+function datecheck($input,$format)
 {
 	$separator_type= array(
 			"/",
@@ -63,7 +63,7 @@ function datecheck($input,$format="")
 	$input_array= explode($separator_used,$input);
 	
 	if ($format=="dmy") {
-		return checkdate($input_array[0],$input_array[1],$input_array[2]);
+		return checkdate($input_array[1],$input_array[0],$input_array[2]);
 	} elseif ($format=="ymd") {
 		return checkdate($input_array[1],$input_array[2],$input_array[0]);
 	} else {

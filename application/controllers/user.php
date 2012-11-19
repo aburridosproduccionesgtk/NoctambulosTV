@@ -15,19 +15,19 @@ class user extends CI_Controller {
 	}
 	
 	
-	function reg(){
+	public function reg(){
 		//$password = md5($this->input->post("password"));
 		$user['id'] = null;
 		$user['email'] = strip_tags($_POST['email']);
 		$user['password']  = md5(strip_tags($_POST['password']));
-		$fecha = strip_tags($_POST['fecha_nac']);
+		$fecha = $_POST['fecha_nac'];
 		$valido = TRUE;
 		
 		
-		if(datecheck($fecha,$format="dmy")===false){
+		if(datecheck($fecha,"dmy")===false){
 			$mensaje = "<div class='alert alert-error fade in'>
               	   <a class='close' data-dismiss='alert'>x</a><strong>
-                	   Por favor, intruduce una fecha correcta
+                	   Por favor, introduce una fecha correcta".$fecha."
                    </div>";
 			$valido = FALSE;
 		}
@@ -69,7 +69,7 @@ class user extends CI_Controller {
 		
 
 	
-	function login(){
+	public function login(){
 		
 	
 		$email = strip_tags($_POST['email_log']);
@@ -109,6 +109,17 @@ class user extends CI_Controller {
 		$this->session->sess_destroy();
 		redirect("secciones");
 	}
+	
+	function profile(){
+		//$data['hoby'] = ;
+		$data['sex'] = $_POST['sex'];
+		$data['provincia'] = $_POST['provincia'];
+		if(!isset($_POST['Hoby'])){
+			$data['hoby'] = 'creo que hemos adelantado algo';
+		}
+		$this->load->view('welcome_message',$data);
+	}
+	
 	
 
 	}

@@ -77,7 +77,9 @@
 
 <div id="container">
 	<h1>Welcome to CodeIgniter!</h1>
-
+  <?php echo print_array($hoby) ?>
+   <?php echo print_array($sex) ?>
+   <?php echo print_array($provincia) ?>
 	<div id="body">
 		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
 

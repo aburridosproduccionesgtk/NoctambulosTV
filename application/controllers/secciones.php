@@ -300,7 +300,11 @@ class secciones extends CI_Controller {
 		
 	}
 	
-	
+	public function profileC(){
+		$this-> __draw_before_content();
+		$this->template->write_view("content","profileform");
+		$this->__draw_after_content();
+	}
 	
 	
 }
