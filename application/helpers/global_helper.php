@@ -91,8 +91,8 @@ function get_user_id()
 }
 
 function redimensionar(){
-	$anchura=180; 
-	$hmax=180; 
+	$anchura=400; 
+	$hmax=200; 
 	$nombre='./img/prof_img/eslogan.jpg' ;
 	$datos = getimagesize($nombre); 
 	if($datos[2]==1){$img = @imagecreatefromgif($nombre);} 
@@ -103,8 +103,8 @@ function redimensionar(){
 	if($altura>$hmax){$anchura2=$hmax*$anchura/$altura;$altura=$hmax;$anchura=$anchura2;}
 	$thumb = imagecreatetruecolor($anchura,$altura); 
 	imagecopyresampled($thumb, $img, 0, 0, 0, 0, $anchura, $altura, $datos[0], $datos[1]); 
-	if($datos[2]==1){header("Content-type: image/gif"); imagegif($thumb,'redimensionada',9);} 
-	if($datos[2]==2){imagejpeg($thumb,'.img/prof_img/redimensionada.jpg',9);} 
+	if($datos[2]==1){header("Content-type: image/gif"); imagegif($thumb,'redimensionada');} 
+	if($datos[2]==2){imagejpeg($thumb,'./img/prof_img/redimensionada.jpg');} 
 	if($datos[2]==3){header("Content-type: image/png");imagepng($thumb,'redimensionada',9); } 
 	imagedestroy($thumb); 
 }

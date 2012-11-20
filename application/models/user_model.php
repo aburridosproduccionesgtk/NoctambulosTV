@@ -39,7 +39,26 @@ class User_model extends CI_Model {
 		
 		function add_user($user){
    	  		$this->db->insert("user", $user);
+			$id = $this->db->insert_id();
+			$this->db->set('id',$id);
+			$this->db->insert('pr_interest');
+			
    		}
+		
+		function get_pr_interest($id){
+			$query = $this->db->get_where("pr_interest", array("id" => $id));
+			 
+			$result = $query->result();
+			if($result == null){
+				$this->db->set('id',$id);
+				$this->db->insert('pr_interest');
+				return null;
+			}else{
+				return $result;
+			}
+			
+		}
+		
 	
 	//TODO a partir de aqui todo es borrable.......
 	/*

@@ -68,9 +68,9 @@
 			
 				<div id="login_frame">
 					<form id="login_form" method="post" action="<?php echo base_url() ?>user/login" >
-						<input type="text" value="Nombre" name="email_log" id="email_log"  />
-						<input type="password" class="required" value="Contraseña" name="password_log" id="password_log" />
-						<input type="submit" value="   Entrar   " name="login" id="login" class="btn btn-small btn-primary" />
+						<input type="text" value="Email" name="email_log" id="email_log" />
+						<input type="password" value="Contraseña" class="required" name="password_log" id="password_log" onclick="javascript:emptyValue(this)" />
+						<input type="submit" value="   Entrar   " name="login" id="login" class="btn btn-small btn-primary" onclick="javascript:emptyValue(this)" />
 						<a class="mintex" id="pass_rec" href="#recovery_pass">No recuerdo mi contraseña</a>
 					</form>
 				 		
@@ -80,11 +80,11 @@
 		
 			<div id="login_reg_frame" >
 				<form id="login_form_reg" method="post" action="<?php echo base_url() ?>user/reg">
-					<input type="text" value="Email" id="email" name="email" />
+					<input type="text" value="Email" id="email" name="email" onclick="javascript:emptyValue(this)" />
 					<label class="error" for="email" id="email_error">Este campo es obligatorio (Email).</label>
-					<input type="text"  value="Fecha de Nacimiento (dd-mm-aaaa)"  id="fecha_nac" name="fecha_nac" />
+					<input type="text"  value="Fecha de Nacimiento (dd-mm-aaaa)"  id="fecha_nac" name="fecha_nac" onclick="javascript:emptyValue(this)" />
 					<label class="error" for="fecha_nac" id="fecha_nac_error">Este campo es obligatorio (Fecha de nacimiento)</label>
-					<input type="password" value="password"  id="password" name="password" />
+					<input type="password" value="password"  id="password" name="password" onclick="javascript:emptyValue(this)"  />
 					<label class="error" for="password" id="password_error">Este campo es obligatorio(Contraseña).</label>
 					<input type="submit" value="   Enviar   " name="reg" id="reg" class="btn btn-large btn-primary"/>
 				</form>

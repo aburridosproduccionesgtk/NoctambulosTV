@@ -177,7 +177,7 @@ $(document).ready(function(){
  		//$('.login_container').addClass('span6');
 		$("#login_reg_frame").hide();
 		$("#login_frame").toggle(function(){
-			$("form#login_form input#email").focus();
+			
 		});
 
 	} 
@@ -188,10 +188,18 @@ $(document).ready(function(){
  		//$('.login_container').addClass('span8');
  		$("#login_frame").hide();
  		$("#login_reg_frame").toggle(function(){
- 			$("form#login_form_reg input#email").focus();
+ 			
  		});
  	}
  	
+ 	 function emptyValue( sObj ){
+ 	    //  if( sObj.value.length == 0 ){
+ 	      //  sObj.value = "Ingresar valor..."
+ 	      //}else if( sObj.value == "Ingresar valor..." ){
+ 	        sObj.value = "";
+ 	     // }
+ 	    }
+ 	//$('#email').click(function(){$('#email').value = ''});
  	
  	$(function(){	
  		$('#login').click(function(){
