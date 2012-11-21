@@ -14,6 +14,39 @@ class user extends CI_Controller {
 	
 	}
 	
+	function __draw_before_content()
+	{
+		// HEADER
+		//$data["username"] = $this->session->userdata("username");
+		
+		$css =   "<link href='".base_url()."css/bootstrap.css' rel='stylesheet'>
+    			<link href='".base_url()."css/jquery.fancybox-1.3.4.css' rel='stylesheet'>
+    			<link href='".base_url()."css/style.css' rel='stylesheet'>
+    			<link href='".base_url()."css/font-awesome.css' rel='stylesheet'>";
+		$this->template->write("css",$css);
+		
+		$js = "<script type='text/javascript' src='".base_url()."js/test.js'></script>
+    		   <script type='text/javascript' src='".base_url()."js/modernizr.custom.81963.js'></script>";
+		$this->template->write("js",$js);		
+		
+		$data = array(
+              'cur_secciones' => 'current',
+         );
+		
+		$this->template->parse_view("header", "header_view", $data, FALSE);
+		
+	
+	
+	}
+	
+	function __draw_after_content()
+	{
+		// FOOTER
+		$this->template->write_view("footer", "footer", "",FALSE);
+		$this->template->render();
+	
+	}
+	
 	
 	public function reg(){
 		//$password = md5($this->input->post("password"));
@@ -67,7 +100,9 @@ class user extends CI_Controller {
 		}
 		echo json_encode($mensaje);	
 	}
-
+	public function subir_foto(){
+		 $this->load->view('upload_foto');
+	}
 		
 
 	
@@ -78,6 +113,7 @@ class user extends CI_Controller {
 		$password = md5(strip_tags($_POST['password_log']));
 		$user = $this->user_model->get_user_by_email($email);
 		$this->user_model->get_pr_interest($user->id);
+		$this->user_model->get_p_information($user->id);
 			
 		if(empty($user)){
 			 $mensaje= "<div class='alert alert-error fade in'>
@@ -115,15 +151,69 @@ class user extends CI_Controller {
 	
 	function profile(){
 		//$data['hoby'] = ;
-		$data['sex'] = $_POST['sex'];
-		$data['provincia'] = $_POST['provincia'];
-		if(!isset($_POST['Hoby'])){
-			$data['hoby'] = 'creo que hemos adelantado algo';
+		$id = $this->session->userdata('id');
+
+		$data['ocuppation'] = strip_tags($_POST['ocuppation']);
+		$data['feast_location'] = strip_tags($_POST['feast_location']); 
+		$data['sex'] = strip_tags($_POST['sex']);
+		$data['provincia'] = strip_tags($_POST['provincia']);
+		
+		$this->user_model->add_information($id,$data);
+		$data['fallo'] = $this->user_model->get_user_name($id);
+		if($this->user_model->get_user_name($id)==NULL){
+			
+			$data['user_name'] = strip_tags($_POST['user_name']);
+			$usern['user_name'] = $data['user_name'];
+			$this->user_model->add_unern($id,$usern);
 		}
-		redimensionar();
+		
+		if(isset($_POST['Hoby'])){
+		   $datos = array();
+			$interest = $_POST['Hoby'];
+			foreach ($interest as $i) {
+				$datos[$i] = 1;
+			}
+			$this->user_model->add_interest($datos,$id);
+			
+		}
+		
+		//redimensionar();
 		$this->load->view('welcome_message',$data);
 	}
 	
+	function uploadPhoto()
+	{
+		
+		$filesize = strip_tags($_FILES['upfile']['size']);
+		$filename = strip_tags($_FILES['upfile']['name']);
+		$uploaddir = './img/temp/';
+		 if($filesize > 0){ 
+				if((preg_match("/.jpg/", $filename)) || (preg_match("/.gif/", $filename)) || (preg_match("/.JPG/", $filename))|| (preg_match("/.GIF/", $filename)))
+				{
+				    $uploadfile = $uploaddir . base64_encode($this->session->userdata['id']);
+					if (move_uploaded_file($_FILES['upfile']['tmp_name'], $uploadfile)) 
+					{
+						$mensaje = "Archivo subido correctamente";
+					} else {		
+						$mensaje = "Error de conexi&oacute;n con el servidor.";
+					}
+				} else {
+					$mensaje = "Sólo se permiten imágenes en formato jpg. y gif., no se ha podido adjuntar.";
+				}
+			}else{
+				$mensaje = "<br><br>Campo vac&iacute;o, no ha seleccionado ninguna imagen";
+			}
+			
+			redirect('user/profileC');
+	
+			 
+	}
+	
+	public function profileC(){
+		$this-> __draw_before_content();
+		$this->template->write_view("content","profileform");
+		$this->__draw_after_content();
+	}
 	
 
 	}

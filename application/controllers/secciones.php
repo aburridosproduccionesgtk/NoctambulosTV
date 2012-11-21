@@ -102,7 +102,6 @@ class secciones extends CI_Controller {
 		}
 	
 		
-		
 		$data['fotos'] = $f;
 	 	$this-> __draw_before_content();
 		
@@ -111,7 +110,6 @@ class secciones extends CI_Controller {
 		
 		$this->__draw_after_content();
 	 	
-	   // 
 	}
 	
 	public function experiencias()
@@ -144,7 +142,6 @@ class secciones extends CI_Controller {
 
 	}
 	
-	
 	public function conciertos ()
 	{
 		$data['videos'] = $this->video_model->get_v('7');
@@ -171,6 +168,7 @@ class secciones extends CI_Controller {
 		$this->__draw_after_content();
 		
 	}
+	
 	
 	public function discotecas()
 	{
@@ -248,7 +246,6 @@ class secciones extends CI_Controller {
 		
 		
 		$data['fotos'] = $f;
-		
 		$this-> __draw_before_content();
 		$this->template->write_view("content","ocio",$data,TRUE);
 		$this->__draw_after_content();
@@ -300,11 +297,7 @@ class secciones extends CI_Controller {
 		
 	}
 	
-	public function profileC(){
-		$this-> __draw_before_content();
-		$this->template->write_view("content","profileform");
-		$this->__draw_after_content();
-	}
+	
 	
 	
 }

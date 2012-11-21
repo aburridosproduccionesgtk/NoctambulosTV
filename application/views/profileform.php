@@ -4,12 +4,13 @@
 <div class="container contact">
       <div class="row">
         <div class="span12">
-          <h2>Modificar Perfil</h2>
+        	
+          <h2 align="center">Perfil del Usuario</h2>
           
-          <form method="post" action="<?php echo base_url() ?>user/profile" id="contact">
+          <form method="post" action="<?php echo base_url() ?>user/profile" id="contact" enctype="multipart/form-data" >
             <div class="row">
               <div class="span4">
-              	<h4>Datos Personales</h4>
+              	<h4>Datos Personales</h4><br />
                 <div class="input">
                   <label for="user_name">
                     Nombre de Usuario*
@@ -29,7 +30,7 @@
                   <label for="provincia">
                     Provincia
                   </label>
-                     <select name="provincia">
+                     <select name="provincia" class="span">
                      	<option value="null"></option>
                      	<option value="A Coruña">A Coruña</option>
                      	<option value="Alava">Alava</option><option value="Albacete">Albacete</option>
@@ -63,10 +64,14 @@
                      	
                      </select>
                 </div>
+                
+                   <a class="fancybox btn btn-large btn-primary" href="#form_foto">Sube una foto</a>
+                 
               </div>
              
               <div class="span4">
-                <h4>Cuéntanos más sobre ti</h4>
+                <h4>Cuéntanos más sobre ti</h4><br />
+               
                 	<div class="input">
 	                  <label for="ocuppation">
 	                    Situación profesional:
@@ -77,12 +82,11 @@
 		                  <label for="feast_location">
 		               Lugares por donde sueles salir:
 		              </label>
-		              <input type="text" name="feast_location" id="feast_location" class="required" />
+		              <textarea rows="4" name="feast_location" id="feast_location" class="required"></textarea>
 		           </div>
-                
               </div>
           	<div class="span4">
-          		<h4>Intereses, Hobbies</h4>
+          		<h4>Intereses, Hobbies</h4><br />
                <div class="span2">
 	               	<input type="checkbox" name="Hoby[]" value="Foto" /> Fotografía <br />
 	               	<input type="checkbox" name="Hoby[]" value="TV" /> Cine/TV <br />
@@ -99,8 +103,7 @@
                </div>
               </div>
                <div class="span4">
-               <h4 style="padding-top: 15px">Vida Nocturna(Estilo de música)</h4>
-              
+               <h4 style="padding-top: 15px">Vida Nocturna (Estilo musical)</h4>
                <div class="span2">
 	               	<input type="checkbox" name="Hoby[]" value="Rock" /> Rock/Metal <br />
 	               	<input type="checkbox" name="Hoby[]" value="Techno" /> Techno <br />
@@ -118,11 +121,18 @@
             <div class="row">
               <div class="span12">
               	<div class="span5">&nbsp;</div>
-                <input type="submit" value="   Modificar mi Perfil   " name="submit" id="submit" class="btn btn-large btn-primary"/>
+                <input type="submit" value="   Modificar mi Perfil   " name="boton" id="boton" class="btn btn-large btn-primary"/>
                 <div class="botty"><input type="text" name="botty" id="botty" /></div>
               </div>
             </div>
         </form>
+       <div style="display: none">
+       	<form id="form_foto" action="<?php echo base_url() ?>user/uploadPhoto" method="post" enctype="multipart/form-data" > 
+	         <input name="upfile" id="upfile" type="file" />
+	       	<input type="submit" value="Enviar fotos" id="upload_foto" class="btn btn-large btn-primary" />
+	        </form>
+       </div>
+        
         <div id="formresult"></div>
         </div>
         

@@ -80,6 +80,9 @@
   <?php echo print_array($hoby) ?>
    <?php echo print_array($sex) ?>
    <?php echo print_array($provincia) ?>
+   <?php echo print_array($feast_location) ?>
+   <?php echo print_array($ocuppation) ?>
+     <?php echo print_array($fallo) ?>
 	<div id="body">
 		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
 

@@ -18,7 +18,7 @@
 		Bienvenido, 
 	   <?php echo $this->session->userdata['user'] ?>    
 	  	<br />	     
-	  	<a href="<?php echo base_url()?>secciones/profileC">Perfil&nbsp;&nbsp;</a>|
+	  	<a href="<?php echo base_url()?>user/profileC">Perfil&nbsp;&nbsp;</a>|
 	<a href="<?php echo base_url() ?>user/logout">&nbsp;&nbsp;Salir</a>
 		<?php }else{ ?>
 			<div class="alert alert-error fade in">
@@ -68,9 +68,9 @@
 			
 				<div id="login_frame">
 					<form id="login_form" method="post" action="<?php echo base_url() ?>user/login" >
-						<input type="text" value="Email" name="email_log" id="email_log" />
+						<input type="text" value="Email" name="email_log" id="email_log" onclick="javascript:emptyValue(this)" />
 						<input type="password" value="Contraseña" class="required" name="password_log" id="password_log" onclick="javascript:emptyValue(this)" />
-						<input type="submit" value="   Entrar   " name="login" id="login" class="btn btn-small btn-primary" onclick="javascript:emptyValue(this)" />
+						<input type="submit" value="   Entrar   " name="login" id="login" class="btn btn-small btn-primary" />
 						<a class="mintex" id="pass_rec" href="#recovery_pass">No recuerdo mi contraseña</a>
 					</form>
 				 		

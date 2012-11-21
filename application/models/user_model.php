@@ -45,6 +45,18 @@ class User_model extends CI_Model {
 			
    		}
 		
+		function get_p_information($id){
+			$query = $this->db->get_where("pr_information", array("id" => $id));
+			$result = $query->result();
+			if($result == null){
+				$this->db->set('id',$id);
+				$this->db->insert('pr_information');
+				return null;
+			}else{
+				return $result;
+			}	
+		}
+		
 		function get_pr_interest($id){
 			$query = $this->db->get_where("pr_interest", array("id" => $id));
 			 
@@ -55,10 +67,35 @@ class User_model extends CI_Model {
 				return null;
 			}else{
 				return $result;
-			}
-			
+			}	
 		}
 		
+		function add_interest($interest,$id){
+			$this->db->where('id',$id);
+			$this->db->update("pr_interest", $interest);
+		}
+		
+		function get_user_name($id){
+			$query = $this->db->get_where("user", array("id" => $id));
+			 
+			$result = $query->result();
+			return $result[0]->user_name;
+		/*	if($result->user_name == NULL){
+				return NULL;
+			}else{
+				return $result['user_name'];
+			}	*/
+		}
+		
+		public function add_unern ($id,$usern){
+			$this->db->where('id',$id);
+			$this->db->update("user", $usern);
+		}
+		
+		public function add_information($id,$data){
+			$this->db->where('id',$id);
+			$this->db->update("pr_information", $data);
+		}
 	
 	//TODO a partir de aqui todo es borrable.......
 	/*
