@@ -212,21 +212,25 @@ class user extends CI_Controller {
 	public function profile(){
 		$id = $this->session->userdata('id');
 		$data['user'] = $this->user_model->get_user_by_id($id);
-		//$data['comments_men'] 
-		$comen_foto= $this->user_model->get_user_comment($id);
+		$comen_vid= $this->user_model->get_user_comment($id);
 		$data['interest'] = $this->user_model->get_pr_interest($id);
 		//$data['foto_com'] 
-		$comen_vid = $this->user_model->get_user_photos($id);
+		$comen_foto = $this->user_model->get_user_photos($id);
 		
-		$commentF = array()
-		foreach($comment_foto as $c) {
-			 $commenF['tipe'] = 'foto';
-			 $commentF['fecha'] = fecha_norm($c->fecha);
-			 $commentF['mensaje'] = $c->mensaje;
-			 
+		$commentF = array();
+		
+		// $data['comments'] = $this->user_model->get_user_comment($id);
+		foreach ($comen_foto as $c ) {
+			  array_push($commentF, array('tipe'=>'foto','fecha'=>fecha_norm($c->fecha),
+			  'mensaje'=>$c->mensaje,'id'=>$c->id_foto));
+		}
+		foreach ($comen_vid as $v ) {
+			  array_push($commentF, array('tipe'=>'video','fecha'=>fecha_norm($v->fecha),
+			  'mensaje'=>$v->mensaje,'id'=>$v->id_vid));
 		}
 		
-		$data['comments'] = array_push($comen_foto,$comen_vid); 
+		$data['comments'] = $commentF;
+		//$data['comments'] = array_push($comen_foto,$comen_vid); 
 		$this-> __draw_before_content();
 		$this->template->write_view("content","profile",$data,TRUE);
 		$this->__draw_after_content();

@@ -118,8 +118,8 @@ class User_model extends CI_Model {
 		
 		public function get_user_photos($id)
 		{
-			$this->db->select('id_foto, mensaje, cm_date');
-			$this->db->order_by('cm_date','cm_date');	
+			$this->db->select('id_foto, mensaje, fecha');
+			$this->db->order_by('fecha','desc');	
 			$query = $this->db->get_where("comments_fotos", array("id_user" => $id));
             return $query->result();
 		}
