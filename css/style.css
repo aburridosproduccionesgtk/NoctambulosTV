@@ -7,10 +7,58 @@ Don't forget to change the button color in the html code (see buttons in element
 
 */
 
+/*---------------------------------------------------------------------------*/
+/*   Estilos del profile
+ * --------------------------------------------------------------------------
+ */
+	.pr_informacion{
+		padding:6px;
+		margin-bottom:15px;
+		-webkit-border-radius: 6px;
+	    border-radius: 6px;
+		border: 3px solid rgb(255, 0, 0);
+		-webkit-box-shadow:  5px 5px 6px 5px rgba(255, 10, 10, 0.4);
+        box-shadow:  5px 5px 6px 5px rgba(255, 0, 0, 0.4);
+	}
+	
+	.pr_comments{
+		padding:6px;
+		-webkit-border-radius: 6px;
+	    border-radius: 6px;
+		border: 3px solid rgb(0, 155, 255);
+		-webkit-box-shadow:  5px 5px 6px 5px rgba(0, 155, 255, 0.4);
+        box-shadow:  5px 5px 6px 5px rgba(0, 155, 255, 0.4);
+	}
+	
+	.pr_videos{
+		padding:6px;
+		margin-bottom:15px;
+		-webkit-border-radius: 6px;
+	    border-radius: 6px;
+		border: 3px solid rgb(41, 255, 6);
+		-webkit-box-shadow:  5px 5px 6px 5px rgba(41, 255, 6, 0.4);
+        box-shadow:  5px 5px 6px 5px rgba(41, 255, 6, 0.4);
+	}
+	
+	.pr_fotos{
+		padding:6px;
+		-webkit-border-radius: 6px;
+	    border-radius: 6px;
+		border: 3px solid rgb(254, 223, 14);
+		-webkit-box-shadow:  5px 5px 6px 5px rgba(254, 223, 14, 0.4);
+        box-shadow:  5px 5px 6px 5px rgba(254, 223, 14, 0.4);
+	}
+	
+	
+		
+
 /* ------------------------------------------------------------------------*/
 /*	Estos son las declaraciones propias. Estas deberian ser incrustadas en el 
  *  sitio correcto del archivo cuando proceda
  */
+
+
+
 .test{
 	background: url(../img/imgPruebas.jpg) no-repeat center center fixed; 
 	-webkit-background-size: cover;
@@ -878,7 +926,6 @@ footer .address {
 
 #copyright {
   padding:12px 0 6px 0;
-  background:#000;
   font-size:13px;
 }
 

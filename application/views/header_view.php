@@ -18,7 +18,7 @@
 		Bienvenido, 
 	   <?php echo $this->session->userdata['user'] ?>    
 	  	<br />	     
-	  	<a href="<?php echo base_url()?>user/profileC">Perfil&nbsp;&nbsp;</a>|
+	  	<a href="<?php echo base_url()?>user/profile">Perfil&nbsp;&nbsp;</a>|
 	<a href="<?php echo base_url() ?>user/logout">&nbsp;&nbsp;Salir</a>
 		<?php }else{ ?>
 			<div class="alert alert-error fade in">

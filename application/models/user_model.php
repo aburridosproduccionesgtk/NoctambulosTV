@@ -86,6 +86,17 @@ class User_model extends CI_Model {
 				return $result['user_name'];
 			}	*/
 		}
+
+		function get_user_by_id($id){
+			$query = $this->db->get_where("user", array("id" => $id));
+			 
+			return $query->row();
+		/*	if($result->user_name == NULL){
+				return NULL;
+			}else{
+				return $result['user_name'];
+			}	*/
+		}
 		
 		public function add_unern ($id,$usern){
 			$this->db->where('id',$id);
@@ -97,6 +108,21 @@ class User_model extends CI_Model {
 			$this->db->update("pr_information", $data);
 		}
 	
+		public function get_user_comment($id){
+			 $this->db->select('id_vid, mensaje, fecha');
+			// $this->db->from('comments');
+			 $this->db->order_by('fecha','desc');	
+			 $query = $this->db->get_where("comments", array("id_user" => $id));
+             return $query->result();
+		}
+		
+		public function get_user_photos($id)
+		{
+			$this->db->select('id_foto, mensaje, cm_date');
+			$this->db->order_by('cm_date','cm_date');	
+			$query = $this->db->get_where("comments_fotos", array("id_user" => $id));
+            return $query->result();
+		}
 	//TODO a partir de aqui todo es borrable.......
 	/*
 	

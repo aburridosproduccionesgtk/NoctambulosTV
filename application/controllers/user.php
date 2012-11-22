@@ -149,7 +149,7 @@ class user extends CI_Controller {
 		redirect("secciones");
 	}
 	
-	function profile(){
+	function profile_update(){
 		//$data['hoby'] = ;
 		$id = $this->session->userdata('id');
 
@@ -209,11 +209,28 @@ class user extends CI_Controller {
 			 
 	}
 	
-	public function profileC(){
+	public function profile(){
+		$id = $this->session->userdata('id');
+		$data['user'] = $this->user_model->get_user_by_id($id);
+		//$data['comments_men'] 
+		$comen_foto= $this->user_model->get_user_comment($id);
+		$data['interest'] = $this->user_model->get_pr_interest($id);
+		//$data['foto_com'] 
+		$comen_vid = $this->user_model->get_user_photos($id);
+		
+		$commentF = array()
+		foreach($comment_foto as $c) {
+			 $commenF['tipe'] = 'foto';
+			 $commentF['fecha'] = fecha_norm($c->fecha);
+			 $commentF['mensaje'] = $c->mensaje;
+			 
+		}
+		
+		$data['comments'] = array_push($comen_foto,$comen_vid); 
 		$this-> __draw_before_content();
-		$this->template->write_view("content","profileform");
+		$this->template->write_view("content","profile",$data,TRUE);
 		$this->__draw_after_content();
 	}
 	
 
-	}
+}

@@ -47,6 +47,11 @@ function cambiaf_a_mysql($fecha){
 	return $fecha2;
 }
 
+function fecha_norm($fecha){
+	$fecha2 = date("d-m-Y",strtotime($fecha));
+	return $fecha2;
+}
+
 function datecheck($input,$format)
 {
 	$separator_type= array(
