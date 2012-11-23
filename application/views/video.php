@@ -14,7 +14,7 @@
 	<div class="span4" >
 		 <div class="commentarios">
 		    <h4>Comentarios</h4> 
-		    <div class="comentconatiner">
+		    <div class="comentcontainer">
 		  	 <?php  if ($comments == null ){ ?>
 		  	 	<p>Aun no hay comentarios para este video.</p>
 		  	 	<p>Registrate y se el primero en comentar.</p>
