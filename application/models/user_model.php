@@ -123,6 +123,20 @@ class User_model extends CI_Model {
 			$query = $this->db->get_where("comments_fotos", array("id_user" => $id));
             return $query->result();
 		}
+		
+		public function saredm($share){
+			$query = $this->db->get_where("sharem", array($share));
+			 
+			$result = $query->result();
+			if($result == null){
+				$this->db->insert('sharem',$share);
+				return "Medio compartido";
+				
+			}else{
+				return "Ya has compartido este medio";
+			}
+			
+		}
 	//TODO a partir de aqui todo es borrable.......
 	/*
 	

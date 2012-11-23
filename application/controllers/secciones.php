@@ -297,6 +297,15 @@ class secciones extends CI_Controller {
 		
 	}
 	
+	public function sharem($idmed,$tipe)
+	{
+		$share['id_dest'] = strip_tags($_POST['id_dest']);
+		$share['id_orig'] =  get_user_id();
+		$share['tipe'] = $tipe;
+		$share['id_med'] = $idmed;
+		$this->video_model->saredm($shared);
+	}
+	
 	
 	
 	
