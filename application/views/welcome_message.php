@@ -8,7 +8,21 @@
 	  	<script type="text/javascript" src="<?= base_url() ?>js/jQRotate2.js"></script>
 	  	 <script type="text/javascript" src="<?= base_url() ?>js/test.js"></script>
 	  	  	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>css/pruebas.css" /> -->
+	     <script>window.jQuery || document.write('<script type="text/javascript" src="<?php echo base_url() ?>js/jquery.js"><\/script>')</script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+	    <script type='text/javascript' src='<? echo base_url() ?>js/jquery.fancybox-1.3.4.pack.js'></script>
+	   <script type="text/javascript">
+	   	$("#tip5").fancybox({
+	'scrolling'		: 'no',
+	'titleShow'		: false,
+	'onClosed'		: function() {
+	    $("#login_error").hide();
+	}
+});
+	   </script>
+
 	<style type="text/css">
+   
 
 	::selection{ background-color: #E13300; color: white; }
 	::moz-selection{ background-color: #E13300; color: white; }
@@ -74,35 +88,41 @@
 	</style>
 </head>
 <body>
-
+    <a id="tip5" title="Login" href="#login_form">Try now</a>
+       
 <div id="container">
-	<h1>Welcome to CodeIgniter!</h1>
-  <?php echo print_array($hoby) ?>
-   <?php echo print_array($sex) ?>
-   <?php echo print_array($provincia) ?>
-   <?php echo print_array($feast_location) ?>
-   <?php echo print_array($ocuppation) ?>
-     <?php echo print_array($fallo) ?>
-	<div id="body">
-		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
-
-		<p>If you would like to edit this page you'll find it located at:</p>
-		<code>application/views/welcome_message.php</code>
-		<div id="image">ssadf</div>
-		<p>The corresponding controller for this page is found at:</p>
-		<code>application/controllers/welcome.php</code>
-
-		<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
-        <p>Estas usando <?= $info_agent?><p>
-        <p>Y otra cosa <?php echo $control ?> mas<p>
-        	<p><?php echo base_url() ?></p>
-        <p><a href="<?php echo base_url().'home/' ?>">Prueba de fuego</a></p>	
-	</div>
-
-	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
-	</div>
-	<div style="border: 3px solid white">
-	hoaalala
+	<a class="mintex" id="pass_rec" href="#share_med">No recuerdo mi contraseña</a>
+		<div style="display:none">
+			
+			<form id="share_med" method="post" action="">
+		  <div class="contact">	 hpppñaaaaaa
+		  	  	<input type="submit" value="   Compartir Video   " name="submit" id="submit" class="btn btn-btn-small btn-primary" />
+		  	  	<input type="hidden" name="id_dest" id="id_dest" value="2" />
+		  	  	<input type="hidden" name="v_id" id="v_id" value="" />
+	   	 </div> 
+	   		</form>
+	   	</div>
+		
+<div style="display:none">
+	<form id="login_form" method="post" action="">
+	    	<p id="login_error">Please, enter data</p>
+		<p>
+			<label for="login_name">Login: </label>
+			<input type="text" id="login_name" name="login_name" size="30" />
+		</p>
+		<p>
+			<label for="login_pass">Password: </label>
+			<input type="password" id="login_pass" name="login_pass" size="30" />
+		</p>
+		<p>
+			<input type="submit" value="Login" />
+		</p>
+		<p>
+		    <em>Leave empty so see resizing</em>
+		</p>
+	</form>
+</div>
+		
 		
 		</div> 
 </body>

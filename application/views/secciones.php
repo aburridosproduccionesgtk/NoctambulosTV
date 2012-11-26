@@ -5,7 +5,7 @@
       		<nav id="lnav" class="span4">
       			<ul>
       				<li>
-      					<a class="programacion" href="#" >Programación</a>
+      					<a class="programacion" href="<?php echo base_url('welcome') ?>" >Programación</a>
       				</li>
       				<li>
       				<a class="ocio" href="<?php echo base_url() ?>secciones/ocio" >ocio y cultura</a> 

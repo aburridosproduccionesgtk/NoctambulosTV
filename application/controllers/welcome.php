@@ -26,7 +26,7 @@ class Welcome extends CI_Controller {
 			$data['control']= "hollaaa";
 		}
 	//	$this->write_view('welcome_message',$data);
-		$this->load->view('pruebas');
+		$this->load->view('welcome_message');
 	}
 }
 

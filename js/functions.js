@@ -37,6 +37,13 @@ jQuery(function() {
 	}
 	
 	/* recuperacion de contraseña */
+	$("#tip5").fancybox({
+		'scrolling'		: 'no',
+		'titleShow'		: false,
+		'onClosed'		: function() {
+		    $("#login_error").hide();
+		}
+	});
 	
 	$("#pass_rec").fancybox({
 		'scrolling'		: 'no',
