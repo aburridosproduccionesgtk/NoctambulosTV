@@ -1,28 +1,24 @@
- <script type="text/javascript" src="<?php echo base_url() ?>js/functions.js"></script>
-  <script type="text/javascript" src="<?php echo base_url() ?>js/jquery.flexslider-min.js"></script>
-
-    <script type="text/javascript" src="<?php echo base_url() ?>js/modernizr.custom.81963.js"></script> 
+ 
 <div class="container contact">
       <div class="row">
-		<?php if( is_logged_in()){ ?>  
-		 	<a class="mintex" id="fancybox" href="#share_med">No recuerdo mi contraseña</a>
-		<?php }else{ ?>
-			<input type="submit" disabled="disabled" value="   Compartir Video   " name="submit" id="submit" class="btn btn-btn-small btn-primary" />
-		<?php } ?>	
-		<a class="mintex" id="pass_rec" href="#share_med">No recuerdo mi contraseña</a>
+		
+		
 		<div style="display:none">
 			
+			<img src="<?php echo base_url('img/fotos/3/IMG_5181.jpg')?>" />
 			<form id="share_med" method="post" action="">
-		  <div class="contact">	 hpppñaaaaaa
+		  	 hpppñaaaaaa
 		  	  	<input type="submit" value="   Compartir Video   " name="submit" id="submit" class="btn btn-btn-small btn-primary" />
 		  	  	<input type="hidden" name="id_dest" id="id_dest" value="2" />
 		  	  	<input type="hidden" name="v_id" id="v_id" value="<?php echo $video[0]->id ?>" />
-	   	 </div> 
 	   		</form>
+	   
 	   	</div>
 	<h2 style="text-transform:none; margin-top:-30px; margin-left:20px"><?php echo $video[0]->title ?></h2>
 	<div class="span8">
-		<iframe width="750" height="480" style="float: right" src="<?php echo $video[0]->link ?>" frameborder="0" allowfullscreen></iframe>
+		
+		<iframe width="750" height="480" style="float: right" src="<?php echo $video[0]->link ?>?rel=0&wmode=transparent" frameborder="0" allowfullscreen seamless="seamless">
+			</iframe>
 		
 	</div>
 	<div class="span4" >
@@ -54,7 +50,11 @@
 		  	    
 		 </div>
 	</div>	 
-	
+	<?php if( is_logged_in()){ ?>  
+		 	<a class="fancybox" href="#share_med">No recuerdo mi contraseña</a>
+		<?php }else{ ?>
+			<input type="submit" disabled="disabled" value="   Compartir Video   " name="submit" id="submit" class="btn btn-btn-small btn-primary" />
+		<?php } ?>	
 		  <?php  if ($foto != null){ ?>
      
  		<h3 class="span4">Fotos</h1>
@@ -66,7 +66,7 @@
                    <li>
                   	 <a class="fancybox" rel="fotoVideo" href="<?php echo base_url() ?>secciones/foto/<?php echo $f->id ?>">
                    	<div>
-                   		<img width="100px" height="70px" ="list-style: none" src="<?php echo base_url() ?>img/fotos/<?php echo $f->tipe."/".$f->name ?>">
+                   		<img width="100px" height="70px" ="list-style: none" src="<?php echo base_url() ?>img/fotos/<?php echo $f->tipe."/".$f->name ?>" />
          			</div>	
                  	 </a>
                 	</li>	

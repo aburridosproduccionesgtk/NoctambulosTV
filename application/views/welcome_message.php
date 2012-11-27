@@ -8,11 +8,12 @@
 	  	<script type="text/javascript" src="<?= base_url() ?>js/jQRotate2.js"></script>
 	  	 <script type="text/javascript" src="<?= base_url() ?>js/test.js"></script>
 	  	  	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>css/pruebas.css" /> -->
-	     <script>window.jQuery || document.write('<script type="text/javascript" src="<?php echo base_url() ?>js/jquery.js"><\/script>')</script>
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-	    <script type='text/javascript' src='<? echo base_url() ?>js/jquery.fancybox-1.3.4.pack.js'></script>
+	  	  	  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+		     <script type='text/javascript' src='<? echo base_url() ?>js/jquery.fancybox-1.3.4.pack.js'></script>
+		
+	  
 	   <script type="text/javascript">
-	   	$("#tip5").fancybox({
+	   	$("#prueba").fancybox({
 	'scrolling'		: 'no',
 	'titleShow'		: false,
 	'onClosed'		: function() {
@@ -91,7 +92,7 @@
     <a id="tip5" title="Login" href="#login_form">Try now</a>
        
 <div id="container">
-	<a class="mintex" id="pass_rec" href="#share_med">No recuerdo mi contraseña</a>
+	<a class="mintex" id="prueba" href="#share_med">No recuerdo mi contraseña</a>
 		<div style="display:none">
 			
 			<form id="share_med" method="post" action="">

@@ -30,7 +30,8 @@
       .fluid-width-video-wrapper iframe,  \
       .fluid-width-video-wrapper object,  \
       .fluid-width-video-wrapper embed {  \
-         position: absolute;              \
+         position: absolute;     		  \
+    	 z-index:0;						  \
          top: 0;                          \
          left: 0;                         \
          width: 100%;                     \

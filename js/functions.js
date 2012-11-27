@@ -20,7 +20,8 @@ jQuery(function() {
 	if( $fancy.length ) {
 		$fancy.fancybox({
 			'transitionIn'	:	'elastic',
-			'transitionOut'	:	'elastic'
+			'transitionOut'	:	'elastic',
+			'overlayShow'	:	true
 				
 		
 		});
@@ -37,13 +38,7 @@ jQuery(function() {
 	}
 	
 	/* recuperacion de contraseña */
-	$("#tip5").fancybox({
-		'scrolling'		: 'no',
-		'titleShow'		: false,
-		'onClosed'		: function() {
-		    $("#login_error").hide();
-		}
-	});
+	
 	
 	$("#pass_rec").fancybox({
 		'scrolling'		: 'no',
