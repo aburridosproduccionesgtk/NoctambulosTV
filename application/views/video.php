@@ -3,25 +3,30 @@
       <div class="row">
 		
 		
-		<div style="display:none">
-			
+		<div style="display:none">			
 			<img src="<?php echo base_url('img/fotos/3/IMG_5181.jpg')?>" />
 			<form id="share_med" method="post" action="">
-		  	 hpppñaaaaaa
+		  
 		  	  	<input type="submit" value="   Compartir Video   " name="submit" id="submit" class="btn btn-btn-small btn-primary" />
 		  	  	<input type="hidden" name="id_dest" id="id_dest" value="2" />
 		  	  	<input type="hidden" name="v_id" id="v_id" value="<?php echo $video[0]->id ?>" />
 	   		</form>
-	   
 	   	</div>
-	<h2 style="text-transform:none; margin-top:-30px; margin-left:20px"><?php echo $video[0]->title ?></h2>
+	
 	<div class="span8">
-		
+		<h2 style="text-transform:none; margin-top:-30px; margin-left:20px"><?php echo $video[0]->title ?></h2>
 		<iframe width="750" height="480" style="float: right" src="<?php echo $video[0]->link ?>?rel=0&wmode=transparent" frameborder="0" allowfullscreen seamless="seamless">
 			</iframe>
 		
 	</div>
 	<div class="span4" >
+			<?php if( is_logged_in()){ ?>  
+			   <div class="compartir">
+		 			<a class="fancybox" href="#share_med">Comparte este video</a>
+		 		</div>
+			<?php } ?>
+			
+			
 		 <div class="commentarios">
 		    <h4>Comentarios</h4> 
 		    <div class="comentcontainer">
@@ -50,14 +55,11 @@
 		  	    
 		 </div>
 	</div>	 
-	<?php if( is_logged_in()){ ?>  
-		 	<a class="fancybox" href="#share_med">No recuerdo mi contraseña</a>
-		<?php }else{ ?>
-			<input type="submit" disabled="disabled" value="   Compartir Video   " name="submit" id="submit" class="btn btn-btn-small btn-primary" />
-		<?php } ?>	
+	
 		  <?php  if ($foto != null){ ?>
      
  		<h3 class="span4">Fotos</h1>
+ 			
  		  <div class="span4">
  			<div class="flex-container-mini" style="padding-left: 0px">
                 <div class="flexslider">
