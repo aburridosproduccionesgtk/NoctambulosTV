@@ -101,7 +101,25 @@ $(document).ready(function(){
 	$('#main_container').load('home/secciones');
 });*/
  	
- 
+ 	
+
+ 	/*	$.ajax({
+			type	: "POST",
+			url		: 'user/searchUser',
+			dataType : 'getJson',
+			headers  : { 'X-fancyBox': true },
+		//	cache	: false,
+		//	data		: $(this).serializeArray(),
+			//dataType: 'getJson',
+			success: function(datos) {
+				alert('estan pasando cosas');
+				$.fancybox(datos);
+				//$.fancybox.append(datos);
+				//
+			//	$('#userlist').append(datos);
+			}
+		});*/
+	
  	
 	function MenuHover(param)
 	{

@@ -236,5 +236,10 @@ class user extends CI_Controller {
 		$this->__draw_after_content();
 	}
 	
+	public function searchUser(){
+		
+		$mensaje = $_POST['user'];
+		echo json_encode($mensaje);
+	}
 
 }

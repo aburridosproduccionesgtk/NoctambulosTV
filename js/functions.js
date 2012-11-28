@@ -48,33 +48,7 @@ jQuery(function() {
 		}
 	});
 	
-	/*$('#upload_foto').click(function(e){
 		
-		 e.preventDefault();
-		
-		window.history.go(-1);
-	
-		
-	   });*/
-	/*$("#form_foto").bind("submit", function() {
-
-		
-		$.fancybox.showActivity();
-
-		$.ajax({
-			type		: "POST",
-			url		: "user/uploadPhoto",
-			cache: false,
-			data		: $(this).serializeArray(),
-			 dataType: 'json',
-			success: function(data) {
-				$.fancybox(data);
-			}
-		});
-
-		return false;
-	});*/
-	
 	$("#recovery_pass").bind("submit", function() {
 
 		
@@ -93,6 +67,27 @@ jQuery(function() {
 
 		return false;
 	});
+	
+
+		$('#share_med').bind('submit', function() {
+		    
+			$.fancybox.showActivity();
+			
+			$.ajax({
+			type : "POST",
+			URL : "user/searchUser",
+			cache : false,
+			data : $(this).serializeArray(),
+			dataType: 'json',
+			success: function(data) {
+				alert('entramos aqui');
+				$.fancybox(data);
+				
+				
+			}
+			});
+			return false;
+		});
 	
 	
 	/* Accordion */ 

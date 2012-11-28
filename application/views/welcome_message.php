@@ -10,17 +10,7 @@
 	  	  	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>css/pruebas.css" /> -->
 	  	  	  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
 		     <script type='text/javascript' src='<? echo base_url() ?>js/jquery.fancybox-1.3.4.pack.js'></script>
-		
-	  
-	   <script type="text/javascript">
-	   	$("#prueba").fancybox({
-	'scrolling'		: 'no',
-	'titleShow'		: false,
-	'onClosed'		: function() {
-	    $("#login_error").hide();
-	}
-});
-	   </script>
+		 <script type="text/javascript" src="<?php echo base_url() ?>js/test.js"></script>
 
 	<style type="text/css">
    
@@ -89,40 +79,18 @@
 	</style>
 </head>
 <body>
-    <a id="tip5" title="Login" href="#login_form">Try now</a>
-       
-<div id="container">
-	<a class="mintex" id="prueba" href="#share_med">No recuerdo mi contraseña</a>
-		<div style="display:none">
-			
-			<form id="share_med" method="post" action="">
-		  <div class="contact">	 hpppñaaaaaa
+    
+
+		
+<form id="share_med" method="post" action="">
+		  		<input type="text" id="user" onkeypress="javascript:searchuser()" />
+		  		<div id="userlist">
+		  			
+		  		</div>
 		  	  	<input type="submit" value="   Compartir Video   " name="submit" id="submit" class="btn btn-btn-small btn-primary" />
 		  	  	<input type="hidden" name="id_dest" id="id_dest" value="2" />
-		  	  	<input type="hidden" name="v_id" id="v_id" value="" />
-	   	 </div> 
+		  	  
 	   		</form>
-	   	</div>
-		
-<div style="display:none">
-	<form id="login_form" method="post" action="">
-	    	<p id="login_error">Please, enter data</p>
-		<p>
-			<label for="login_name">Login: </label>
-			<input type="text" id="login_name" name="login_name" size="30" />
-		</p>
-		<p>
-			<label for="login_pass">Password: </label>
-			<input type="password" id="login_pass" name="login_pass" size="30" />
-		</p>
-		<p>
-			<input type="submit" value="Login" />
-		</p>
-		<p>
-		    <em>Leave empty so see resizing</em>
-		</p>
-	</form>
-</div>
 		
 		
 		</div> 
