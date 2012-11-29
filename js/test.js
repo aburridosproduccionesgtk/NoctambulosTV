@@ -189,7 +189,12 @@ $(document).ready(function(){
 	}*/
 		  
 	//
- 	function login_toggle()
+ 	function sharemed(){
+ 		$('.compartir').hide();
+ 		$('#user_share').toggle(function(){});
+ 	}
+	
+	function login_toggle()
 	{
  	//	$('.login_container').removeClass('span4');
  		//$('.login_container').addClass('span6');
@@ -244,7 +249,7 @@ $(document).ready(function(){
  		
  	});
  	
- 	
+ 
  	
  	
  	
@@ -294,7 +299,7 @@ $(document).ready(function(){
  		      success: function(output_string) {
  		    	  var exito = output_string;
  		    	  if(exito ==='log'){
- 		    		  alert('entro aqui');
+ 		    		 
  		    		 this.reload();
  		    	  }else{
  		    

@@ -238,8 +238,12 @@ class user extends CI_Controller {
 	
 	public function searchUser(){
 		
-		$mensaje = $_POST['user'];
-		echo json_encode($mensaje);
+		 $data['html'] = '<select name="cosa" id="cosa" size="3">
+<option value="1" >Telefonía</option>
+<option value="2">Oficina</option>
+<option value="3">Informática</option></select>';
+ 
+        $this->load->view('responce', $data);
 	}
 
 }

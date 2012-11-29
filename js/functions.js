@@ -68,27 +68,6 @@ jQuery(function() {
 		return false;
 	});
 	
-
-		$('#share_med').bind('submit', function() {
-		    
-			$.fancybox.showActivity();
-			
-			$.ajax({
-			type : "POST",
-			URL : "user/searchUser",
-			cache : false,
-			data : $(this).serializeArray(),
-			dataType: 'json',
-			success: function(data) {
-				alert('entramos aqui');
-				$.fancybox(data);
-				
-				
-			}
-			});
-			return false;
-		});
-	
 	
 	/* Accordion */ 
 	var $accordion = $('.accordion');

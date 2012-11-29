@@ -1,20 +1,16 @@
- 
+ <script type="text/javascript">
+    $(document).ready(function(){
+       $("#user").on('keypress',function(){
+     
+            $("#userlist").load("<?php echo base_url() ?>user/searchUser");
+        });
+    });
+</script>
 <div class="container contact">
       <div class="row">
 		
 		
-		<div style="display:none">			
-			<img src="<?php echo base_url('img/fotos/3/IMG_5181.jpg')?>" />
-			<form id="share_med" method="post" action="">
-		  		<input type="text" id="user" name="user" />
-		  		<div id="userlist">
-		  			
-		  		</div>
-		  	  	<input type="submit" value="   Compartir Video   " name="submit" id="submit" class="btn btn-btn-small btn-primary" />
-		  	  	<input type="hidden" name="id_dest" id="id_dest" value="2" />
-		  	  
-	   		</form>
-	   	</div>
+		
 	
 	<div class="span8">
 		<h2 style="text-transform:none; margin-top:-30px; margin-left:20px"><?php echo $video[0]->title ?></h2>
@@ -25,9 +21,22 @@
 	<div class="span4" >
 			<?php if( is_logged_in()){ ?>  
 			   <div class="compartir">
-			   <a class="fancybox"	href="<?php echo base_url() ?>welcome">enlace</a>
-		 			<a class="fancybox" href="#share_med">Comparte este video</a>
+			   
+		 			<a href="javascript:sharemed()">Comparte este video</a>
 		 		</div>
+		 		<div id="user_share" style="display:none">			
+			
+			<form id="share_med" method="post" action="" style="margin-top:-10px; margin-bottom:5px" >
+		  		<input type="text" id="user" name="user" style="width: 70%; float:left; margin-right:10px" />
+		  		
+		  	  	<input type="submit" value=" Compartir " name="submit" id="submit" class="btn btn-btn-small btn-primaryb" />
+		  	  	<input type="hidden" name="id_dest" id="id_dest" value="2" />
+		  	  
+	   		</form>
+	   		<div id="userlist">
+		  			
+		  		</div>
+	   	</div>
 			<?php } ?>
 			
 			
