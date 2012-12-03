@@ -64,18 +64,7 @@ function __construct()
 		$this->db->insert("comments_fotos", $coment);
 	}
 	
-	function sared_m($share){
-		
-		$query = $this->db->get_where('sharem',$share);
-		
-		if($query->result() != null){
-			
-			//si el objeto ya existe en la base de datos, no hace falta actualizarlo.
-		}else{
-			
-			$this->db->insert('sharem',$share);
-		}
-	}
+	
 }
 
 ?>

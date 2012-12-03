@@ -124,18 +124,26 @@ class User_model extends CI_Model {
             return $query->result();
 		}
 		
-		public function saredm($share){
-			$query = $this->db->get_where("sharem", array($share));
-			 
-			$result = $query->result();
-			if($result == null){
-				$this->db->insert('sharem',$share);
-				return "Medio compartido";
+		function sared_m($share){
+		
+			$query = $this->db->get_where('sharem',$share);
+		
+			if($query->result() != null){
 				
+			//si el objeto ya existe en la base de datos, no hace falta actualizarlo.
 			}else{
-				return "Ya has compartido este medio";
-			}
 			
+			$this->db->insert('sharem',$share);
+			}
+		}
+		
+		
+		
+		public function search_user($user){
+			   $user = '%'.$user.'%';
+				$query = $this->db->query('SELECT user_name FROM user WHERE user_name LIKE ?',array($user));
+			
+			return $query->result();
 		}
 	//TODO a partir de aqui todo es borrable.......
 	/*

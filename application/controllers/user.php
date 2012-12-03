@@ -236,14 +236,34 @@ class user extends CI_Controller {
 		$this->__draw_after_content();
 	}
 	
-	public function searchUser(){
+	public function searchUser($user){
 		
-		 $data['html'] = '<select name="cosa" id="cosa" size="3">
-<option value="1" >Telefonía</option>
-<option value="2">Oficina</option>
-<option value="3">Informática</option></select>';
- 
-        $this->load->view('responce', $data);
+		$share = $this->user_model->search_user($user);	  
+		$lista = '<ul id="lista_share">';
+		  	foreach ($share as $s) {
+				$lista = $lista."<li onclick='javascript:elegido()' class='item_share' title='$s->user_name'>".$s->user_name."</li>";
+			}
+		$lista = $lista.'</ul>';
+		$data['html'] = $lista;
+		$this->load->view('responce', $data);
 	}
+	
+	public function sharemed(){
+		
+		$destinatario = strip_tags($_POST['id_dest']);
+		//TODO: facer aqui una busqueda por nombre de usuario
+		$share['tipe'] = $tipe;
+		$share['id_med'] = $idmed;
+		$share['id_orig'] =  get_user_id();
+		
+		//TODO: meter el html en el modelo...
+		$mensaje = $this->user_model->sared_m($share);
+		
+		
+		
+		$this->load->view('resconce',$mensaje);
+		
+	}
+	
 
 }

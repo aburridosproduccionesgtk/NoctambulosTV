@@ -119,7 +119,7 @@ $(document).ready(function(){
 			//	$('#userlist').append(datos);
 			}
 		});*/
-	
+ 	
  	
 	function MenuHover(param)
 	{
@@ -250,7 +250,11 @@ $(document).ready(function(){
  	});
  	
  
- 	
+ 	function elegido(){
+ 		var j = $('#lista_share li').attr('title');
+ 		$('#user').attr('value',j);
+ 		$('#userlist').hide(); 		
+ 	}
  	
  	
  	$(function() {

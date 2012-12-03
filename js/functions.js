@@ -69,6 +69,8 @@ jQuery(function() {
 	});
 	
 	
+//	$('#lista_share li').attr('title');
+	 
 	/* Accordion */ 
 	var $accordion = $('.accordion');
 	if( $accordion.length ) {

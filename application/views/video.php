@@ -1,9 +1,17 @@
  <script type="text/javascript">
     $(document).ready(function(){
-       $("#user").on('keypress',function(){
-     
-            $("#userlist").load("<?php echo base_url() ?>user/searchUser");
-        });
+      $("#user").on('keypress',function(){
+ 		//var us = $('#userlist').val();
+ 		var user = $('#userlist');
+ 		var us = this.value;
+ 		
+ 		if(us != ""){
+ 			user.show();
+ 			user.load("<?php echo base_url() ?>user/searchUser/"+this.value);
+ 		}
+	 	});
+	 	
+	
     });
 </script>
 <div class="container contact">
@@ -26,14 +34,13 @@
 		 		</div>
 		 		<div id="user_share" style="display:none">			
 			
-			<form id="share_med" method="post" action="" style="margin-top:-10px; margin-bottom:5px" >
+			<form id="share_med" method="post" action="<?php echo base_url() ?>user/sharemed/" style="margin-top:-10px; margin-bottom:5px" >
 		  		<input type="text" id="user" name="user" style="width: 70%; float:left; margin-right:10px" />
-		  		
-		  	  	<input type="submit" value=" Compartir " name="submit" id="submit" class="btn btn-btn-small btn-primaryb" />
-		  	  	<input type="hidden" name="id_dest" id="id_dest" value="2" />
-		  	  
+		  		<input type="hidden" name="tipe" id="tipe" value="V" />
+		  	  	<input type="submit" value=" Compartir " name="submit" id="submit" class="btn btn-btn-small btn-primary" />
+		  	  	<input type="hidden" name="id_med" id="id_med" value="<?php echo $video[0]->id ?>" />
 	   		</form>
-	   		<div id="userlist">
+	   		<div id="userlist" style="display: none">
 		  			
 		  		</div>
 	   	</div>
