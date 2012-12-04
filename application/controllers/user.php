@@ -218,10 +218,13 @@ class user extends CI_Controller {
 		//$data['foto_com'] 
 		$comen_foto = $this->user_model->get_user_photos($id);
 		
+		$aux = array();
 		$videos = $this->video_model->get_vid_com($id);
 		   foreach($videos as $v){
-		   	
+		     array_push($aux,$v);
 		   }
+		$data['fer'] =  $aux;
+		
 		
 		$commentF = array();
 		

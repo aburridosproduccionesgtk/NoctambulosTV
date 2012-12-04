@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+	<!--[if IE 7]>                  <html class="ie7 no-js" lang="en">    <![endif]-->
+	<!--[if lte IE 8]>              <html class="ie8 no-js" lang="en">     <![endif]-->
+	<!--[if (gte IE 9)|!(IE)]><!--> <html class="not-ie no-js" lang="en">  <!--<![endif]-->
  <html class="not-ie no-js" lang="es"> 
   <head>
     <meta charset="utf-8">
@@ -7,6 +10,9 @@
     <meta name="description" content="">
     <meta name="author" content="hesselek">
 
+	<script type="text/javascript">
+		var base_url = '<?php echo base_url();?>'
+	</script>
     <!-- Le styles -->
   	<?= $css ?>
   
@@ -22,9 +28,9 @@
     <![endif]-->
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
+    [if lt IE 9]
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    [endif]
 
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="ico/favicon.ico">
@@ -84,8 +90,8 @@
     <script type='text/javascript' src='<? echo base_url() ?>js/jquery.isotope.min.js'></script>
     <script type='text/javascript' src='<? echo base_url() ?>js/jquery.flexslider-min.js'></script>
     <script type='text/javascript' src='<? echo base_url() ?>js/jquery.fancybox-1.3.4.pack.js'></script>
-    <!--[if lt IE 9]>
-    <script type='text/javascript' src='<? echo base_url() ?>js/css3-mediaqueries.js'></script>
+   	<!--[if lt IE 9]>
+    	<script type="text/javascript" src="js/css3-mediaqueries.js"></script>
     <![endif]-->
   </body>
 </html>

@@ -66,7 +66,7 @@ function __construct()
 	
 	function get_vid_com($id)
 	{
-		$query = $this->db->query("SELECT * FROM sharem WHERE id_orig=? AND tipe='V'",array($id));
+		$query = $this->db->query("SELECT id_med FROM sharem WHERE id_orig=? AND tipe='V'",array($id));
 		return $query->result();
 	}
 	

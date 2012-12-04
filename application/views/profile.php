@@ -1,4 +1,4 @@
-<?php echo $fer ?>
+<?php print_array($fer) ?>
 <div class="span12">
 	<div class="row">
 		<div class="span5 pr_comments">

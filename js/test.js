@@ -231,7 +231,7 @@ $(document).ready(function(){
  				var dataString1 = 'email_log='+email_log+'&password_log='+password_log;
  				$.ajax({
  		 		      type: 'POST',
- 		 		      url: 'user/login',
+ 		 		      url: base_url+'user/login',
  		 		      data: dataString1,
  		 		     dataType: 'json',
  		 		      success: function(output_string) {
@@ -297,7 +297,7 @@ $(document).ready(function(){
  				
  				$.ajax({
  		      type: 'POST',
- 		      url: 'user/reg',
+ 		      url: base_url+'user/reg',
  		      data: dataString,
  		     dataType: 'json',
  		      success: function(output_string) {
@@ -309,6 +309,7 @@ $(document).ready(function(){
  		    
  		    		  $('#mensajito').show();
  		    		  $('#mensajito').html(output_string);
+ 		    		 
  		    	  } 
  		        }
  		     });
