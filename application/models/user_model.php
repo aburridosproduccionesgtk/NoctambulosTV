@@ -134,11 +134,20 @@ class User_model extends CI_Model {
 			}else{
 			
 			$this->db->insert('sharem',$share);
+			return "<div class='alert alert-success fade in'>
+                <a class='close' data-dismiss='alert'>x</a><strong>
+		  			El usuario ha sido creado correctamente
+              	</div>";
 			}
 		}
 		
-		
-		
+		public function get_user_by_username($username)
+		{
+				$query = $this->db->get_where("user", array("user_name" => $username));
+				$result = $query->result();
+				return $result[0]->id;
+		}	
+			
 		public function search_user($user){
 			   $user = '%'.$user.'%';
 				$query = $this->db->query('SELECT user_name FROM user WHERE user_name LIKE ?',array($user));

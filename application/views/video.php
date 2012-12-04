@@ -1,8 +1,9 @@
  <script type="text/javascript">
     $(document).ready(function(){
+     var user = $('#userlist');
       $("#user").on('keypress',function(){
  		//var us = $('#userlist').val();
- 		var user = $('#userlist');
+ 		
  		var us = this.value;
  		
  		if(us != ""){
@@ -10,7 +11,10 @@
  			user.load("<?php echo base_url() ?>user/searchUser/"+this.value);
  		}
 	 	});
-	 	
+	 	$('#submit1').click(function()  {
+		   alert('video compartido!!!');
+		   
+		 });
 	
     });
 </script>
@@ -37,7 +41,7 @@
 			<form id="share_med" method="post" action="<?php echo base_url() ?>user/sharemed/" style="margin-top:-10px; margin-bottom:5px" >
 		  		<input type="text" id="user" name="user" style="width: 70%; float:left; margin-right:10px" />
 		  		<input type="hidden" name="tipe" id="tipe" value="V" />
-		  	  	<input type="submit" value=" Compartir " name="submit" id="submit" class="btn btn-btn-small btn-primary" />
+		  	  	<input type="submit" value=" Compartir " name="submit" id="submit1" class="btn btn-btn-small btn-primary" />
 		  	  	<input type="hidden" name="id_med" id="id_med" value="<?php echo $video[0]->id ?>" />
 	   		</form>
 	   		<div id="userlist" style="display: none">
@@ -62,6 +66,7 @@
 		  	  		 <input type="text" name="comments" id="comments">
 		  	    	 <input type="submit" value="   Enviar   " name="submit" id="submit" class="btn btn-btn-small btn-primary" />		  	   		 
 		  	   		 <input type="hidden" name="v_id" id="v_id" value="<?php echo $video[0]->id ?>" />
+		  	   		 
 		  	    </form>
 		  	    
 		  	    
@@ -78,7 +83,7 @@
 	
 		  <?php  if ($foto != null){ ?>
      
- 		<h3 class="span4">Fotos</h1>
+ 		<h4 class="span4">Fotos</h4>
  			
  		  <div class="span4">
  			<div class="flex-container-mini" style="padding-left: 0px">

@@ -8,6 +8,7 @@ class user extends CI_Controller {
 
 		parent::__construct();
 		$this->load->model('user_model','user_model',TRUE);
+		$this->load->model('video_model','video_model', TRUE);
 		$this->load->helper('global');
 		
 		//Debug
@@ -217,6 +218,11 @@ class user extends CI_Controller {
 		//$data['foto_com'] 
 		$comen_foto = $this->user_model->get_user_photos($id);
 		
+		$videos = $this->video_model->get_vid_com($id);
+		   foreach($videos as $v){
+		   	
+		   }
+		
 		$commentF = array();
 		
 		// $data['comments'] = $this->user_model->get_user_comment($id);
@@ -249,19 +255,15 @@ class user extends CI_Controller {
 	}
 	
 	public function sharemed(){
-		
-		$destinatario = strip_tags($_POST['id_dest']);
-		//TODO: facer aqui una busqueda por nombre de usuario
-		$share['tipe'] = $tipe;
-		$share['id_med'] = $idmed;
+		$username = strip_tags($_POST['user']);
+		$share['id_dest'] = $this->user_model->get_user_by_username($username);//TODO: facer aqui una busqueda por nombre de usuario
+		$share['tipe'] = strip_tags($_POST['tipe']);
+		$share['id_med'] = strip_tags($_POST['id_med']);
 		$share['id_orig'] =  get_user_id();
 		
 		//TODO: meter el html en el modelo...
-		$mensaje = $this->user_model->sared_m($share);
-		
-		
-		
-		$this->load->view('resconce',$mensaje);
+		$data['html'] = $this->user_model->sared_m($share);
+		redirect(base_url().'secciones/videos/'.$share['id_med']);
 		
 	}
 	

@@ -64,6 +64,11 @@ function __construct()
 		$this->db->insert("comments_fotos", $coment);
 	}
 	
+	function get_vid_com($id)
+	{
+		$query = $this->db->query("SELECT * FROM sharem WHERE id_orig=? AND tipe='V'",array($id));
+		return $query->result();
+	}
 	
 }
 

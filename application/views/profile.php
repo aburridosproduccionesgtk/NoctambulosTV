@@ -1,4 +1,4 @@
-
+<?php echo $fer ?>
 <div class="span12">
 	<div class="row">
 		<div class="span5 pr_comments">
@@ -28,7 +28,29 @@
 			<div class="span6 pr_comments">
 			
 				<h4>Videos Compartidos</h4>
-				videos	
+				
+					<div class="vertical">
+						<?php echo imagetext('ULTIMOS',30,array(255,255,255));?>
+					</div>
+		 			<div class="flex-container-nonav">
+		                <div class="flexslider">
+		                  <ul class="slides">               	
+		                 	 <?php foreach ($videos_dat as $v_dat){ ?>
+		                 <li>
+		                 	<a href="videos/<?php echo $v_dat->id ?>"> 
+			                  	<div>
+		    	              		<img style="border:3px solid <?php echo $color ?>;	list-style: none;
+		        			          	" src="<?php echo base_url() ?>img/tbvid/<?php echo $v_dat->id ?>.jpg" width="215" height="115" />
+		                  		</div>
+		                  	 	<p class="leyeVideo"><?php recorta($v_dat->title,45) ?></p>
+		                  	 </a>
+		                  </li>
+		                 
+		                  			<?php }?>
+		                  </ul>
+		              </div>
+					</div>
+		
 			
 			</div>
 		</div>
