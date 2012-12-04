@@ -69,6 +69,14 @@ function __construct()
 		$query = $this->db->query("SELECT id_med FROM sharem WHERE id_orig=? AND tipe='V'",array($id));
 		return $query->result();
 	}
+	function get_fot_com($id){
+		$query = $this->db->query("SELECT id_med FROM sharem WHERE id_orig=? AND tipe='F'",array($id));
+		return $query->result();
+	}
+	function get_foto_profile($id){
+		$query = $this->db->query("SELECT * FROM img WHERE id=?",array($id));
+		return $query->result();
+	}
 	
 }
 

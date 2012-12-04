@@ -175,6 +175,20 @@ jQuery(function() {
 					
 				});
 		    break;
+		    
+		 case 'flex-container-med':
+			 $flexslider.flexslider({
+					animation: "slide",              
+					animationLoop:false,
+					 slideshow: false,
+					 itemWidth:140, 
+					 itemMargin: 4,
+					 controlNav:false,
+					    minItems: 3,
+					    maxItems: 3,
+					
+				});
+		    break;
 			 
 		 }
 			

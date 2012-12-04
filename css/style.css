@@ -2617,7 +2617,7 @@ aside .categories li a:hover {
 .flexslider, .flexslider1 ul{padding-top:1px; list-style: none;}
 .flexslider, .flexslider1 .slides > li {position: relative;}
 /* Suggested container for "Slide" animation setups. Can replace this with your own, if you wish */
-.flex-container, .flex-container-nonav, .flex-container-fotos{
+.flex-container, .flex-container-nonav, .flex-container-fotos, .flex-container-med{
  	zoom: 1;
 	position: relative;
 	background: transparent;
@@ -2634,6 +2634,13 @@ aside .categories li a:hover {
 	background: transparent;
 	padding: 2px 25px;
 	
+}
+
+.flex-container-med{
+	zoom: 1;
+	position: relative;
+	background: transparent;
+	padding: 24px 20px;
 }
 
 /* Caption style */

@@ -309,6 +309,7 @@ $(document).ready(function(){
  		    
  		    		  $('#mensajito').show();
  		    		  $('#mensajito').html(output_string);
+ 		    		  	this.reload();
  		    		 
  		    	  } 
  		        }

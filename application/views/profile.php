@@ -1,4 +1,4 @@
-<?php print_array($fer) ?>
+
 <div class="span12">
 	<div class="row">
 		<div class="span5 pr_comments">
@@ -30,19 +30,19 @@
 				<h4>Videos Compartidos</h4>
 				
 					<div class="vertical">
-						<?php echo imagetext('ULTIMOS',30,array(255,255,255));?>
+						
 					</div>
-		 			<div class="flex-container-nonav">
+		 			<div class="flex-container-med">
 		                <div class="flexslider">
 		                  <ul class="slides">               	
 		                 	 <?php foreach ($videos_dat as $v_dat){ ?>
 		                 <li>
-		                 	<a href="videos/<?php echo $v_dat->id ?>"> 
+		                 	<a href="videos/<?php echo $v_dat[0]->id ?>"> 
 			                  	<div>
-		    	              		<img style="border:3px solid <?php echo $color ?>;	list-style: none;
-		        			          	" src="<?php echo base_url() ?>img/tbvid/<?php echo $v_dat->id ?>.jpg" width="215" height="115" />
+		    	              		<img style="border:3px solid;	list-style: none;
+		        			          	" src="<?php echo base_url() ?>img/tbvid/<?php echo $v_dat[0]->id ?>.jpg" width="140" height="80" />
 		                  		</div>
-		                  	 	<p class="leyeVideo"><?php recorta($v_dat->title,45) ?></p>
+		                  	 	<p class="leyeVideo"><?php recorta($v_dat[0]->title,25) ?></p>
 		                  	 </a>
 		                  </li>
 		                 
@@ -76,30 +76,27 @@
 			<div class="span6 pr_comments">
 				
 					<h4>Fotos compartidas</h4>
-					<div class="flex-container-fotos">
-                <div class="flexslider1">
+					<div class="flex-container-med">
+                <div class="flexslider">
                   <ul class="slides">     
-            	      	
+            	   <?php foreach($fotos_dat as $fo) { ?>   	
                    <li>
                   	 
                  
                   	
-                  	 <a rel="<?php echo $fo[$i]->id_vid ?>" class="fancybox" href="<?php echo base_url() ?>img/fotos/<?php echo $fo[$i]->tipe."/".$fo[$i]->name ?>">
+                  	 <a rel="<?php echo $fo[0]->tipe ?>" class="fancybox" href="<?php echo base_url() ?>img/fotos/<?php echo $fo[0]->tipe."/".$fo[0]->name ?>">
                   
-                   			<img style="border:3px solid 
-                   			     <?php echo $color; 
-                   			     if($i>0){
-                   			     	echo "display:none;";
-								 } ?>	list-style: none" src="<?php echo base_url().'img/fotos/'.$fo[$i]->tipe.'/'.$fo[$i]->name; ?>" 
-								 width="130" height="115" />
+                   			<img style="border:3px solid; 
+                   			     	list-style: none" src="<?php echo base_url().'img/fotos/'.$fo[0]->tipe.'/'.$fo[0]->name; ?>" 
+								 width="140" height="80" />
          			
          				</a>
                   	 
                    		
-         				<p class="leyeVideoF"><?php recorta($f['title'],30) ?></p>
+         		
                  	
                 	</li>	
-                
+                 <?php } ?>
                   </ul>
               </div>
 			</div>
