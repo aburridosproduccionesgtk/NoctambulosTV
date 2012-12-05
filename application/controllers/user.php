@@ -77,7 +77,7 @@ class user extends CI_Controller {
 			$valido = FALSE;
 		}	
 		
-		if($this->user_model->exist_username($user['email']))
+		if($this->user_model->checkmail($user['email']))
 		{
 				$mensaje = "<div class='alert alert-error fade in'>
                 <a class='close' data-dismiss='alert'>x</a><strong>El usuario ya existe
@@ -120,7 +120,7 @@ class user extends CI_Controller {
                 <a class='close' data-dismiss='alert'>x</a><strong>
 		  			El usuario no existe
               	</div>";
-			echo json_encode($mensaje);	
+			
 		}
 		
 			
@@ -133,39 +133,45 @@ class user extends CI_Controller {
 			$this->user_model->get_p_information($user->id);
 			
 			$mensaje = 'log'; 
-				
-				echo json_encode($mensaje);	
-			
+
 		}else{
 			$mensaje= "<div class='alert alert-error fade in'>
 		                <a class='close' data-dismiss='alert'>x</a><strong>
 				  			Contraseña incorrecta </strong>
 		              	</div>";
-					echo json_encode($mensaje);	
+					
 		}
+		echo json_encode($mensaje);	
 	}
 	
 	function logout(){
 		$this->session->sess_destroy();
 		redirect("secciones");
 	}
-	
+	function profileC(){
+		$this-> __draw_before_content();
+		$this->template->write_view("content","profileform");
+		$this->__draw_after_content();
+	}
 	function profile_update(){
-		//$data['hoby'] = ;
+		
 		$id = $this->session->userdata('id');
 
 		$data['ocuppation'] = strip_tags($_POST['ocuppation']);
 		$data['feast_location'] = strip_tags($_POST['feast_location']); 
 		$data['sex'] = strip_tags($_POST['sex']);
 		$data['provincia'] = strip_tags($_POST['provincia']);
-		
 		$this->user_model->add_information($id,$data);
-		$data['fallo'] = $this->user_model->get_user_name($id);
-		if($this->user_model->get_user_name($id)==NULL){
+		$usern['user_name'] = strip_tags($_POST['user_name']);
+		
+		$mensaje = $this->user_model->exist_username($usern);
+		if(!$this->user_model->exist_username($usern)) {
 			
-			$data['user_name'] = strip_tags($_POST['user_name']);
-			$usern['user_name'] = $data['user_name'];
+			
+			$mensaje = 'no existe el usuario';
 			$this->user_model->add_unern($id,$usern);
+		}else{
+			$idf = $this->user_model->get_user_by_username($usern);
 		}
 		
 		if(isset($_POST['Hoby'])){
@@ -177,9 +183,9 @@ class user extends CI_Controller {
 			$this->user_model->add_interest($datos,$id);
 			
 		}
-		
+		echo  $mensaje;
 		//redimensionar();
-		$this->load->view('welcome_message',$data);
+		
 	}
 	
 	function uploadPhoto()
@@ -259,14 +265,21 @@ class user extends CI_Controller {
 	
 	public function sharemed(){
 		$username = strip_tags($_POST['user']);
-		$share['id_dest'] = $this->user_model->get_user_by_username($username);//TODO: facer aqui una busqueda por nombre de usuario
+		$share['id_dest'] = $this->user_model->get_user_by_username($username);
 		$share['tipe'] = strip_tags($_POST['tipe']);
 		$share['id_med'] = strip_tags($_POST['id_med']);
 		$share['id_orig'] =  get_user_id();
+		$vmed = strip_tags($_POST['id_vid']);
+		
+		if($share['tipe']=="V"){
+			$medio = $share['id_med'];
+		}else{
+			$medio  = $vmed;
+		}
 		
 		//TODO: meter el html en el modelo...
 		$data['html'] = $this->user_model->sared_m($share);
-		redirect(base_url().'secciones/videos/'.$share['id_med']);
+		redirect(base_url().'secciones/videos/'.$medio);
 		
 	}
 	

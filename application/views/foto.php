@@ -27,7 +27,27 @@
 		  	  		 <input type="text" name="comments" id="comments" >
 		  	    	 <input type="submit" value="   Enviar   " name="submit" id="submit" class="btn btn-btn-small btn-primary" />
 		  	   		 <input type="hidden" name="v_id_foto" id="v_id_foto" value="<?php echo $foto[0]->id ?>"/>
+		  	   		 <input type ="hidden" name="id_vid" id="id_vid" value="<?php echo $foto[0]->id_vid ?>" />
 		  	    </form>
+		  	    <div id="comentcontainerParContainer">
+		  	    	<div class="compartir">
+			   
+		 				<a href="javascript:sharemed1()">Comparte esta foto</a>
+		 			</div>
+		 		</div>
+		 		<div id="user_share2" style="display:none">			
+			
+						<form method="post" action="<?php echo base_url() ?>user/sharemed/" style="margin-top:-10px; margin-bottom:5px" />
+					  		<input type="text" id="user" name="user" style="width: 70%; float:left; margin-top: 38px; margin-top: 37px;" />
+					  		<input type="hidden" name="tipe" id="tipe" value="F" />
+					  	  	<input type="submit" value=" Comparte " class="btn btn-btn-mini btn-primary" style="margin-top: 37px;" />
+					  	  	<input type="hidden" name="id_med" id="id_med" value="<?php echo $foto[0]->id ?>" />
+					  	  	<input type ="hidden" name="id_vid" id="id_vid" value="<?php echo $foto[0]->id_vid ?>" />
+				   		</form>
+	   				<div id="userlist" style="display: none">
+		  			
+		  			</div>
+	   			</div>
 		  	    
 		  	    <?php }else{ ?>
 		  	    	

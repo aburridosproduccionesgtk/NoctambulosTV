@@ -189,6 +189,11 @@ $(document).ready(function(){
 	}*/
 		  
 	//
+	function sharemed1(){
+		$('.compartir').hide();
+		$('.commentFcontainer').css('height','60%');
+		$('#user_share2').toggle(function(){});
+	}
  	function sharemed(){
  		$('.compartir').hide();
  		$('#user_share').toggle(function(){});
@@ -239,8 +244,9 @@ $(document).ready(function(){
  		 		    		location.reload();
  		 		    	  }else{
  		 		    
- 		 		    		  $('#formresult').show();
- 		 		    		  $('#formresult').html(output_string);
+ 		 		    		  $('#mensajito').show();
+ 		 		    		  $('#mensajito').html(output_string);
+ 		 		    		  widows.location.reloda();
  		 		    	  } 
  		 		       }
  		 		     });

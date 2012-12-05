@@ -82,15 +82,7 @@
     
 
 		
-<form id="share_med" method="post" action="">
-		  		<input type="text" id="user" onkeypress="javascript:searchuser()" />
-		  		<div id="userlist">
-		  			
-		  		</div>
-		  	  	<input type="submit" value="   Compartir Video   " name="submit" id="submit" class="btn btn-btn-small btn-primary" />
-		  	  	<input type="hidden" name="id_dest" id="id_dest" value="2" />
-		  	  
-	   		</form>
+<?php echo $data ?>
 		
 		
 		</div> 

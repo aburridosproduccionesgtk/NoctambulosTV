@@ -11,7 +11,7 @@ class User_model extends CI_Model {
         parent::__construct();
     }
     
-    function exist_username($username)
+    function checkmail($username)
     {
     	$query = $this->db->get_where("user", array("email" => $username));
     	$result = $query->result();
@@ -23,10 +23,14 @@ class User_model extends CI_Model {
     	}
     }
    		
-		function checkemail($email){
-			$sql = "SELECT email FROM user c WHERE c.email=?";
-			$query = $this->db->query($sql,array($email));
-			return $query->row();
+		function exist_username($user){
+			$query = $this->db->get_where("user", $user);
+    		$result = $query->result();
+			if($result == null){
+				return false;
+			}else{
+				return true;
+			}
 		}
 		
 		function get_user_by_email($email)
@@ -99,8 +103,9 @@ class User_model extends CI_Model {
 		}
 		
 		public function add_unern ($id,$usern){
-			$this->db->where('id',$id);
-			$this->db->update("user", $usern);
+			//$this->db->where('id',$id);
+			$id = 'id = '.$id;
+			$this->db->update("user", $usern,$id);
 		}
 		
 		public function add_information($id,$data){
@@ -143,9 +148,9 @@ class User_model extends CI_Model {
 		
 		public function get_user_by_username($username)
 		{
-				$query = $this->db->get_where("user", array("user_name" => $username));
-				$result = $query->result();
-				return $result[0]->id;
+				$query = $this->db->query('SELECT id FROM user WHERE user_name=?',array($username));
+				
+				return $query->row();;
 		}	
 			
 		public function search_user($user){

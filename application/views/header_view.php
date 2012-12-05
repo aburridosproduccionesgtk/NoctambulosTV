@@ -13,20 +13,20 @@
 <?php if( is_logged_in()){ 
 	   $user = $this->session->userdata['user'];
 	   
-	   if($user != null){ ?>
-		<span class="login span4" style="padding-top: 25px">
-		Bienvenido, 
-	   <?php echo $this->session->userdata['user'] ?>    
-	  
-		<?php }else{ ?>
-			<div class="alert alert-error fade in">
+	   if($user == ""){ ?>
+	   	<div class="alert alert-error fade in">
                 <a class="close" data-dismiss="alert">x</a><strong>
-		  			<?php echo $user ?>Tu perfil todavía no está completo¡¡¡ Accede 
-		  			<a href="<?php echo base_url() ?>secciones/profileC">aquí</a> para completarlo</strong>
+		  			<?php echo $user ?>!!!Tu perfil todavía no está completo!!! <br />Accede 
+		  			<a href="<?php echo base_url() ?>user/profileC">aquí</a> para completarlo</strong>
               	</div>
-		<?php } ?>
-			<br />	    
-			<span class="login span4"> 
+		<span class="login span4" style="padding-top: 25px">
+		<?php }else{ ?>
+			
+		Bienvenido, <?php echo $this->session->userdata['user'];
+	
+	      } ?>
+		    
+			 <br />  
 	  	<a href="<?php echo base_url()?>user/profile">Perfil&nbsp;&nbsp;</a>|
 	<a href="<?php echo base_url() ?>user/logout">&nbsp;&nbsp;Salir</a></span>
 		<?php }else{  ?>
@@ -35,7 +35,6 @@
 <a href="javascript:login_toggle()">Entrar</a>
 </span>
 <?php }?>
-
 </div>
 </div>
 <div style="display: none">

@@ -38,7 +38,7 @@
 		 		</div>
 		 		<div id="user_share" style="display:none">			
 			
-			<form id="share_med" method="post" action="<?php echo base_url() ?>user/sharemed/" style="margin-top:-10px; margin-bottom:5px" >
+			<form id="share_med" method="post" action="<?php echo base_url() ?>user/sharemed/" style="margin-top:-10px; margin-bottom:5px" />
 		  		<input type="text" id="user" name="user" style="width: 70%; float:left; margin-right:10px" />
 		  		<input type="hidden" name="tipe" id="tipe" value="V" />
 		  	  	<input type="submit" value=" Compartir " name="submit" id="submit1" class="btn btn-btn-small btn-primary" />

@@ -7,7 +7,7 @@
         	
           <h2 align="center">Perfil del Usuario</h2>
           
-          <form method="post" action="<?php echo base_url() ?>user/profile" id="contact" enctype="multipart/form-data" >
+          <form method="post" action="<?php echo base_url() ?>user/profile_update" id="contact" enctype="multipart/form-data" >
             <div class="row">
               <div class="span4">
               	<h4>Datos Personales</h4><br />

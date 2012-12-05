@@ -37,10 +37,9 @@
 		                  <ul class="slides">               	
 		                 	 <?php foreach ($videos_dat as $v_dat){ ?>
 		                 <li>
-		                 	<a href="videos/<?php echo $v_dat[0]->id ?>"> 
+		                 	<a href="<?php echo base_url() ?>videos/<?php echo $v_dat[0]->id ?>"> 
 			                  	<div>
-		    	              		<img style="border:3px solid;	list-style: none;
-		        			          	" src="<?php echo base_url() ?>img/tbvid/<?php echo $v_dat[0]->id ?>.jpg" width="140" height="80" />
+		    	              		<img style="border:3px solid;	list-style: none;" src="<?php echo base_url() ?>img/tbvid/<?php echo $v_dat[0]->id ?>.jpg" width="140" height="80" />
 		                  		</div>
 		                  	 	<p class="leyeVideo"><?php recorta($v_dat[0]->title,25) ?></p>
 		                  	 </a>
@@ -56,7 +55,7 @@
 		</div>
 		
 		<div class="row">
-			<div class="span5 pr_comments">
+			<div class="span5 pr_comments" style="height: 172px;">
 				
 					<h4>Últimos comentarios</h4>
 						<div class="commentFcontainer">
