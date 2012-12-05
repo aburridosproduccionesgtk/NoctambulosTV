@@ -80,7 +80,7 @@ function datecheck($input,$format)
 function is_logged_in()
 {
 	$CI = & get_instance();
-	return ($CI->session->userdata("user")!= null);
+	return ($CI->session->userdata("id")!= null);
 }
 
 
