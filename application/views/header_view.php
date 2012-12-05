@@ -21,7 +21,7 @@
 		<?php }else{ ?>
 			<div class="alert alert-error fade in">
                 <a class="close" data-dismiss="alert">x</a><strong>
-		  			<?php echo $username ?>Tu perfil todavía no está completo¡¡¡ Accede 
+		  			<?php echo $user ?>Tu perfil todavía no está completo¡¡¡ Accede 
 		  			<a href="<?php echo base_url() ?>secciones/profileC">aquí</a> para completarlo</strong>
               	</div>
 		<?php } ?>
