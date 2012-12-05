@@ -22,7 +22,7 @@
 			<div class="alert alert-error fade in">
                 <a class="close" data-dismiss="alert">x</a><strong>
 		  			<?php echo $username ?>Tu perfil todavía no está completo¡¡¡ Accede 
-		  			<a href="<?php echo base_url() ?>secciones/profileC">aquí</a> para completarlo
+		  			<a href="<?php echo base_url() ?>secciones/profileC">aquí</a> para completarlo</strong>
               	</div>
 		<?php } ?>
 			<br />	     
@@ -32,8 +32,9 @@
 			 	<span class="login span4"> 
 <a href="javascript:login_reg_toggle()"> Registrarse</a> |
 <a href="javascript:login_toggle()">Entrar</a>
-<?php }?>
 </span>
+<?php }?>
+
 </div>
 </div>
 <div style="display: none">
