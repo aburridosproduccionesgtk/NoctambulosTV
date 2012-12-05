@@ -26,7 +26,7 @@
 		  			<?php echo $username ?>Tu perfil todavía no está completo¡¡¡ Accede 
 		  			<a href="<?php echo base_url() ?>secciones/profileC">aquí</a> para completarlo
               	</div>
-		<? } }else{  ?>
+		<?php } }else{  ?>
 			 	<span class="login span4"> 
 <a href="javascript:login_reg_toggle()"> Registrarse</a> |
 <a href="javascript:login_toggle()">Entrar</a>
