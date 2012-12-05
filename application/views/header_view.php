@@ -13,7 +13,7 @@
 <?php if( is_logged_in()){ 
 	   $user = $this->session->userdata['user'];
 	   
-	   if($user != ""){ ?>
+	   if($user != null){ ?>
 		<span class="login span4" style="padding-top: 25px">
 		Bienvenido, 
 	   <?php echo $this->session->userdata['user'] ?>    
