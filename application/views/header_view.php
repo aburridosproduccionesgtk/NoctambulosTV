@@ -25,9 +25,10 @@
 		  			<a href="<?php echo base_url() ?>secciones/profileC">aquí</a> para completarlo</strong>
               	</div>
 		<?php } ?>
-			<br />	     
+			<br />	    
+			<span class="login span4"> 
 	  	<a href="<?php echo base_url()?>user/profile">Perfil&nbsp;&nbsp;</a>|
-	<a href="<?php echo base_url() ?>user/logout">&nbsp;&nbsp;Salir</a>
+	<a href="<?php echo base_url() ?>user/logout">&nbsp;&nbsp;Salir</a></span>
 		<?php }else{  ?>
 			 	<span class="login span4"> 
 <a href="javascript:login_reg_toggle()"> Registrarse</a> |
