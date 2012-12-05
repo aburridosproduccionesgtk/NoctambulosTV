@@ -113,8 +113,7 @@ class user extends CI_Controller {
 		$email = strip_tags($_POST['email_log']);
 		$password = md5(strip_tags($_POST['password_log']));
 		$user = $this->user_model->get_user_by_email($email);
-		$this->user_model->get_pr_interest($user->id);
-		$this->user_model->get_p_information($user->id);
+		
 			
 		if(empty($user)){
 			 $mensaje= "<div class='alert alert-error fade in'>
@@ -130,7 +129,8 @@ class user extends CI_Controller {
 		{
 			$this->session->set_userdata("id",$user->id);
 			$this->session->set_userdata("user",$user->user_name);
-			
+			$this->user_model->get_pr_interest($user->id);
+			$this->user_model->get_p_information($user->id);
 			
 			$mensaje = 'log'; 
 				
@@ -139,7 +139,7 @@ class user extends CI_Controller {
 		}else{
 			$mensaje= "<div class='alert alert-error fade in'>
 		                <a class='close' data-dismiss='alert'>x</a><strong>
-				  			Contraseña incorrecta <br>
+				  			Contraseña incorrecta </strong>
 		              	</div>";
 					echo json_encode($mensaje);	
 		}
