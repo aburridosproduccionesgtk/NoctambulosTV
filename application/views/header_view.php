@@ -17,16 +17,18 @@
 		<span class="login span4" style="padding-top: 25px">
 		Bienvenido, 
 	   <?php echo $this->session->userdata['user'] ?>    
-	  	<br />	     
-	  	<a href="<?php echo base_url()?>user/profile">Perfil&nbsp;&nbsp;</a>|
-	<a href="<?php echo base_url() ?>user/logout">&nbsp;&nbsp;Salir</a>
+	  
 		<?php }else{ ?>
 			<div class="alert alert-error fade in">
                 <a class="close" data-dismiss="alert">x</a><strong>
 		  			<?php echo $username ?>Tu perfil todavía no está completo¡¡¡ Accede 
 		  			<a href="<?php echo base_url() ?>secciones/profileC">aquí</a> para completarlo
               	</div>
-		<?php } }else{  ?>
+		<?php } ?>
+			<br />	     
+	  	<a href="<?php echo base_url()?>user/profile">Perfil&nbsp;&nbsp;</a>|
+	<a href="<?php echo base_url() ?>user/logout">&nbsp;&nbsp;Salir</a>
+		<?php }else{  ?>
 			 	<span class="login span4"> 
 <a href="javascript:login_reg_toggle()"> Registrarse</a> |
 <a href="javascript:login_toggle()">Entrar</a>
