@@ -41,7 +41,7 @@ function __construct()
     		return $query->result();
 	}
 	function get_comments($id){
-		$query = $this->db->query("SELECT * FROM comments c WHERE c.id_vid = ?",array($id)); 
+		$query = $this->db->query("SELECT id_user, fecha, mensaje FROM comments c WHERE c.id_vid = ?",array("id_vid"=>$id)); 
     	return $query->result();
 		
 	}

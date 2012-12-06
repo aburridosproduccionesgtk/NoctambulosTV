@@ -164,14 +164,22 @@ class user extends CI_Controller {
 		$this->user_model->add_information($id,$data);
 		$usern['user_name'] = strip_tags($_POST['user_name']);
 		
-		$mensaje = $this->user_model->exist_username($usern);
+		
 		if(!$this->user_model->exist_username($usern)) {
 			
 			
-			$mensaje = 'no existe el usuario';
+			
 			$this->user_model->add_unern($id,$usern);
 		}else{
 			$idf = $this->user_model->get_user_by_username($usern);
+			if($id==$idf){
+				$this->user_model->add_unern($id,$usern);
+			}else{
+				$mensaje = "<div class='alert alert-error fade in'>
+		                <a class='close' data-dismiss='alert'>x</a><strong>
+				  			El usuario ya existe </strong>
+		              	</div>";
+			}
 		}
 		
 		if(isset($_POST['Hoby'])){

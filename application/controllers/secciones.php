@@ -22,6 +22,7 @@ class secciones extends CI_Controller {
 
 		parent::__construct();
 		$this->load->model('video_model','video_model',TRUE);
+		$this->load->model('user_model','user_model',TRUE);
 		$this->load->helper('global');
 		//Debug
 		
@@ -258,8 +259,17 @@ class secciones extends CI_Controller {
 		$this->video_model->update_c($id);
 		$data['video'] = $this->video_model->get_v_id($id);
 		$data['foto'] = $this->video_model->get_f_id($id);
-		$data['comments'] = $this->video_model->get_comments($id);
 		
+		$mensajes  = $this->video_model->get_comments($id);
+		$data['comments']=array();
+		
+		foreach($mensajes as $m){
+			$commit['fecha'] = fecha_norm($m->fecha);
+			$commit['mensaje'] = $m->mensaje;
+			$user = $this->user_model->get_user_name($m->id_user);
+			$commit['user'] = $user->user_name;
+			array_push(	$data['comments'],$commit);
+		}
 	
 		$this-> __draw_before_content();
 		

@@ -80,10 +80,11 @@ class User_model extends CI_Model {
 		}
 		
 		function get_user_name($id){
-			$query = $this->db->get_where("user", array("id" => $id));
+			$query = $this->db->query('SELECT user_name FROM user WHERE id=?',array("id" => $id));
+			
 			 
-			$result = $query->result();
-			return $result[0]->user_name;
+			return $query->row();
+			
 		/*	if($result->user_name == NULL){
 				return NULL;
 			}else{
@@ -92,9 +93,10 @@ class User_model extends CI_Model {
 		}
 
 		function get_user_by_id($id){
+			
 			$query = $this->db->get_where("user", array("id" => $id));
 			 
-			return $query->row();
+			return $query->result();
 		/*	if($result->user_name == NULL){
 				return NULL;
 			}else{

@@ -57,8 +57,8 @@
 		  	 <?php  if ($comments == null ){ ?>
 		  	 	<p>Aun no hay comentarios para este video.</p>
 		  	 	<p>Registrate y se el primero en comentar.</p>
-		  	<?php  }else{ foreach ($comments as $c){ ?>
-		  	    <p><?php echo $c->mensaje?>
+		  	<?php  }else{ for($i=0; $i<count($comments); $i++){ ?>
+		  	    <div class="mensaje"><?php echo $comments[$i]['mensaje'] ?></div>
 		  	    <?php } }?>
 		  	    </div>
 		  	    <?php if( is_logged_in()){ ?>

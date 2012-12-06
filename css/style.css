@@ -55,7 +55,13 @@ Don't forget to change the button color in the html code (see buttons in element
 		overflow:hidden;
 	}
 	
-
+	.mensaje{
+		color:#fff;
+		font-family: Helvetica, Arial;
+		font-size: 0.7em;
+		display:block;
+		border-bottom: 1px solid #009EE0;
+	}
 
 
 	
