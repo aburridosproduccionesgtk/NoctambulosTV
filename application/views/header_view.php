@@ -19,15 +19,17 @@
 		  			<?php echo $user ?>!!!Tu perfil todavia no esta completo!!! <br />Accede 
 		  			<a href="<?php echo base_url() ?>user/profileC">aquí</a> para completarlo</strong>
               	</div>
-		
+			
+	  		<span class="login span4"><a href="<?php echo base_url()?>user/profile">Perfil&nbsp;&nbsp;</a>|
+			<a href="<?php echo base_url() ?>user/logout">&nbsp;&nbsp;Salir</a></span>
 		<?php }else{ ?>
 			<span class="login span4" style="padding-top: 25px">
-		Bienvenido, <?php echo $this->session->userdata['user']; } ?>
-		    
-			 <br />  
+			Bienvenido, <?php echo $this->session->userdata['user'];  ?><br>
+		  
+			
 	  	<a href="<?php echo base_url()?>user/profile">Perfil&nbsp;&nbsp;</a>|
 	<a href="<?php echo base_url() ?>user/logout">&nbsp;&nbsp;Salir</a></span>
-		<?php }else{  ?>
+		<?php } }else{  ?>
 			 	<span class="login span4"> 
 <a href="javascript:login_reg_toggle()"> Registrarse</a> |
 <a href="javascript:login_toggle()">Entrar</a>
@@ -43,7 +45,7 @@
               <div class="row"> 
                 <div class="input">
                   <label for="email">
-                    Introduce tu correo electrónico:
+                    Introduce tu correo electr�nico:
                   </label>
                   <input type="text" name="email" id="email_recovery" value="" class="email" />
                   <div class="span2">&nbsp;</div>

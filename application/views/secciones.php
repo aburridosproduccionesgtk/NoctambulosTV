@@ -45,7 +45,7 @@
 			left: 0;
 			width: 100%;
 		
-					height: 100%;overflow: inherit;">
+					height: 95%;overflow: inherit;">
  					 <source src="<?php echo base_url() ?>video/intro.avi" type="video/mp4" />
  					<source src="<?php echo base_url() ?>video/intro.ogg" type="video/mp4" />
   					

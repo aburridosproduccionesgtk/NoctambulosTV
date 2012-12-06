@@ -2,8 +2,7 @@
  <html>
  	<body >
  		<div style="padding: 50px; background-color:#000000">
- 			 <?php $imgInfo = getimagesize(base_url().'/img/fotos/'.$foto[0]->tipe.'/'.$foto[0]->name) ?>
-<?php echo print_array($comments)?> 			
+ 			 <?php $imgInfo = getimagesize(base_url().'/img/fotos/'.$foto[0]->tipe.'/'.$foto[0]->name) ?>			
  		<table >
  				<tr> 
 					

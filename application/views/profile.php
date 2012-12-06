@@ -1,6 +1,7 @@
 
 <div class="span12">
 	<div class="row">
+	<div class="offset9"><span class="btn btn-large btn-primary">Modificar Mi perfil</span></div>
 		<div class="span5 pr_comments">
 			
 			
