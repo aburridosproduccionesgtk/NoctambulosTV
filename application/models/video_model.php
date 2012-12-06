@@ -41,12 +41,16 @@ function __construct()
     		return $query->result();
 	}
 	function get_comments($id){
-		$query = $this->db->query("SELECT id_user, fecha, mensaje FROM comments c WHERE c.id_vid = ?",array("id_vid"=>$id)); 
+		$query = $this->db->query("SELECT comments.id_user, comments.fecha, comments.mensaje, user.user_name
+									FROM comments, user WHERE comments.id_vid =? AND comments.id_user = 
+									user.id",array("id_vid"=>$id)); 
     	return $query->result();
 		
 	}
 	function get_foto_comments($id){
-		$query = $this->db->query("SELECT * FROM comments_fotos c WHERE c.id_foto = ?",array($id)); 
+		$query = $this->db->query("SELECT comments_fotos.id_user, comments_fotos.fecha, comments_fotos.mensaje, 
+									user.user_name FROM comments_fotos, user WHERE comments_fotos.id_foto =? 
+									AND comments_fotos.id_user = user.id",array("id_vid"=>$id)); 
     	return $query->result();
 		
 	}

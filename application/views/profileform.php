@@ -32,25 +32,25 @@
                   </label>
                      <select name="provincia" class="span">
                      	<option value="null"></option>
-                     	<option value="A Coruña">A Coruña</option>
+                     	<option value="A CoruÃ±a">A CoruÃ±a</option>
                      	<option value="Alava">Alava</option><option value="Albacete">Albacete</option>
-						<option value="Alicante">Alicante</option><option value="Almería">Almería</option>
-						<option value="Asturias">Asturias</option><option value="Ávila">Ávila</option>
+						<option value="Alicante">Alicante</option><option value="AlmerÃ­a">AlmerÃ­a</option>
+						<option value="Asturias">Asturias</option><option value="Ã�vila">Ã�vila</option>
 						<option value="Badajoz">Badajoz</option>
 						<option value="Baleares (Illes)">Baleares (Illes)</option><option value="Barcelona">Barcelona</option>
-						<option value="Burgos">Burgos</option><option value="Cáceres">Cáceres</option>
-						<option value="Cádiz">Cádiz</option>
+						<option value="Burgos">Burgos</option><option value="CÃ¡ceres">CÃ¡ceres</option>
+						<option value="CÃ¡diz">CÃ¡diz</option>
 						<option value="Cantabria">Cantabria</option>
-						<option value="Castellón">Castellón</option>
-						<option value="Ciudad Real">Ciudad Real</option><option value="Córdoba">Córdoba</option>
+						<option value="CastellÃ³n">CastellÃ³n</option>
+						<option value="Ciudad Real">Ciudad Real</option><option value="CÃ³rdoba">CÃ³rdoba</option>
 						<option value="Cuenca">Cuenca</option>
 						<option value="Girona">Girona</option><option value="Granada">Granada</option>
-						<option value="Guadalajara">Guadalajara</option><option value="Guipúzcoa">Guipúzcoa</option>
+						<option value="Guadalajara">Guadalajara</option><option value="GuipÃºzcoa">GuipÃºzcoa</option>
 						<option value="Huelva">Huelva</option><option value="Huesca">Huesca</option>
-						<option value="Jaén">Jaén</option><option value="León">León</option>
+						<option value="JaÃ©n">JaÃ©n</option><option value="LeÃ³n">LeÃ³n</option>
 						<option value="Lleida">Lleida</option><option value="La Rioja">La Rioja</option>
 						<option value="Lugo">Lugo</option><option value="Madrid">Madrid</option>
-						<option value="Málaga">Málaga</option><option value="Murcia">Murcia</option>
+						<option value="MÃ¡laga">MÃ¡laga</option><option value="Murcia">Murcia</option>
 						<option value="Navarra">Navarra</option><option value="Ourense">Ourense</option>
 						<option value="Palencia">Palencia</option><option value="Las Palmas">Las Palmas</option>
 						<option value="Pontevedra">Pontevedra</option><option value="Salamanca">Salamanca</option>
@@ -74,7 +74,7 @@
                
                 	<div class="input">
 	                  <label for="ocuppation">
-	                    Situación profesional:
+	                    SituaciÃ³n profesional:
 	                  </label>
 	                  <input type="text" name="ocuppation" id="ocuppation"  />
                 	</div>
@@ -98,7 +98,7 @@
                		<input type="checkbox" name="Hoby[]" value="Fest"> Festivales<br />
                		<input type="checkbox" name="Hoby[]" value="Moda"> Moda/Belleza	<br />
                		<input type="checkbox" name="Hoby[]" value="Net" /> Internet<br />
-	               	<input type="checkbox" name="Hoby[]" value="Mobile" /> Móbiles<br />
+	               	<input type="checkbox" name="Hoby[]" value="Mobile" /> Moviles<br />
 	               	<input type="checkbox" name="Hoby[]" value="Motor"> Motor<br />
                </div>
               </div>

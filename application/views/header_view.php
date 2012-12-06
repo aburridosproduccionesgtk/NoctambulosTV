@@ -16,15 +16,13 @@
 	   if($user == ""){ ?>
 	   	<div class="alert alert-error fade in">
                 <a class="close" data-dismiss="alert">x</a><strong>
-		  			<?php echo $user ?>!!!Tu perfil todavía no está completo!!! <br />Accede 
+		  			<?php echo $user ?>!!!Tu perfil todavia no esta completo!!! <br />Accede 
 		  			<a href="<?php echo base_url() ?>user/profileC">aquí</a> para completarlo</strong>
               	</div>
-		<span class="login span4" style="padding-top: 25px">
+		
 		<?php }else{ ?>
-			
-		Bienvenido, <?php echo $this->session->userdata['user'];
-	
-	      } ?>
+			<span class="login span4" style="padding-top: 25px">
+		Bienvenido, <?php echo $this->session->userdata['user']; } ?>
 		    
 			 <br />  
 	  	<a href="<?php echo base_url()?>user/profile">Perfil&nbsp;&nbsp;</a>|

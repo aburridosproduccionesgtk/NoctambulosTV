@@ -48,17 +48,21 @@
 		  			
 		  		</div>
 	   	</div>
+			<?php }else{ ?>
+			 <div class="compartir">Reg&iacute;strate para compartir este video</div>
 			<?php } ?>
-			
-			
 		 <div class="commentarios">
 		    <h4>Comentarios</h4> 
 		    <div class="comentcontainer">
 		  	 <?php  if ($comments == null ){ ?>
 		  	 	<p>Aun no hay comentarios para este video.</p>
 		  	 	<p>Registrate y se el primero en comentar.</p>
-		  	<?php  }else{ for($i=0; $i<count($comments); $i++){ ?>
-		  	    <div class="mensaje"><?php echo $comments[$i]['mensaje'] ?></div>
+		  	<?php  }else{ foreach ($comments as $c){ ?>
+		  	    <div class="mensaje">
+		  	    <?php echo $c->mensaje ?><br>
+		  	    <span><?php echo $c->user_name; ?></span>
+		  	    <div class="fmensaje"><?php echo fecha_norm($c->fecha); ?></div>
+		  	    </div>
 		  	    <?php } }?>
 		  	    </div>
 		  	    <?php if( is_logged_in()){ ?>

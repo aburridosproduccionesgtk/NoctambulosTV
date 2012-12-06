@@ -76,7 +76,7 @@ class secciones extends CI_Controller {
 		$this->template->write_view("content","secciones",FALSE);
 		$this->__draw_after_content();
 			
-		//	$this->output->enable_profiler(TRUE); 
+			$this->output->enable_profiler(TRUE); 
 		
 		
 		
@@ -260,16 +260,9 @@ class secciones extends CI_Controller {
 		$data['video'] = $this->video_model->get_v_id($id);
 		$data['foto'] = $this->video_model->get_f_id($id);
 		
-		$mensajes  = $this->video_model->get_comments($id);
-		$data['comments']=array();
 		
-		foreach($mensajes as $m){
-			$commit['fecha'] = fecha_norm($m->fecha);
-			$commit['mensaje'] = $m->mensaje;
-			$user = $this->user_model->get_user_name($m->id_user);
-			$commit['user'] = $user->user_name;
-			array_push(	$data['comments'],$commit);
-		}
+		$data['comments']  = $this->video_model->get_comments($id);
+		
 	
 		$this-> __draw_before_content();
 		

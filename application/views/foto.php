@@ -3,7 +3,7 @@
  	<body >
  		<div style="padding: 50px; background-color:#000000">
  			 <?php $imgInfo = getimagesize(base_url().'/img/fotos/'.$foto[0]->tipe.'/'.$foto[0]->name) ?>
- 			
+<?php echo print_array($comments)?> 			
  		<table >
  				<tr> 
 					
@@ -19,7 +19,11 @@
 				  	 					<p>Aun no hay comentarios para esta foto.</p>
 				  	 					<p>Registrate y se el primero en comentar.</p>
 				  					<?php  }else{ foreach ($comments as $c){ ?>
-				  	    			<p><?php echo $c->mensaje?>
+				  	    				<div class="mensaje">
+		  	  								<?php echo $c->mensaje ?><br>
+		  	    							<span><?php echo $c->user_name; ?></span>
+		  	    							<div class="fmensaje"><?php echo fecha_norm($c->fecha); ?></div>
+		  	    						</div>
 				  	  				 <?php } }?>
 						 	 </div>	
 						 	 <?php if( is_logged_in()){ ?>
