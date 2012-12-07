@@ -24,7 +24,9 @@ class User_model extends CI_Model {
     }
    		
 		function exist_username($user){
-			$query = $this->db->get_where("user", $user);
+				$this->db->select('user_name');
+				$this->db->where('user_name',$user);
+				$query = $this->db->get('user');
     		$result = $query->result();
 			if($result == null){
 				return false;
@@ -107,7 +109,8 @@ class User_model extends CI_Model {
 		public function add_unern ($id,$usern){
 			//$this->db->where('id',$id);
 			$id = 'id = '.$id;
-			$this->db->update("user", $usern,$id);
+			
+			$this->db->update("user", array('user_name'=>$usern),$id);
 		}
 		
 		public function add_information($id,$data){

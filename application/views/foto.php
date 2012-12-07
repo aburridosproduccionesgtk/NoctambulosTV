@@ -1,11 +1,11 @@
 <!DOCTYPE html>
  <html>
+ 	<?php echo print_array($foto) ?>
  	<body >
  		<div style="padding: 50px; background-color:#000000">
  			 <?php $imgInfo = getimagesize(base_url().'/img/fotos/'.$foto[0]->tipe.'/'.$foto[0]->name) ?>			
  		<table >
  				<tr> 
-					
 					<td >
 						<img src="<?php echo base_url() ?>img/fotos/<?php echo $foto[0]->tipe."/".$foto[0]->name ?>" <?php echo $imgInfo[3] ?> />
 					</td>	 
@@ -40,8 +40,8 @@
 		 		</div>
 		 		<div id="user_share2" style="display:none">			
 			
-						<form method="post" action="<?php echo base_url() ?>user/sharemed/" style="margin-top:-10px; margin-bottom:5px" />
-					  		<input type="text" id="user" name="user" style="width: 70%; float:left; margin-top: 38px; margin-top: 37px;" />
+						<form method="post" action="<?php echo base_url() ?>user/sharemed" style="margin-top:-10px; margin-bottom:5px" >
+					  		<input type="text" id="user" name="user" value="nombre de usuario" style="width: 70%; float:left; margin-top: 38px; margin-top: 37px;" />
 					  		<input type="hidden" name="tipe" id="tipe" value="F" />
 					  	  	<input type="submit" value=" Comparte " class="btn btn-btn-mini btn-primary" style="margin-top: 37px;" />
 					  	  	<input type="hidden" name="id_med" id="id_med" value="<?php echo $foto[0]->id ?>" />
@@ -66,9 +66,7 @@
 				</tr>
 				
 			</table>
- 			
- 			
- 			
+
  			
  		</div>
  	</body>

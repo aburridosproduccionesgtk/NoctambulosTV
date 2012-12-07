@@ -169,7 +169,7 @@ $(document).ready(function(){
 			
 			$('#bgImage').fadeOut(100,function(){
 				$('#bgImage').css({ 
-					'background-image': "url('./img/tienda.jpg')",
+					'background-image': "url('./img/experiencias.jpg')",
 					'background-size': 'contain',
 					'margin-top' : '0px'
 					}).fadeIn(500);
@@ -180,8 +180,8 @@ $(document).ready(function(){
 			$('#bgImage').fadeOut(100,function(){
 				$('#bgImage').css({ 
 					'background-image': "url('./img/lcn.jpg')",
-					'background-size': 'contain',
-					'margin-top' : '60px'
+					'background-size': 'contain'
+					
 					}).fadeIn(500);
 			});
 			break;

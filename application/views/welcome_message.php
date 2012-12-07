@@ -82,7 +82,7 @@
     
 
 		
-<?php echo print_array($id_dest) ?>
+<?php echo print_array($medio) ?>
 		
 		
 		</div> 

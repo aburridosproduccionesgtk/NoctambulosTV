@@ -15,7 +15,7 @@
                   <label for="user_name">
                     Nombre de Usuario*
                   </label>
-                  <input type="text" name="user_name" id="user_name" class="required" />
+                  <input type="text" name="user" id="user" class="required" />
                 </div>
                 <div class="input">
                   <label for="sexo">

@@ -162,14 +162,18 @@ class user extends CI_Controller {
 		$data['sex'] = strip_tags($_POST['sex']);
 		$data['provincia'] = strip_tags($_POST['provincia']);
 		$this->user_model->add_information($id,$data);
-		$usern['user_name'] = strip_tags($_POST['user_name']);
+		$usern = strip_tags($_POST['user']);
 		
 		
 		if(!$this->user_model->exist_username($usern)) {
-			
+			$mensaje = "<div class='alert alert-success fade in'>
+                <a class='close' data-dismiss='alert'>x</a><strong>
+		  			Perfil actualizado. Puedes volver a tu perfil desde <a href='".base_url('user/profile')."'>aqui</a>
+              	</div>";
 			
 			
 			$this->user_model->add_unern($id,$usern);
+			$this->session->set_userdata("user",$usern);
 		}else{
 			$idf = $this->user_model->get_user_by_username($usern);
 			if($id==$idf){
@@ -180,6 +184,11 @@ class user extends CI_Controller {
 				  			El usuario ya existe </strong>
 		              	</div>";
 			}
+			$mensaje = "<div class='alert alert-success fade in'>
+                <a class='close' data-dismiss='alert'>x</a><strong>
+		  			Perfil actualizado. Puedes volver a tu perfil desde <a href='".base_url()."
+		  			'user/profile'>aqui</a>
+              	</div>";
 		}
 		
 		if(isset($_POST['Hoby'])){
@@ -188,11 +197,13 @@ class user extends CI_Controller {
 			foreach ($interest as $i) {
 				$datos[$i] = 1;
 			}
+			$mensaje = $_POST['Hoby'];
 			$this->user_model->add_interest($datos,$id);
 			
 		}
 		echo  $mensaje;
 		//redimensionar();
+		$this->output->enable_profiler(TRUE); 
 		
 	}
 	
@@ -273,19 +284,24 @@ class user extends CI_Controller {
 	
 	public function sharemed(){
 		$username = strip_tags($_POST['user']);
-		if($username!=""&&$username!="nombre de usuario"){
-		$userdes = $this->user_model->get_user_by_username($username);
-		$share['id_dest'] = $userdes[0]->id;
-		$share['tipe'] = strip_tags($_POST['tipe']);
-		$share['id_med'] = strip_tags($_POST['id_med']);
-		$share['id_orig'] =  get_user_id();
 		
-		
-		$this->user_model->sared_m($share);
-		}
+		if($username!="" && $username !="nombre de usuario"){
+		   	$userdes = $this->user_model->get_user_by_username($username);
+			$share['id_dest'] = $userdes[0]->id;
+			$share['tipe'] = strip_tags($_POST['tipe']);
+			$share['id_med'] = strip_tags($_POST['id_med']);
+			$share['id_orig'] =  get_user_id();
+			$tipe = strip_tags($_POST['id_vid']);
+	
+		   
+				
+			$this->user_model->sared_m($share);
+			$share['medio'] = $tipe;
+		 }
 		//TODO: meter el html en el modelo...
 		//$data['html'] = $this->user_model->sared_m($share);
-		redirect(base_url().'secciones/videos/'.$share['id_med']);
+		redirect(base_url().'secciones/videos/'.$tipe);
+		
 		
 	}
 	

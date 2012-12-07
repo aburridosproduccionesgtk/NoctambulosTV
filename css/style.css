@@ -180,8 +180,8 @@ Don't forget to change the button color in the html code (see buttons in element
 
 #bgImage{
 	clear: both;
-	width:1170px;
-	height:100%;
+	width:91.5%;
+	height:75%;
 	position:absolute;
 	background-size: contain;
 	background-repeat:no-repeat;

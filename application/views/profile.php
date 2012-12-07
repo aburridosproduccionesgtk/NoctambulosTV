@@ -1,7 +1,7 @@
 
 <div class="span12">
 	<div class="row">
-	<div class="offset9"><span class="btn btn-large btn-primary">Modificar Mi perfil</span></div>
+	
 		<div class="span5 pr_comments">
 			
 			
@@ -101,6 +101,11 @@
               </div>
 			</div>
 				
+			</div>
+			<div class="span2">
+				<a href="<?php echo base_url('user/profileC') ?>">
+			        <span class="btn btn-large btn-primary">Modificar Mi perfil</span>
+			    </a>    
 			</div>
 		</div>
 		
