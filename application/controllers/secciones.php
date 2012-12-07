@@ -254,12 +254,12 @@ class secciones extends CI_Controller {
 	}
 	
 	
-	public function videos($id){
+	public function videos($id,$related){
 		
 		$this->video_model->update_c($id);
 		$data['video'] = $this->video_model->get_v_id($id);
 		$data['foto'] = $this->video_model->get_f_id($id);
-		
+		$data['videos'] = $this->video_model->get_v($related);
 		
 		$data['comments']  = $this->video_model->get_comments($id);
 		

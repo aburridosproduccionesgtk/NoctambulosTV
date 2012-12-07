@@ -19,6 +19,7 @@
 	
     });
 </script>
+
 <div class="container contact">
       <div class="row">
 		
@@ -111,7 +112,32 @@
 
       	<?php } ?> 
      </div>
-   
+     
+   <div claas="span12">
+	<div class="bgVideos" style="margin-left:0px; margin-top:15px">
+		<div class="vertical" style="margin-top:10px">
+			<?php echo imagetext('RELACIONADOS',30,array(255,255,255));?>
+		</div>
+ 			<div class="flex-container-nonav">
+                <div class="flexslider">
+                  <ul class="slides">               	
+                 	 <?php foreach ($videos as $v_dat){ ?>
+                 <li>
+                 	<a href="videos/<?php echo $v_dat->id ?>"> 
+	                  	<div>
+    	              		<img style="border:3px solid;	list-style: none;
+        			          	" src="<?php echo base_url() ?>img/tbvid/<?php echo $v_dat->id ?>.jpg" width="215" height="115" />
+                  		</div>
+                  	 	<p class="leyeVideo"><?php recorta($v_dat->title,45) ?></p>
+                  	 </a>
+                  </li>
+                 
+                  			<?php }?>
+                  </ul>
+              </div>
+			</div>
+		</div>
+	</div>
 
 </div>
 

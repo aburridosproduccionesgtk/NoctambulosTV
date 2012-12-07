@@ -248,9 +248,7 @@ class user extends CI_Controller {
 				array_push($data['fotos_dat'],$this->video_model->get_foto_profile($f->id_med));
 			}
 		$data['videos_dat'] = $this->video_model->get_vid_com($id);
-	//	   foreach($videos as $v){
-		//     array_push(=$this->video_model->get_v_id($v->id_med));
-		 //}
+	
 		
 		$commentF = array();
 		
@@ -298,8 +296,7 @@ class user extends CI_Controller {
 			$this->user_model->sared_m($share);
 			$share['medio'] = $tipe;
 		 }
-		//TODO: meter el html en el modelo...
-		//$data['html'] = $this->user_model->sared_m($share);
+		
 		redirect(base_url().'secciones/videos/'.$tipe);
 		
 		

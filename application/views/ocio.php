@@ -1,5 +1,4 @@
 
-
   <script type="text/javascript" src="<?php echo base_url() ?>js/jquery.flexslider-min.js"></script>
 
     <script type="text/javascript" src="<?php echo base_url() ?>js/modernizr.custom.81963.js"></script> 
@@ -17,7 +16,7 @@
                   <ul class="slides">               	
                  	 <?php foreach ($videos_dat as $v_dat){ ?>
                  <li>
-                 	<a href="videos/<?php echo $v_dat->id ?>"> 
+                 	<a href="videos/<?php echo $v_dat->id.'/'.$v_dat->tipe ?>"> 
 	                  	<div>
     	              		<img style="border:3px solid <?php echo $color ?>;	list-style: none;
         			          	" src="<?php echo base_url() ?>img/tbvid/<?php echo $v_dat->id ?>.jpg" width="215" height="115" />
