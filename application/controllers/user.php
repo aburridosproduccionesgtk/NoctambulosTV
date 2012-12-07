@@ -273,22 +273,19 @@ class user extends CI_Controller {
 	
 	public function sharemed(){
 		$username = strip_tags($_POST['user']);
-		$share['id_dest'] = $this->user_model->get_user_by_username($username);
+		if($username!=""&&$username!="nombre de usuario"){
+		$userdes = $this->user_model->get_user_by_username($username);
+		$share['id_dest'] = $userdes[0]->id;
 		$share['tipe'] = strip_tags($_POST['tipe']);
 		$share['id_med'] = strip_tags($_POST['id_med']);
 		$share['id_orig'] =  get_user_id();
-		//$vmed = strip_tags($_POST['id_med']);
 		
-		$this->load->view('welcome_message',$share);
-		//if($share['tipe']=="V"){
-		//	$medio = $share['id_med'];
-		//}else{
-			//$medio  = $vmed;
-		//}
 		
+		$this->user_model->sared_m($share);
+		}
 		//TODO: meter el html en el modelo...
 		//$data['html'] = $this->user_model->sared_m($share);
-		//redirect(base_url().'secciones/videos/'.$medio);
+		redirect(base_url().'secciones/videos/'.$share['id_med']);
 		
 	}
 	

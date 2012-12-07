@@ -150,11 +150,11 @@ class User_model extends CI_Model {
 		
 		public function get_user_by_username($username){
 		      //   $user = '%'.$username.'%';
-			$query = $this->db->query("SELECT * FROM user WHERE user_name='hesselek'");
-				//$this->db->select('id');
-				//$this->db->where('user_name',$username);
-			//	$query = $this->db->get('user');
-				return $$query->result();
+			//$query = $this->db->query("SELECT * FROM user WHERE user_name='hesselek'");
+				$this->db->select('id');
+				$this->db->where('user_name',$username);
+				$query = $this->db->get('user');
+				return $query->result();
 				
 		}	
 			
