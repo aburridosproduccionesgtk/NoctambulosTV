@@ -236,10 +236,10 @@ class user extends CI_Controller {
 			foreach($fotos as $f){
 				array_push($data['fotos_dat'],$this->video_model->get_foto_profile($f->id_med));
 			}
-		$videos = $this->video_model->get_vid_com($id);
-		   foreach($videos as $v){
-		     array_push($data['videos_dat'],$this->video_model->get_v_id($v->id_med));
-		   }
+		$data['videos_dat'] = $this->video_model->get_vid_com($id);
+	//	   foreach($videos as $v){
+		//     array_push(=$this->video_model->get_v_id($v->id_med));
+		 //}
 		
 		$commentF = array();
 		
@@ -277,17 +277,18 @@ class user extends CI_Controller {
 		$share['tipe'] = strip_tags($_POST['tipe']);
 		$share['id_med'] = strip_tags($_POST['id_med']);
 		$share['id_orig'] =  get_user_id();
-		$vmed = strip_tags($_POST['id_vid']);
+		//$vmed = strip_tags($_POST['id_med']);
 		
-		if($share['tipe']=="V"){
-			$medio = $share['id_med'];
-		}else{
-			$medio  = $vmed;
-		}
+		$this->load->view('welcome_message',$share);
+		//if($share['tipe']=="V"){
+		//	$medio = $share['id_med'];
+		//}else{
+			//$medio  = $vmed;
+		//}
 		
 		//TODO: meter el html en el modelo...
-		$data['html'] = $this->user_model->sared_m($share);
-		redirect(base_url().'secciones/videos/'.$medio);
+		//$data['html'] = $this->user_model->sared_m($share);
+		//redirect(base_url().'secciones/videos/'.$medio);
 		
 	}
 	

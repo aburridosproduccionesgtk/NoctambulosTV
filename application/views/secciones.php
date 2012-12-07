@@ -41,11 +41,9 @@
       	
       		<div class="clearfix span8" style="margin-left: 0">
       	   <div id="intro">
-      			<video  width="500" height="400" autoplay="true" style="top: 0;
-			left: 0;
-			width: 100%;
-		
-					height: 95%;overflow: inherit;">
+      			<video  width="500" height="400" autoplay="true" style="top: 0; left: 0;
+					width: 100%; height: 95%; overflow: inherit;" poster="img/LogoFinal.png">
+					     Tu navegador no soporta videos en HTML5
  					 <source src="<?php echo base_url() ?>video/intro.avi" type="video/mp4" />
  					<source src="<?php echo base_url() ?>video/intro.ogg" type="video/mp4" />
   					

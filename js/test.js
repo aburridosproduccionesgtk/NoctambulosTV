@@ -129,7 +129,8 @@ $(document).ready(function(){
 		$('#bgImage').fadeOut(100,function(){
 			$('#bgImage').css({ 
 				'background-image': "url('./img/60sindex.jpg')",
-				'background-size': 'contain'
+				'background-size': 'contain',
+				'margin-top' : '0px'
 				}).fadeIn(500);
 		});
 		break;
@@ -139,7 +140,8 @@ $(document).ready(function(){
 			$('#bgImage').fadeOut(100,function(){
 				$('#bgImage').css({ 
 					'background-image': "url('./img/musica.jpg')",
-					'background-size': 'contain'
+					'background-size': 'contain',
+					'margin-top' : '0px'
 					}).fadeIn(500);
 			});
 			break;
@@ -148,7 +150,8 @@ $(document).ready(function(){
 			$('#bgImage').fadeOut(100,function(){
 				$('#bgImage').css({ 
 				    'background-image': "url('./img/tienda.jpg')",
-				    'background-size': 'contain'    
+				    'background-size': 'contain',  
+				    'margin-top' : '0px'
 				}).fadeIn(500);			
 		});
 			break;
@@ -157,7 +160,8 @@ $(document).ready(function(){
 			$('#bgImage').fadeOut(100,function(){
 				$('#bgImage').css({ 
 				    'background-image': "url('./img/casting.jpg')",
-				    'background-size': 'contain'    
+				    'background-size': 'contain',    
+				    'margin-top' : '0px'
 				}).fadeIn(500);			
 		});
 			break;
@@ -166,7 +170,18 @@ $(document).ready(function(){
 			$('#bgImage').fadeOut(100,function(){
 				$('#bgImage').css({ 
 					'background-image': "url('./img/tienda.jpg')",
-					'background-size': 'contain'
+					'background-size': 'contain',
+					'margin-top' : '0px'
+					}).fadeIn(500);
+			});
+			break;
+		case 'lcn':
+			
+			$('#bgImage').fadeOut(100,function(){
+				$('#bgImage').css({ 
+					'background-image': "url('./img/lcn.jpg')",
+					'background-size': 'contain',
+					'margin-top' : '60px'
 					}).fadeIn(500);
 			});
 			break;

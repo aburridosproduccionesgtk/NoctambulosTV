@@ -10,9 +10,9 @@
 					<img src="<?php echo base_url('img/NO-PHOTO.png') ?>" />
 				</div>
 				<div class="span3" style="margin-left: 0px">
-					Usuario: <?php echo $user->user_name; ?><br />
-					Fecha de Nacimiento: <?php echo fecha_norm($user->fecha_nac); ?><br />
-					Correo: <?php echo $user->email; ?><br /><br /><br />
+					Usuario: <?php echo $user[0]->user_name; ?><br />
+					Fecha de Nacimiento: <?php echo fecha_norm($user[0]->fecha_nac); ?><br />
+					Correo: <?php echo $user[0]->email; ?><br /><br /><br />
 					Intereses:</br>
 					<?php $intereses = $interest[0]; 
 					foreach ($intereses as $c=>$v) {
@@ -38,11 +38,11 @@
 		                  <ul class="slides">               	
 		                 	 <?php foreach ($videos_dat as $v_dat){ ?>
 		                 <li>
-		                 	<a href="<?php echo base_url() ?>videos/<?php echo $v_dat[0]->id ?>"> 
+		                 	<a href="<?php echo base_url() ?>videos/<?php echo $v_dat->id ?>"> 
 			                  	<div>
-		    	              		<img style="border:3px solid;	list-style: none;" src="<?php echo base_url() ?>img/tbvid/<?php echo $v_dat[0]->id ?>.jpg" width="140" height="80" />
+		    	              		<img style="border:3px solid;	list-style: none;" src="<?php echo base_url() ?>img/tbvid/<?php echo $v_dat->id ?>.jpg" width="140" height="80" />
 		                  		</div>
-		                  	 	<p class="leyeVideo"><?php recorta($v_dat[0]->title,25) ?></p>
+		                  	 	<p class="leyeVideo"><?php recorta($v_dat->title,25) ?></p>
 		                  	 </a>
 		                  </li>
 		                 

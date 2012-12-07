@@ -45,7 +45,7 @@
               <div class="row"> 
                 <div class="input">
                   <label for="email">
-                    Introduce tu correo electrónico:
+                    Introduce tu correo electrï¿½nico:
                   </label>
                   <input type="text" name="email" id="email_recovery" value="" class="email" />
                   <div class="span2">&nbsp;</div>
@@ -130,7 +130,7 @@
             <li class={cur_tienda} onmouseover="javascript:MenuHover('tienda')">
               <a href="#">TIENDA</a>
             </li>
-            <li class={cur_lcn} onmouseover="javascript:MenuHover('tienda')">
+            <li class={cur_lcn} onmouseover="javascript:MenuHover('lcn')">
             	<a href="#">LCN</a>
             </li>
             <li class={cur_casting} onmouseover="javascript:MenuHover('casting')" >

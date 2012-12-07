@@ -12,8 +12,9 @@
  		}
 	 	});
 	 	$('#submit1').click(function()  {
+	 		if($("#user").value !=""{
 		   alert('video compartido!!!');
-		   
+		   }
 		 });
 	
     });
@@ -39,7 +40,7 @@
 		 		<div id="user_share" style="display:none">			
 			
 			<form id="share_med" method="post" action="<?php echo base_url() ?>user/sharemed/" style="margin-top:-10px; margin-bottom:5px" />
-		  		<input type="text" id="user" name="user" style="width: 70%; float:left; margin-right:10px" />
+		  		<input type="text" id="user" name="user" style="width: 70%; float:left; margin-right:10px" value="nombre de usuario" onclick="javascript:emptyValue(this)" />
 		  		<input type="hidden" name="tipe" id="tipe" value="V" />
 		  	  	<input type="submit" value=" Compartir " name="submit" id="submit1" class="btn btn-btn-small btn-primary" />
 		  	  	<input type="hidden" name="id_med" id="id_med" value="<?php echo $video[0]->id ?>" />
@@ -67,7 +68,7 @@
 		  	    </div>
 		  	    <?php if( is_logged_in()){ ?>
 		  	    <form method="post" action="<?php echo base_url() ?>secciones/comments">
-		  	  		 <input type="text" name="comments" id="comments">
+		  	  		 <input type="text" name="comments" id="comments"  />
 		  	    	 <input type="submit" value="   Enviar   " name="submit" id="submit" class="btn btn-btn-small btn-primary" />		  	   		 
 		  	   		 <input type="hidden" name="v_id" id="v_id" value="<?php echo $video[0]->id ?>" />
 		  	   		 

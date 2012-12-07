@@ -82,7 +82,7 @@
     
 
 		
-<?php echo $data ?>
+<?php echo $id_dest ?>
 		
 		
 		</div> 
