@@ -40,7 +40,7 @@
 		 		</div>
 		 		<div id="user_share" style="display:none">			
 			
-			<form id="share_med" method="post" action="<?php echo base_url() ?>user/sharemed/" style="margin-top:-10px; margin-bottom:5px" />
+			<form id="share_med" method="post" action="<?php echo base_url() ?>user/sharemed/<?php echo $video[0]->tipe ?>" style="margin-top:-10px; margin-bottom:5px" />
 		  		<input type="text" id="user" name="user" style="width: 70%; float:left; margin-right:10px" value="nombre de usuario" onclick="javascript:emptyValue(this)" />
 		  		<input type="hidden" name="tipe" id="tipe" value="V" />
 		  		<input type="hidden" name="id_vid" id="id_vid" value="<?php echo $video[0]->id ?>" />
@@ -123,7 +123,7 @@
                   <ul class="slides">               	
                  	 <?php foreach ($videos as $v_dat){ ?>
                  <li>
-                 	<a href="videos/<?php echo $v_dat->id ?>"> 
+                 	<a href="<?php echo $v_dat->id ?>"> 
 	                  	<div>
     	              		<img style="border:3px solid;	list-style: none;
         			          	" src="<?php echo base_url() ?>img/tbvid/<?php echo $v_dat->id ?>.jpg" width="215" height="115" />

@@ -280,7 +280,7 @@ class user extends CI_Controller {
 		$this->load->view('responce', $data);
 	}
 	
-	public function sharemed(){
+	public function sharemed($cat){
 		$username = strip_tags($_POST['user']);
 		
 		if($username!="" && $username !="nombre de usuario"){
@@ -297,7 +297,7 @@ class user extends CI_Controller {
 			$share['medio'] = $tipe;
 		 }
 		
-		redirect(base_url().'secciones/videos/'.$tipe);
+		redirect(base_url().'secciones/videos/'.$cat.'/'.$tipe);
 		
 		
 	}

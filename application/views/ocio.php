@@ -16,7 +16,7 @@
                   <ul class="slides">               	
                  	 <?php foreach ($videos_dat as $v_dat){ ?>
                  <li>
-                 	<a href="videos/<?php echo $v_dat->id.'/'.$v_dat->tipe ?>"> 
+                 	<a href="videos/<?php echo $v_dat->tipe.'/'.$v_dat->id ?>"> 
 	                  	<div>
     	              		<img style="border:3px solid <?php echo $color ?>;	list-style: none;
         			          	" src="<?php echo base_url() ?>img/tbvid/<?php echo $v_dat->id ?>.jpg" width="215" height="115" />
@@ -44,7 +44,7 @@
           <?php foreach ($videos as $v){ ?>
                    
             	<li>
-            		<a href="videos/<?php echo $v->id ?>"> 
+            		<a href="videos/<?php echo $v->tipe.'/'.$v->id ?>"> 
                   		 <div>
                   			<img style="border:3px solid <?php echo $color ?>;	list-style: none" src="<?php echo base_url() ?>img/tbvid/<?php echo $v->id ?>.jpg" width="215" height="115" />
                   		</div>

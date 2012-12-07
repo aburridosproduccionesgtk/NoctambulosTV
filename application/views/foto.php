@@ -40,7 +40,7 @@
 		 		</div>
 		 		<div id="user_share2" style="display:none">			
 			
-						<form method="post" action="<?php echo base_url() ?>user/sharemed" style="margin-top:-10px; margin-bottom:5px" >
+						<form method="post" action="<?php echo base_url().'user/sharemed/'.$foto[0]->tipe ?>" style="margin-top:-10px; margin-bottom:5px" >
 					  		<input type="text" id="user" name="user" value="nombre de usuario" style="width: 70%; float:left; margin-top: 38px; margin-top: 37px;" />
 					  		<input type="hidden" name="tipe" id="tipe" value="F" />
 					  	  	<input type="submit" value=" Comparte " class="btn btn-btn-mini btn-primary" style="margin-top: 37px;" />
