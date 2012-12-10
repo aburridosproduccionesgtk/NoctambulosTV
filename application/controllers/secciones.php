@@ -279,17 +279,17 @@ class secciones extends CI_Controller {
 		$this->load->view('foto',$data);
 	}
 	
-	public function comments(){
+	public function comments($tipe){
 		$commen['id'] = null;
 		$commen['id_user'] = get_user_id();
 		$commen['id_vid'] = strip_tags($_POST['v_id']);
 		$commen['mensaje'] = strip_tags($_POST['comments']);
 
 		$this->video_model->add_comment($commen);
-		redirect("secciones/videos/".$commen['id_vid']);
+		redirect("secciones/videos/".$tipe.'/'.$commen['id_vid']);
 	}
 	
-	public function commentsFotos(){
+	public function commentsFotos($tipe){
 		$commen['id'] = null;
 		$commen['id_user'] = get_user_id();
 		$commen['id_foto'] = strip_tags($_POST['v_id_foto']);
@@ -298,7 +298,7 @@ class secciones extends CI_Controller {
 		echo $video;
 		
 		$this->video_model->add_comment_foto($commen);
-		redirect(base_url()."secciones/videos/".$video);
+		redirect(base_url()."secciones/videos/".$tipe.'/'.$video);
 		
 	}
 	

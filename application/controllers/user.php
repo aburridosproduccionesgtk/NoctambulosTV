@@ -149,12 +149,17 @@ class user extends CI_Controller {
 		redirect("secciones");
 	}
 	function profileC(){
+		$id = $this->session->userdata('id');
+		$data['user'] = $this->user_model->get_user_by_id($id);
+		$data['profile'] =$this->user_model->get_p_information($id);
+		$data['interest'] = $this->user_model->get_pr_interest($id);
+		
 		$this-> __draw_before_content();
-		$this->template->write_view("content","profileform");
+		$this->template->write_view("content","profileform",$data);
 		$this->__draw_after_content();
 	}
 	function profile_update(){
-		
+	
 		$id = $this->session->userdata('id');
 
 		$data['ocuppation'] = strip_tags($_POST['ocuppation']);
@@ -168,7 +173,7 @@ class user extends CI_Controller {
 		if(!$this->user_model->exist_username($usern)) {
 			$mensaje = "<div class='alert alert-success fade in'>
                 <a class='close' data-dismiss='alert'>x</a><strong>
-		  			Perfil actualizado. Puedes volver a tu perfil desde <a href='".base_url('user/profile')."'>aqui</a>
+		  			Perfil actualizado. Puedes volver a tu perfil desde <a href='".base_url()."user/profile'><span style='color:red'>aqui</span></a>
               	</div>";
 			
 			
@@ -184,10 +189,9 @@ class user extends CI_Controller {
 				  			El usuario ya existe </strong>
 		              	</div>";
 			}
-			$mensaje = "<div class='alert alert-success fade in'>
+			$mensaje =  "<div class='alert alert-success fade in'>
                 <a class='close' data-dismiss='alert'>x</a><strong>
-		  			Perfil actualizado. Puedes volver a tu perfil desde <a href='".base_url()."
-		  			'user/profile'>aqui</a>
+		  			Perfil actualizado. Puedes volver a tu perfil desde <a href='".base_url()."user/profile'><span style='color:red'>aqui</span></a>
               	</div>";
 		}
 		
@@ -197,13 +201,13 @@ class user extends CI_Controller {
 			foreach ($interest as $i) {
 				$datos[$i] = 1;
 			}
-			$mensaje = $_POST['Hoby'];
+			
 			$this->user_model->add_interest($datos,$id);
 			
 		}
 		echo  $mensaje;
 		//redimensionar();
-		$this->output->enable_profiler(TRUE); 
+		
 		
 	}
 	
@@ -283,18 +287,22 @@ class user extends CI_Controller {
 	public function sharemed($cat){
 		$username = strip_tags($_POST['user']);
 		
+		
+		$share['tipe'] = strip_tags($_POST['tipe']);
+		$share['id_med'] = strip_tags($_POST['id_med']);
+		$share['id_orig'] =  get_user_id();
+		$tipe = strip_tags($_POST['id_vid']);
 		if($username!="" && $username !="nombre de usuario"){
-		   	$userdes = $this->user_model->get_user_by_username($username);
-			$share['id_dest'] = $userdes[0]->id;
-			$share['tipe'] = strip_tags($_POST['tipe']);
-			$share['id_med'] = strip_tags($_POST['id_med']);
-			$share['id_orig'] =  get_user_id();
-			$tipe = strip_tags($_POST['id_vid']);
-	
+			if($this->user_model->exist_username($username)){
+			   	$userdes = $this->user_model->get_user_by_username($username);
+				
+			   	$share['id_dest'] = $userdes[0]->id;
+				$this->user_model->sared_m($share);
+			}
 		   
 				
-			$this->user_model->sared_m($share);
-			$share['medio'] = $tipe;
+			
+			
 		 }
 		
 		redirect(base_url().'secciones/videos/'.$cat.'/'.$tipe);

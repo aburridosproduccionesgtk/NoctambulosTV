@@ -5,7 +5,7 @@
 		<div class="span5 pr_comments">
 			
 			
-				<h4>Información Personal</h4>
+				<h4>Informacion Personal</h4>
 				<div class="span2" style="margin-left: 0px">
 					<img src="<?php echo base_url('img/NO-PHOTO.png') ?>" />
 				</div>

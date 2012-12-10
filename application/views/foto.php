@@ -1,6 +1,6 @@
 <!DOCTYPE html>
  <html>
- 	<?php echo print_array($foto) ?>
+ 
  	<body >
  		<div style="padding: 50px; background-color:#000000">
  			 <?php $imgInfo = getimagesize(base_url().'/img/fotos/'.$foto[0]->tipe.'/'.$foto[0]->name) ?>			
@@ -26,7 +26,7 @@
 				  	  				 <?php } }?>
 						 	 </div>	
 						 	 <?php if( is_logged_in()){ ?>
-		  	    <form method="post" action="<?php echo base_url() ?>secciones/commentsFotos" >
+		  	    <form method="post" action="<?php echo base_url().'secciones/commentsFotos/'.$foto[0]->tipe ?>" >
 		  	  		 <input type="text" name="comments" id="comments" >
 		  	    	 <input type="submit" value="   Enviar   " name="submit" id="submit" class="btn btn-btn-small btn-primary" />
 		  	   		 <input type="hidden" name="v_id_foto" id="v_id_foto" value="<?php echo $foto[0]->id ?>"/>
@@ -41,7 +41,7 @@
 		 		<div id="user_share2" style="display:none">			
 			
 						<form method="post" action="<?php echo base_url().'user/sharemed/'.$foto[0]->tipe ?>" style="margin-top:-10px; margin-bottom:5px" >
-					  		<input type="text" id="user" name="user" value="nombre de usuario" style="width: 70%; float:left; margin-top: 38px; margin-top: 37px;" />
+					  		<input type="text" id="user" name="user" value="nombre de usuario" style="width: 70%; float:left; margin-top: 38px; margin-top: 37px;" onclick="javascript:emptyValue(this)" />
 					  		<input type="hidden" name="tipe" id="tipe" value="F" />
 					  	  	<input type="submit" value=" Comparte " class="btn btn-btn-mini btn-primary" style="margin-top: 37px;" />
 					  	  	<input type="hidden" name="id_med" id="id_med" value="<?php echo $foto[0]->id ?>" />

@@ -7,7 +7,7 @@
         <nav>
           <ul>
             <li>
-              <a href="<?php echo base_url() ?>contact/condiciones">Condiciones Legales</a>
+              <a href="#">Condiciones Legales</a>
             </li>
             <li>
               <a href="<?php echo base_url() ?>contact"><i class="icon-envelope-alt"></i> Contacto</a>

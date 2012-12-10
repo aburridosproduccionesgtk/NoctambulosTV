@@ -1,19 +1,20 @@
+
  <script type="text/javascript">
     $(document).ready(function(){
      var user = $('#userlist');
-      $("#user").on('keypress',function(){
+    //  $("#user").on('keypress',function(){
  		//var us = $('#userlist').val();
  		
- 		var us = this.value;
+ 	//	var us = this.value;
  		
- 		if(us != ""){
- 			user.show();
- 			user.load("<?php echo base_url() ?>user/searchUser/"+this.value);
- 		}
-	 	});
+ 		//if(us != ""){
+ 			//user.show();
+ 			//user.load("<?php echo base_url() ?>user/searchUser/"+this.value);
+ 		//}
+	 	//});
 	 	$('#submit1').click(function()  {
 	 		if($("#user").value !=""){
-		 	  alert('Â¡Â¡Â¡video compartido!!!');
+		 	  alert('¡¡¡video compartido!!!');
 		    }
 		 });
 	
@@ -69,7 +70,7 @@
 		  	    <?php } }?>
 		  	    </div>
 		  	    <?php if( is_logged_in()){ ?>
-		  	    <form method="post" action="<?php echo base_url() ?>secciones/comments">
+		  	    <form method="post" action="<?php echo base_url() ?>secciones/comments/<?php echo $video[0]->tipe ?>">
 		  	  		 <input type="text" name="comments" id="comments"  />
 		  	    	 <input type="submit" value="   Enviar   " name="submit" id="submit" class="btn btn-btn-small btn-primary" />		  	   		 
 		  	   		 <input type="hidden" name="v_id" id="v_id" value="<?php echo $video[0]->id ?>" />
