@@ -211,17 +211,17 @@ class user extends CI_Controller {
 		
 	}
 	
-	function uploadPhoto()
+	function uploadPhoto($path)
 	{
 		
-		$filesize = strip_tags($_FILES['upfile']['size']);
-		$filename = strip_tags($_FILES['upfile']['name']);
+		/*$filesize = strip_tags($_FILES['qqfile']['size']);
+		$filename = 'uno';//strip_tags($_FILES['qqfile']['name']);
 		$uploaddir = './img/temp/';
 		 if($filesize > 0){ 
 				if((preg_match("/.jpg/", $filename)) || (preg_match("/.gif/", $filename)) || (preg_match("/.JPG/", $filename))|| (preg_match("/.GIF/", $filename)))
 				{
 				    $uploadfile = $uploaddir . base64_encode($this->session->userdata['id']);
-					if (move_uploaded_file($_FILES['upfile']['tmp_name'], $uploadfile)) 
+					if (move_uploaded_file($_FILES['qqfile']['tmp_name'], $uploadfile)) 
 					{
 						$mensaje = "Archivo subido correctamente";
 					} else {		
@@ -232,11 +232,37 @@ class user extends CI_Controller {
 				}
 			}else{
 				$mensaje = "<br><br>Campo vac&iacute;o, no ha seleccionado ninguna imagen";
+			}*/
+	
+			$input = fopen("php://input", "r");
+			$temp = tmpfile();
+			$realSize = stream_copy_to_stream($input, $temp);
+			fclose($input);
+		
+			if ($realSize != $this->getSize()){
+				return false;
 			}
+		
+			$target = fopen('./img/'.$path.'/holaaa.jpg', "w");
+			fseek($temp, 0, SEEK_SET);
+			stream_copy_to_stream($temp, $target);
+			fclose($target);
+		
+			return 'exito';
+		
 			
-			redirect('user/profileC');
 	
 			 
+	}
+	public function getName() {
+		return $_GET['qqfile'];
+	}
+	public function getSize() {
+		if (isset($_SERVER["CONTENT_LENGTH"])){
+			return (int)$_SERVER["CONTENT_LENGTH"];
+		} else {
+			throw new Exception('Getting content length is not supported.');
+		}
 	}
 	
 	public function profile(){

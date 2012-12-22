@@ -295,7 +295,7 @@ class secciones extends CI_Controller {
 		$commen['id_foto'] = strip_tags($_POST['v_id_foto']);
 		$commen['mensaje'] = strip_tags($_POST['comments']);
 		$video= strip_tags($_POST['id_vid']);
-		echo $video;
+		
 		
 		$this->video_model->add_comment_foto($commen);
 		redirect(base_url()."secciones/videos/".$tipe.'/'.$video);

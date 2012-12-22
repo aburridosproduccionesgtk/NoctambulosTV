@@ -3,7 +3,7 @@
  RewriteEngine On
     
 RewriteBase /NoctambulosTV/
-   
+  
 # RewriteCond $1 !^(index\.php|img|js|video|music|css|uploads|font|ico|robots\.txt)
   
  # RewriteRule ^(.*)$ index.php/$1 [L]

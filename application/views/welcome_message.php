@@ -11,7 +11,8 @@
 	  	  	  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
 		     <script type='text/javascript' src='<? echo base_url() ?>js/jquery.fancybox-1.3.4.pack.js'></script>
 		 <script type="text/javascript" src="<?php echo base_url() ?>js/test.js"></script>
-
+ <script type='text/javascript' src="<?php echo base_url() ?>js/fineupload/jquery.fineuploader-3.0.js"></script>
+	<script type='text/javascript' src="<?php echo base_url() ?>js/fineupload/jquery.plugin.js"></script>
 	<style type="text/css">
    
 
@@ -82,9 +83,26 @@
     
 
 		
-<?php echo print_array($medio) ?>
+
 		
-		
-		</div> 
+
+ 
+   
+    <div id="jquery-wrapped-fine-uploader"></div>
+ 
+  
+   
+   
+    <script>
+      $(document).ready(function () {
+        $('#jquery-wrapped-fine-uploader').fineUploader({
+      
+          request: {
+            endpoint: 'user/uploadPhoto/prof_img'
+          },
+          debug: true
+        });
+      });
+    </script>
 </body>
 </html>
